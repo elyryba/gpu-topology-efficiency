@@ -1,0 +1,108 @@
+repo,org,system_id,gen,total_gpus,evidence_string,inferred_domain,confidence
+training_results_v5.0,Supermicro,ARS-121GL-NBO_16,GB200,64,SRS-GB200-NVL72-M1 (16x ARS-121GL-NBO),72.0,high
+training_results_v5.0,Supermicro,ARS-121GL-NBO_18,GB200,72,SRS-GB200-NVL72-M1 (18x ARS-121GL-NBO),72.0,high
+training_results_v5.0,IBM+CoreWeave+NVIDIA,carina_ngpu512_ngc25.04_nemo,GB200,512,Carina (8x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,IBM+CoreWeave+NVIDIA,carina_ngpu1536_ngc25.04_nemo,GB200,1536,Carina (24x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,IBM+CoreWeave+NVIDIA,carina_ngpu1024_ngc25.04_nemo,GB200,1024,Carina (16x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,IBM+CoreWeave+NVIDIA,carina_ngpu2496_ngc25.04_nemo,GB200,2496,Carina (39x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,IBM+CoreWeave+NVIDIA,carina_ngpu2048_ngc25.04_nemo,GB200,2048,Carina (32x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,Oracle,18xBM.GPU.GB200.4,GB200,72,"config_GB200_18x4x1xtp1pp1cp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v5.0,Oracle,2xBM.GPU.GB200.4,GB200,8,"config_GB200_18x4x1xtp1pp1cp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v5.0,Oracle,1xBM.GPU.GB200.4,GB200,4,"config_GB200_18x4x1xtp1pp1cp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v5.0,Dell,4xXE9712x4GB200,GB200,16,"config_GB200_18x4x1024.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v5.0,Dell,9xXE9712x4GB200,GB200,36,"config_GB200_18x4x1024.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v5.0,Dell,1xXE9712x4GB200,GB200,4,"config_GB200_18x4x1024.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v5.0,Dell,2xXE9712x4GB200,GB200,8,"config_GB200_18x4x1024.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v5.0,Dell,16xXE9712x4GB200,GB200,64,"config_GB200_18x4x1024.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v5.0,Dell,8xXE9712x4GB200,GB200,32,"config_GB200_18x4x1024.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v5.0,NVIDIA,tyche_ngpu8_ngc25.04_nemo,GB200,8,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu8_ngc25.03_dgl,GB200,8,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu256_ngc25.03_dgl,GB200,256,Tyche (4x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu256_ngc25.04_nemo,GB200,256,Tyche (4x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu64_ngc25.03_hugectr,GB200,64,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu8_ngc25.03_hugectr,GB200,8,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu144_ngc25.04_nemo,GB200,144,Tyche (2x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu512_ngc25.04_pytorch,GB200,512,Tyche (8x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu512_ngc25.04_nemo,GB200,512,Tyche (8x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu8_ngc25.04_pytorch,GB200,8,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu72_ngc25.03_dgl,GB200,72,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu64_ngc25.04_pytorch,GB200,64,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu72_ngc25.04_pytorch,GB200,72,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.0,NVIDIA,tyche_ngpu72_ngc25.04_nemo,GB200,72,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,Wiwynn,1xKinabalux18x4GB200,GB200,72,Kinabalu (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,Wiwynn,8xKinabalux18x4GB200,GB200,576,Kinabalu (8x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,Supermicro,ARS-121GL-NB3,GB300,72,SRS-GB300-NVL72-M1 (18x ARS-121GL-NB3),72.0,high
+training_results_v5.1,NVIDIA,hsg_ngpu1152_ngc25.09_nemo,GB200,1152,Tyche-hsg (18x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu8_ngc25.09_nemo,GB200,8,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,hsg_ngpu2560_ngc25.09_nemo,GB200,2560,Tyche-hsg (40x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,theia_ngpu16_ngc25.09_nemo,GB300,16,Theia (1x NVIDIA GB300 NVL72),72.0,high
+training_results_v5.1,NVIDIA,theia_ngpu8_ngc25.09_nemo,GB300,8,Theia (1x NVIDIA GB300 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu8_ngc25.03_dgl,GB200,8,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu256_ngc25.03_dgl,GB200,256,Tyche (4x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu16_ngc25.09_nemo,GB200,16,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,theia_ngpu512_ngc25.09_nemo,GB300,512,Theia (8x NVIDIA GB300 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu64_ngc25.03_hugectr,GB200,64,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu8_ngc25.03_hugectr,GB200,8,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu512_ngc25.09_nemo,GB200,512,Tyche (8x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,hsg_ngpu5120_ngc25.09_nemo,GB200,5120,Tyche-hsg (80x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu512_ngc25.04_pytorch,GB200,512,Tyche (8x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu8_ngc25.04_pytorch,GB200,8,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,theia_ngpu72_ngc25.09_nemo,GB300,72,Theia (1x NVIDIA GB300 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu72_ngc25.03_dgl,GB200,72,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu72_ngc25.09_nemo,GB200,72,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,NVIDIA,tyche_ngpu72_ngc25.04_pytorch,GB200,72,Tyche (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v5.1,Lambda,gb300_n18_ngc25.04_nemo,GB300,72,"config_GB200_18x4x1xtp1pp1cp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Supermicro,ARS-121GL-NB3,GB300,72,SRS-GB300-NVL72-M1 (18x ARS-121GL-NB3),72.0,high
+training_results_v6.0,Azure,2048xAzure_GB200,GB200,8192,Azure GB200 (128x NVIDIA GB200 NVL72),72.0,high
+training_results_v6.0,Google,gb200_nvl72_n64_ngc26.04_nemo,GB200,256,"NVIDIA GB200 NVL72 (64 nodes, 4 NVLink domains)",72.0,high
+training_results_v6.0,Oracle,72GPU.GB300.4.NVL72,GB300,72,"config_GB300_2x4x3xtp1pp1cp1ep1_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Oracle,32GPU.GB300.4.NVL72,GB300,32,"config_GB300_2x4x3xtp1pp1cp1ep1_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Oracle,512GPU.GB300.4.NVL72,GB300,512,"config_GB300_2x4x3xtp1pp1cp1ep1_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Oracle,8GPU.GB300.4.NVL72,GB300,8,"config_GB300_2x4x3xtp1pp1cp1ep1_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,CoreWeave,CoreWeave_GB300_1024x4_nccl2297,GB300,4096,"config_GB300_1024x4x16xtp1pp4ep32cp1_mxfp8_full_cg.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,CoreWeave,CoreWeave_GB300_512x4,GB300,2048,"config_GB300_1024x4x16xtp1pp4ep32cp1_mxfp8_full_cg.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,CoreWeave,CoreWeave_GB300_2048x4,GB300,8192,"config_GB300_1024x4x16xtp1pp4ep32cp1_mxfp8_full_cg.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,CoreWeave,CoreWeave_GB300_1024x4,GB300,4096,"config_GB300_1024x4x16xtp1pp4ep32cp1_mxfp8_full_cg.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,HPE,HPE-GB300-ngpu72_ngc26.04,GB300,72,NVIDIA GB300 NVL72 by HPE,72.0,high
+training_results_v6.0,HPE,HPE-GB300-ngpu8_ngc26.04,GB300,8,NVIDIA GB300 NVL72 by HPE,72.0,high
+training_results_v6.0,HPE,HPE-GB300-ngpu72_ngc26.04_reduced_gbs,GB300,72,NVIDIA GB300 NVL72 by HPE,72.0,high
+training_results_v6.0,HPE,HPE-GB200-ngpu16_ngc25.09,GB200,16,NVIDIA GB200 NVL72 by HPE,72.0,high
+training_results_v6.0,HPE,HPE-GB300-ngpu16_ngc26.04,GB300,16,NVIDIA GB300 NVL72 by HPE,72.0,high
+training_results_v6.0,HPE,HPE-GB300-ngpu32_ngc26.04,GB300,32,NVIDIA GB300 NVL72 by HPE,72.0,high
+training_results_v6.0,HPE,HPE-GB200-ngpu4_ngc25.09,GB200,4,NVIDIA GB200 NVL72 by HPE,72.0,high
+training_results_v6.0,HPE,HPE-GB200-ngpu32_ngc25.09,GB200,32,NVIDIA GB200 NVL72 by HPE,72.0,high
+training_results_v6.0,HPE,HPE-GB300-ngpu72_ngc26.04_reduced_warmup,GB300,72,NVIDIA GB300 NVL72 by HPE,72.0,high
+training_results_v6.0,HPE,HPE-GB200-ngpu8_ngc25.09,GB200,8,NVIDIA GB200 NVL72 by HPE,72.0,high
+training_results_v6.0,Dell,8xXE9712x4GB300,GB300,32,"config_GB200_2x4x2xtp1pp1cp1ep2_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Dell,16xXE9712x4GB300,GB300,64,"config_GB200_2x4x2xtp1pp1cp1ep2_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Dell,4xXE9712x4GB300,GB300,16,"config_GB200_2x4x2xtp1pp1cp1ep2_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Dell,1xXE9712x4GB300,GB300,4,"config_GB200_2x4x2xtp1pp1cp1ep2_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Dell,2xXE9712x4GB300,GB300,8,"config_GB200_2x4x2xtp1pp1cp1ep2_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,NVIDIA,theia_ngpu72_ngc26.04_nemo,GB300,72,Theia (1x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu1024_ngc26.04_nemo,GB200,1024,Tyche-hsg (16x NVIDIA GB200 NVL72),72.0,high
+training_results_v6.0,NVIDIA,theia-cmh_ngpu512_ngc26.04_nemo,GB300,512,Theia-cmh (8x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,hsg_ngpu2560_ngc25.09_nemo,GB200,2560,Tyche-hsg (40x NVIDIA GB200 NVL72),72.0,high
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu72_ngc26.04_nemo,GB200,72,Tyche-hsg (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v6.0,NVIDIA,theia_ngpu64_ngc26.03_hugectr,GB300,64,Theia (1x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,theia_ngpu512_ngc26.04_nemo,GB300,512,Theia (8x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu4096_ngc26.04_nemo,GB200,4096,Tyche-hsg (64x NVIDIA GB200 NVL72),72.0,high
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu8_ngc26.04_nemo,GB200,8,Tyche-hsg (1x NVIDIA GB200 NVL72),72.0,high
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu2048_ngc26.04_nemo,GB200,2048,Tyche-hsg (32x NVIDIA GB200 NVL72),72.0,high
+training_results_v6.0,NVIDIA,theia_ngpu256_ngc26.04_nemo,GB300,256,Theia (4x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,theia_ngpu8_ngc26.03_hugectr,GB300,8,Theia (1x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,theia_ngpu512_ngc25.09_nemo,GB300,512,Theia (8x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,theia_ngpu8_ngc26.04_nemo,GB300,8,Theia (1x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,theia-cmh_ngpu2048_ngc26.04_nemo,GB300,2048,Theia-cmh (32x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,hsg_ngpu5120_ngc25.09_nemo,GB200,5120,Tyche-hsg (80x NVIDIA GB200 NVL72),72.0,high
+training_results_v6.0,NVIDIA,theia-cmh_ngpu72_ngc26.03_nemo,GB300,72,Theia-cmh (1x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu8192_ngc26.04_nemo,GB200,8192,Tyche-hsg (128x NVIDIA GB200 NVL72),72.0,high
+training_results_v6.0,NVIDIA,theia-cmh_ngpu32_ngc26.03_nemo,GB300,32,Theia-cmh (1x NVIDIA GB300 NVL72),72.0,high
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu512_ngc26.04_nemo,GB200,512,Tyche-hsg (8x NVIDIA GB200 NVL72),72.0,high
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu8,GB300,8,"config_GB300_2x4x3xtp1pp1cp1ep1_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu64,GB300,64,"config_GB300_2x4x3xtp1pp1cp1ep1_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Lambda,gb300_n18_ngc25.09_nemo,GB300,72,"config_GB300_2x4x3xtp1pp1cp1ep1_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,Nebius,nebius_gb300_n18,GB300,72,"Nebius GB300 n18 (18x NVIDIA GB300 NVL4) (NVL4 == accelerators_per_node 4 -> tray/module label, not rack fabric)",,medium
+training_results_v6.0,Nebius,nebius_gb300_n8,GB300,32,"Nebius GB300 n8 (8x NVIDIA GB300 NVL4) (NVL4 == accelerators_per_node 4 -> tray/module label, not rack fabric)",,medium
+training_results_v6.0,Nebius,nebius_gb300_n2,GB300,8,"Nebius GB300 n2 (2x NVIDIA GB300 NVL4) (NVL4 == accelerators_per_node 4 -> tray/module label, not rack fabric)",,medium
+training_results_v6.0,GigaComputing,DLB2-CB3_pytorch,GB300,72,"config_GB300_18x4x1xtp1pp1cp2ep4_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
+training_results_v6.0,GigaComputing,DLB2-CB3_hugectr,GB300,64,"config_GB300_18x4x1xtp1pp1cp2ep4_mxfp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)",,low
