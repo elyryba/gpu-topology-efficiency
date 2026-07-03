@@ -1,0 +1,1042 @@
+repo,org,system_id,model,nodes,gpus_per_node,total_gpus,accelerator,accel_interconnect_raw,accel_interconnect_gbps,host_network_raw,host_network_gbps,time_to_train_s,median_time_to_train_s,run_to_run_cv,n_runs_found
+training_results_v3.1,CTuning,a10x2-mxnet_22.08,resnet,1,2,2,NVIDIA A10G,NVIDIA NVLink,,,,23960.08,23975.33,0.002,5
+training_results_v3.1,Dell,2xXE8640x4H100-SXM-80GB,dlrm_dcnv2,2,4,8,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,351.52,352.16,0.068,10
+training_results_v3.1,Dell,2xXE8640x4H100-SXM-80GB,ssd,2,4,8,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,2177.59,2177.99,0.001,5
+training_results_v3.1,Dell,2xXE8640x4H100-SXM-80GB,resnet,2,4,8,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,832.01,832.18,0.0,5
+training_results_v3.1,Dell,2xXE8640x4H100-SXM-80GB,bert,2,4,8,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,308.53,349.66,0.178,10
+training_results_v3.1,Dell,2xXE8640x4H100-SXM-80GB,unet3d,2,4,8,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,442.24,707.37,1.541,40
+training_results_v3.1,Dell,XE8640x4H100-SXM-80GB,rnnt,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,1523.34,1674.06,0.287,10
+training_results_v3.1,Dell,XE8640x4H100-SXM-80GB,ssd,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,4326.22,4331.37,0.002,5
+training_results_v3.1,Dell,XE8640x4H100-SXM-80GB,resnet,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,1592.12,1594.12,0.001,5
+training_results_v3.1,Dell,XE8640x4H100-SXM-80GB,bert,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,577.89,684.69,0.267,10
+training_results_v3.1,Dell,XE8640x4H100-SXM-80GB,unet3d,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,787.82,1331.66,0.957,40
+training_results_v3.1,Dell,XE8640x4H100-SXM-80GB,maskrcnn,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,2318.39,2319.39,0.003,5
+training_results_v3.1,Dell,2xXE9680x8H100-SXM-80GB,rnnt,2,8,16,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,8x ConnectX-7 IB NDR 400Gb/Sec,,647.62,698.97,0.147,10
+training_results_v3.1,Dell,2xXE9680x8H100-SXM-80GB,ssd,2,8,16,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,8x ConnectX-7 IB NDR 400Gb/Sec,,1154.11,1155.55,0.002,5
+training_results_v3.1,Dell,2xXE9680x8H100-SXM-80GB,resnet,2,8,16,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,8x ConnectX-7 IB NDR 400Gb/Sec,,450.65,450.95,0.001,4
+training_results_v3.1,Dell,2xXE9680x8H100-SXM-80GB,bert,2,8,16,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,8x ConnectX-7 IB NDR 400Gb/Sec,,174.74,215.41,0.237,10
+training_results_v3.1,Dell,XE9680x8H100-SXM-80GB,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,225.64,241.88,0.201,10
+training_results_v3.1,Dell,XE9680x8H100-SXM-80GB,rnnt,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,993.49,1015.05,0.064,10
+training_results_v3.1,Dell,XE9680x8H100-SXM-80GB,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2174.36,2179.03,0.003,5
+training_results_v3.1,Dell,XE9680x8H100-SXM-80GB,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,800.84,801.32,0.001,5
+training_results_v3.1,Dell,XE9680x8H100-SXM-80GB,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,297.88,337.79,0.178,10
+training_results_v3.1,Dell,XE9680x8H100-SXM-80GB,stable_diffusion,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2189.6,2739.64,0.4,10
+training_results_v3.1,Dell,XE9680x8H100-SXM-80GB,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,385.74,711.87,1.34,40
+training_results_v3.1,Dell,XE9680x8H100-SXM-80GB,maskrcnn,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1189.66,1191.75,0.008,5
+training_results_v3.1,Dell,XE9640x4H100-SXM-80GB,dlrm_dcnv2,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,433.18,467.29,0.145,10
+training_results_v3.1,Dell,XE9640x4H100-SXM-80GB,rnnt,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,1513.89,1698.85,0.198,10
+training_results_v3.1,Dell,XE9640x4H100-SXM-80GB,ssd,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,4389.99,4396.18,0.003,5
+training_results_v3.1,Dell,XE9640x4H100-SXM-80GB,resnet,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,1604.92,1609.59,0.003,4
+training_results_v3.1,Dell,XE9640x4H100-SXM-80GB,bert,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,621.3,692.94,0.157,10
+training_results_v3.1,Dell,XE9640x4H100-SXM-80GB,unet3d,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,845.55,1420.59,1.167,40
+training_results_v3.1,Dell,XE9640x4H100-SXM-80GB,maskrcnn,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,2332.39,2336.09,0.009,5
+training_results_v3.1,Azure+NVIDIA,ND_H100_v5_n1344_pytorch,gpt3,1344,8,10752,NVIDIA H100-SXM-80GB,NVLINK 4.0,,"1x Ethernet 100Gb/Sec, 8x NVIDIA Quantum-2 CX7 InfiniBand (400Gb/s)",400.0,240.47,240.51,0.004,3
+training_results_v3.1,GigaComputing,G593-ZD2_mxnet,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,801.48,801.77,0.0,5
+training_results_v3.1,GigaComputing,G593-ZD2_mxnet,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,489.19,709.69,1.044,40
+training_results_v3.1,GigaComputing,G593-ZD2_hugectr,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,224.56,240.72,0.068,10
+training_results_v3.1,GigaComputing,G593-ZD2_pytorch,rnnt,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,898.02,975.17,0.142,10
+training_results_v3.1,GigaComputing,G593-ZD2_pytorch,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,2170.36,2172.46,0.002,5
+training_results_v3.1,GigaComputing,G593-ZD2_pytorch,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,277.4,316.7,0.249,10
+training_results_v3.1,GigaComputing,G593-ZD2_pytorch,maskrcnn,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,1102.3,1177.92,0.078,5
+training_results_v3.1,Ailiverse,8xA100_40GB_open,resnet,10,8,80,NVIDIA A100-SXM-40GB,,,,,1731.49,1738.06,0.017,5
+training_results_v3.1,ASUSTeK,ESC8000-E11-8xH100-PCIE-80GB,dlrm_dcnv2,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,693.02,695.13,0.069,10
+training_results_v3.1,ASUSTeK,ESC8000-E11-8xH100-PCIE-80GB,rnnt,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,1376.38,1404.6,0.081,10
+training_results_v3.1,ASUSTeK,ESC8000-E11-8xH100-PCIE-80GB,ssd,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,3228.89,3234.43,0.004,5
+training_results_v3.1,ASUSTeK,ESC8000-E11-8xH100-PCIE-80GB,resnet,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,1251.48,1251.72,0.001,5
+training_results_v3.1,ASUSTeK,ESC8000-E11-8xH100-PCIE-80GB,bert,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,514.04,621.91,0.236,10
+training_results_v3.1,ASUSTeK,ESC8000-E11-8xH100-PCIE-80GB,unet3d,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,670.91,1102.4,1.555,40
+training_results_v3.1,ASUSTeK,ESC8000-E11-8xH100-PCIE-80GB,maskrcnn,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,1687.97,1690.68,0.074,5
+training_results_v3.1,ASUSTeK,ESC-N8-E11,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,241.43,258.5,0.266,10
+training_results_v3.1,ASUSTeK,ESC-N8-E11,rnnt,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,944.97,1009.16,0.124,10
+training_results_v3.1,ASUSTeK,ESC-N8-E11,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2154.08,2156.78,0.003,5
+training_results_v3.1,ASUSTeK,ESC-N8-E11,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,800.37,800.43,0.0,5
+training_results_v3.1,ASUSTeK,ESC-N8-E11,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,274.25,331.34,0.234,10
+training_results_v3.1,ASUSTeK,ESC-N8-E11,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,391.43,701.25,1.797,40
+training_results_v3.1,ASUSTeK,ESC-N8-E11,maskrcnn,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1157.52,1159.55,0.003,5
+training_results_v3.1,Fujitsu,primergy-cdi-A100x8-mxnet-ngc23.09,resnet,1,8,8,NVIDIA A100-PCIe-80GB,PCIe gen4 x16,,,,1781.22,1784.44,0.002,4
+training_results_v3.1,Fujitsu,primergy-cdi-A100x4-mxnet-ngc23.09,resnet,1,4,4,NVIDIA A100-PCIe-80GB,PCIe gen4 x16,,,,3533.66,3536.35,0.001,5
+training_results_v3.1,Fujitsu,primergy-cdi-A100x2-mxnet-ngc23.09,resnet,1,2,2,NVIDIA A100-PCIe-80GB,PCIe gen4 x16,,,,6935.94,6942.69,0.001,5
+training_results_v3.1,Fujitsu,primergy-cdi-A100x8-mxnet-ngc23.04,unet3d,1,8,8,NVIDIA A100-PCIe-80GB,PCIe gen4 x16,,,,852.47,1513.84,1.128,40
+training_results_v3.1,Fujitsu,primergy-cdi-A100x10-pytorch-ngc23.09_gbs320,ssd,1,10,10,NVIDIA A100-PCIe-80GB,PCIe gen4 x16,,,,4302.44,4305.42,0.005,5
+training_results_v3.1,Fujitsu,primergy-cdi-A100x10-mxnet-ngc23.09,resnet,1,10,10,NVIDIA A100-PCIe-80GB,PCIe gen4 x16,,,,1466.45,1467.54,0.003,5
+training_results_v3.1,Fujitsu,primergy-cdi-A100x8-pytorch-ngc23.09_gbs320,ssd,1,8,8,NVIDIA A100-PCIe-80GB,PCIe gen4 x16,,,,5255.17,5257.06,0.001,5
+training_results_v3.1,Azure,ND_H100_v5_mxnet,resnet,1,8,8,NVIDIA H100-SXM-80GB,NVLINK 4.0,,"1x Ethernet 80Gb/Sec, 8x NVIDIA NDR (400Gb/s)",400.0,823.21,825.28,0.004,5
+training_results_v3.1,Azure,ND_H100_v5_pytorch,bert,1,8,8,NVIDIA H100-SXM-80GB,NVLINK 4.0,,"1x Ethernet 80Gb/Sec, 8x NVIDIA NDR (400Gb/s)",400.0,279.95,339.58,0.178,10
+training_results_v3.1,Azure,ND_H100_v5_pytorch,maskrcnn,1,8,8,NVIDIA H100-SXM-80GB,NVLINK 4.0,,"1x Ethernet 80Gb/Sec, 8x NVIDIA NDR (400Gb/s)",400.0,1188.15,1190.12,0.145,5
+training_results_v3.1,Clemson,8xR750-2xA100-PCIe-80GB,bert,8,2,16,NVIDIA A100 - PCIe - 80 GB,PCIe Gen4: 64 GB / s,,"Management: 1 x 25 Gb / Sec Ethernet, Compute: 1 x ConnectX - 6 IB HDR100 100 Gb / Sec",,1028.75,1073.89,0.125,10
+training_results_v3.1,Clemson,16xR750-2xA100-PCIe-80GB,bert,16,2,32,NVIDIA A100 - PCIe - 80 GB,PCIe Gen4: 64 GB / s,,"Management: 1 x 25 Gb / Sec Ethernet, Compute: 1 x ConnectX - 6 IB HDR100 100 Gb / Sec",,474.45,553.42,0.238,10
+training_results_v3.1,Google,cloud-tpu-v5e-4096-PAX,gpt3,1024,4,4096,TPU-v5e,,,,,2668.31,2681.09,0.007,3
+training_results_v4.0,Dell,XE8640x4H100-SXM-80GB,gnn,1,4,4,NVIDIA H100-SXM5-80GB,18xNVLink 25GB/s,25.0,4x ConnectX-7 IB NDR 400Gb/Sec,,1591.51,1741.55,0.091,10
+training_results_v4.0,Dell,XE8640x4H100-SXM-80GB,ssd,1,4,4,NVIDIA H100-SXM5-80GB,18xNVLink 25GB/s,25.0,4x ConnectX-7 IB NDR 400Gb/Sec,,4202.92,4209.49,0.002,5
+training_results_v4.0,Dell,XE8640x4H100-SXM-80GB,resnet,1,4,4,NVIDIA H100-SXM5-80GB,18xNVLink 25GB/s,25.0,4x ConnectX-7 IB NDR 400Gb/Sec,,1611.92,1613.27,0.001,5
+training_results_v4.0,Dell,XE8640x4H100-SXM-80GB,bert,1,4,4,NVIDIA H100-SXM5-80GB,18xNVLink 25GB/s,25.0,4x ConnectX-7 IB NDR 400Gb/Sec,,528.4,567.32,0.202,10
+training_results_v4.0,Dell,XE8640x4H100-SXM-80GB,unet3d,1,4,4,NVIDIA H100-SXM5-80GB,18xNVLink 25GB/s,25.0,4x ConnectX-7 IB NDR 400Gb/Sec,,803.17,1467.93,1.239,40
+training_results_v4.0,Dell,XE9680x8H100-SXM-80GB,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,219.68,235.47,0.269,10
+training_results_v4.0,Dell,XE9680x8H100-SXM-80GB,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1762.25,1770.94,0.14,10
+training_results_v4.0,Dell,XE9680x8H100-SXM-80GB,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2174.36,2179.03,0.003,5
+training_results_v4.0,Dell,XE9680x8H100-SXM-80GB,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,788.88,789.69,0.002,4
+training_results_v4.0,Dell,XE9680x8H100-SXM-80GB,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,297.88,337.79,0.178,10
+training_results_v4.0,Dell,XE9680x8H100-SXM-80GB,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,385.74,711.87,1.34,40
+training_results_v4.0,Dell,XE9640x4H100-SXM-80GB,dlrm_dcnv2,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,433.18,467.29,0.145,10
+training_results_v4.0,Dell,XE9640x4H100-SXM-80GB,ssd,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,4389.99,4396.18,0.003,5
+training_results_v4.0,Dell,XE9640x4H100-SXM-80GB,resnet,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,1604.92,1609.59,0.003,4
+training_results_v4.0,Dell,XE9640x4H100-SXM-80GB,bert,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,621.3,692.94,0.157,10
+training_results_v4.0,Dell,XE9640x4H100-SXM-80GB,unet3d,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,845.55,1420.59,1.167,40
+training_results_v4.0,Dell,R760xax4L40S,ssd,1,4,4,NVIDIA L40S,,,2x ConnectX-7 IB NDR 400Gb/Sec,,12197.03,12202.17,0.002,5
+training_results_v4.0,Dell,R760xax4L40S,resnet,1,4,4,NVIDIA L40S,,,2x ConnectX-7 IB NDR 400Gb/Sec,,5155.29,5157.06,0.001,5
+training_results_v4.0,Dell,R760xax4L40S,bert,1,4,4,NVIDIA L40S,,,2x ConnectX-7 IB NDR 400Gb/Sec,,3976.75,4838.2,0.214,9
+training_results_v4.0,GigaComputing,G593-SD1_dgl,gnn,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,639.85,682.58,0.121,10
+training_results_v4.0,GigaComputing,G593-SD1_pytorch,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,1690.35,1696.82,0.139,10
+training_results_v4.0,GigaComputing,G593-SD1_pytorch,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,2161.16,2162.67,0.001,5
+training_results_v4.0,GigaComputing,G593-SD1_pytorch,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,280.55,338.73,0.231,10
+training_results_v4.0,GigaComputing,G593-SD1_pytorch,stable_diffusion,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,2556.79,2572.23,0.2,10
+training_results_v4.0,GigaComputing,G593-SD1_mxnet,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,790.08,790.22,0.0,5
+training_results_v4.0,GigaComputing,G593-SD1_mxnet,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,398.07,681.9,1.192,40
+training_results_v4.0,GigaComputing,G593-SD1_hugectr,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLink,,Gig Ethernet,,227.12,227.44,0.068,10
+training_results_v4.0,Red_Hat,AS-8125GS-TNHR-RHEL9.4,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,1801.8,1812.31,0.139,10
+training_results_v4.0,JuniperNetworks,h100_n4_ngc24.1_pytorch_deepspeed,llama2_70b_lora,4,8,32,NVIDIA H100-SXM5-80GB,2x 400Gbe Ethernet,,Gig Ethernet,,2522.65,2678.6,0.109,10
+training_results_v4.0,JuniperNetworks,a100_n8_ngc23.09_pytorch,bert,8,8,64,NVIDIA A100-SXM4-80GB,2 x 200Gbe Ethernet,,Gig Ethernet,,147.8,158.5,0.198,10
+training_results_v4.0,JuniperNetworks,a100_n8_ngc23.09_merlin_hugectr,dlrm_dcnv2,8,8,64,NVIDIA A100-SXM4-80GB,2 x 200Gbe Ethernet,,Gig Ethernet,,155.92,172.4,0.166,10
+training_results_v4.0,JuniperNetworks,h100_n4_ngc23.09_pytorch,bert,4,8,32,NVIDIA H100-SXM5-80GB,2x 400Gbe Ethernet,,Gig Ethernet,,110.05,110.87,0.072,10
+training_results_v4.0,JuniperNetworks,h100_n4_ngc23.09_merlin_hugectr,dlrm_dcnv2,4,8,32,NVIDIA H100-SXM5-80GB,2x 400Gbe Ethernet,,Gig Ethernet,,159.09,169.54,0.167,10
+training_results_v4.0,JuniperNetworks,h100_n1_ngc24.1_pytorch_deepspeed,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,2x 400Gbe Ethernet,,Gig Ethernet,,6337.73,7037.49,0.316,10
+training_results_v4.0,JuniperNetworks,a100_n8_ngc24.1_pytorch_deepspeed,llama2_70b_lora,8,8,64,NVIDIA A100-SXM4-80GB,2 x 200Gbe Ethernet,,Gig Ethernet,,4219.31,4494.92,0.244,10
+training_results_v4.0,NVIDIA,eos_ngc24.04_pytorch,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,2122.93,2127.74,0.004,5
+training_results_v4.0,NVIDIA,eos_n9_ngc24.04_mxnet,unet3d,9,8,72,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,63.68,117.04,1.05,40
+training_results_v4.0,NVIDIA,l40s_n16_ngc24.04_pytorch,ssd,16,4,64,NVIDIA L40S,PCIe Gen4,,BF3 200Gbps for NS and 2xBF3 400Gbps for EW,,936.84,937.09,0.002,5
+training_results_v4.0,NVIDIA,l40s_n16_ngc24.04_nemo,llama2_70b_lora,16,4,64,NVIDIA L40S,PCIe Gen4,,BF3 200Gbps for NS and 2xBF3 400Gbps for EW,,1118.26,1289.42,0.265,10
+training_results_v4.0,NVIDIA,l40s_n16_ngc24.04_nemo,stable_diffusion,16,4,64,NVIDIA L40S,PCIe Gen4,,BF3 200Gbps for NS and 2xBF3 400Gbps for EW,,1295.71,1301.21,0.203,10
+training_results_v4.0,NVIDIA,eos_n8_ngc24.04_dgl,gnn,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,155.03,163.4,0.103,10
+training_results_v4.0,NVIDIA,eos_ngc23.04_pytorch,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,270.86,328.6,0.235,10
+training_results_v4.0,NVIDIA,eos_n64_ngc24.04_nemo,gpt3,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,3038.25,3043.68,0.036,3
+training_results_v4.0,NVIDIA,eos_n64_ngc24.04_nemo,stable_diffusion,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,95.67,109.56,0.127,10
+training_results_v4.0,NVIDIA,eos_n128_ngc24.04_nemo,llama2_70b_lora,128,8,1024,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,84.95,88.43,0.179,10
+training_results_v4.0,NVIDIA,eos_n128_ngc24.04_nemo,stable_diffusion,128,8,1024,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,73.28,83.97,0.289,10
+training_results_v4.0,NVIDIA,eos_n8_ngc24.04_merlin_hugectr,dlrm_dcnv2,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,70.2,82.81,0.205,10
+training_results_v4.0,NVIDIA,eos_n16_ngc24.04_merlin_hugectr,dlrm_dcnv2,16,8,128,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,56.86,60.36,0.102,10
+training_results_v4.0,NVIDIA,eos_ngc24.04_mxnet,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,791.16,798.1,0.01,5
+training_results_v4.0,NVIDIA,eos_ngc24.04_mxnet,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,491.22,703.95,0.7,40
+training_results_v4.0,NVIDIA,eos_n8_ngc23.04_pytorch,bert,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,49.05,52.68,0.196,9
+training_results_v4.0,NVIDIA,eos_n8_ngc24.04_pytorch,ssd,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,364.38,364.6,0.001,5
+training_results_v4.0,NVIDIA,eos_ngc24.04_nemo,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1412.44,1629.94,0.268,10
+training_results_v4.0,NVIDIA,eos_ngc24.04_nemo,stable_diffusion,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,2016.44,2536.16,0.209,10
+training_results_v4.0,NVIDIA,l40s_n2_ngc24.04_pytorch,ssd,2,4,8,NVIDIA L40S,PCIe Gen4,,BF3 200Gbps for NS and 2xBF3 400Gbps for EW,,6624.43,6629.89,0.005,5
+training_results_v4.0,NVIDIA,eos-dfw_n1452_ngc24.04_nemo,gpt3,1452,8,11616,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage+Management: 1x NVIDIA BlueField 2 DPU 100Gb/s, Compute: 8x NVIDIA ConnectX-7 IB NDR 400Gb/s",50.0,206.36,206.66,0.003,3
+training_results_v4.0,NVIDIA,eos_n64_ngc24.04_dgl,gnn,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,64.42,68.91,0.137,10
+training_results_v4.0,NVIDIA,l40s_n16_ngc24.04_mxnet,resnet,16,4,64,NVIDIA L40S,PCIe Gen4,,BF3 200Gbps for NS and 2xBF3 400Gbps for EW,,427.44,427.77,0.011,5
+training_results_v4.0,NVIDIA,eos-dfw_n1344_ngc24.04_nemo,gpt3,1344,8,10752,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage+Management: 1x NVIDIA BlueField 2 DPU 100Gb/s, Compute: 8x NVIDIA ConnectX-7 IB NDR 400Gb/s",50.0,222.49,222.51,0.002,3
+training_results_v4.0,NVIDIA,h200_ngc24.04_merlin_hugectr,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,193.75,208.16,0.075,10
+training_results_v4.0,NVIDIA,h200_ngc24.04_nemo,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1406.02,1414.54,0.138,10
+training_results_v4.0,NVIDIA,h200_ngc24.04_nemo,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1979.87,2481.57,0.404,10
+training_results_v4.0,NVIDIA,eos_n8_ngc24.04_mxnet,resnet,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,150.21,150.33,0.001,4
+training_results_v4.0,NVIDIA,h200_ngc24.04_pytorch,ssd,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,2045.7,2053.02,0.008,5
+training_results_v4.0,NVIDIA,eos_n316_ngc24.04_pytorch,ssd,316,8,2528,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,43.23,48.07,0.193,5
+training_results_v4.0,NVIDIA,eos_n8_ngc24.04_nemo,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,264.05,306.91,0.26,10
+training_results_v4.0,NVIDIA,eos_n8_ngc24.04_nemo,stable_diffusion,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,361.41,362.61,0.202,10
+training_results_v4.0,NVIDIA,h200_ngc24.04_dgl,gnn,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,435.32,462.35,0.108,10
+training_results_v4.0,NVIDIA,coreweave_hgxh100_n448_ngc23.04_mxnet,resnet,448,8,3584,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Management: 1x Bluefield-2 DPU Ethernet 100Gb/Sec, Compute: 8x ConnectX-7 InfiniBand NDR 400Gb/Sec",,10.96,10.98,0.004,5
+training_results_v4.0,NVIDIA,h200_ngc24.04_mxnet,resnet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,721.15,721.44,0.002,5
+training_results_v4.0,NVIDIA,h200_ngc24.04_mxnet,unet3d,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,431.38,634.28,1.317,40
+training_results_v4.0,NVIDIA,eos_n96_ngc23.09_mxnet,unet3d,96,8,768,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,31.2,41.2,1.126,36
+training_results_v4.0,NVIDIA,eos_ngc24.04_merlin_hugectr,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,213.46,229.31,0.134,10
+training_results_v4.0,NVIDIA,eos_n316_ngc24.04_mxnet,resnet,316,8,2528,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,13.14,13.93,0.057,5
+training_results_v4.0,NVIDIA,l40s_n2_ngc24.04_mxnet,resnet,2,4,8,NVIDIA L40S,PCIe Gen4,,BF3 200Gbps for NS and 2xBF3 400Gbps for EW,,3032.41,3036.53,0.003,5
+training_results_v4.0,NVIDIA,eos_ngc24.04_dgl,gnn,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,638.29,678.09,0.11,10
+training_results_v4.0,NVIDIA,h200_ngc23.09_pytorch,bert,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,281.84,319.63,0.177,10
+training_results_v4.0,NVIDIA,l40s_n96_ngc24.04_nemo,llama2_70b_lora,96,4,384,NVIDIA L40S,PCIe Gen4,,BF3 200Gbps for NS and 2xBF3 400Gbps for EW,,372.22,430.84,0.202,10
+training_results_v4.0,NVIDIA,eos_n434_ngc23.09_pytorch,bert,434,8,3472,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,6.68,7.13,0.174,10
+training_results_v4.0,smc,1xSMC-H100-SXM-80GB,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,214.58,229.64,0.132,10
+training_results_v4.0,smc,1xSMC-H100-SXM-80GB,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1685.18,1687.01,0.006,10
+training_results_v4.0,smc,1xSMC-H100-SXM-80GB,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2155.09,2159.0,0.003,5
+training_results_v4.0,smc,1xSMC-H100-SXM-80GB,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,793.18,797.7,0.006,5
+training_results_v4.0,smc,1xSMC-H100-SXM-80GB,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,277.05,335.74,0.234,10
+training_results_v4.0,smc,1xSMC-H100-SXM-80GB,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,356.67,726.43,1.968,40
+training_results_v4.0,smc,9xSMC-H100-SXM-80GB,unet3d,9,8,72,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,68.17,104.06,1.203,40
+training_results_v4.0,smc,8xSMC-H100-SXM-80GB,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,273.31,313.89,0.139,10
+training_results_v4.0,smc,8xSMC-H100-SXM-80GB,ssd,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,377.88,378.89,0.003,5
+training_results_v4.0,smc,8xSMC-H100-SXM-80GB,resnet,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,152.45,152.56,0.002,5
+training_results_v4.0,smc,8xSMC-H100-SXM-80GB,stable_diffusion,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,313.95,393.01,0.402,10
+training_results_v4.0,smc,64xSMC-H100-SXM-80GB,llama2_70b_lora,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,120.12,126.77,0.1,10
+training_results_v4.0,smc,64xSMC-H100-SXM-80GB,gpt3,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,3410.91,3412.16,0.001,3
+training_results_v4.0,Lenovo,SR685aV3-8xH100_SXM5_80GB_700W,ssd,1,8,8,NVIDIA H100-SXM5-80GB,PCIe 4.0,,BCM57414 NetXtreme-E 10Gb/25Gb RDMA Ethernet Controller,,2172.15,2176.42,0.002,5
+training_results_v4.0,Lenovo,SR685aV3-8xH100_SXM5_80GB_700W,resnet,1,8,8,NVIDIA H100-SXM5-80GB,PCIe 4.0,,BCM57414 NetXtreme-E 10Gb/25Gb RDMA Ethernet Controller,,797.84,798.19,0.006,5
+training_results_v4.0,Lenovo,SR685aV3-8xH100_SXM5_80GB_700W,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,PCIe 4.0,,BCM57414 NetXtreme-E 10Gb/25Gb RDMA Ethernet Controller,,404.83,688.27,1.661,40
+training_results_v4.0,Lenovo,SR675V3-8xL40S_PCIe_48GB_350W,resnet,1,8,8,NVIDIA L40S,,,,,3042.99,3043.87,0.114,5
+training_results_v4.0,smc-ac-power,1xSMC-H100-SXM-80GB,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,226.09,226.43,0.135,10
+training_results_v4.0,smc-ac-power,1xSMC-H100-SXM-80GB,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1685.18,1687.01,0.006,10
+training_results_v4.0,smc-ac-power,1xSMC-H100-SXM-80GB,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2169.44,2170.8,0.001,5
+training_results_v4.0,smc-ac-power,1xSMC-H100-SXM-80GB,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,799.85,802.15,0.003,5
+training_results_v4.0,smc-ac-power,1xSMC-H100-SXM-80GB,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,277.05,335.74,0.234,10
+training_results_v4.0,smc-ac-power,1xSMC-H100-SXM-80GB,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,472.48,706.21,0.966,40
+training_results_v4.0,smc-ac-power,9xSMC-H100-SXM-80GB,unet3d,9,8,72,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,68.17,104.06,1.203,40
+training_results_v4.0,smc-ac-power,8xSMC-H100-SXM-80GB,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,317.45,318.58,0.005,10
+training_results_v4.0,smc-ac-power,8xSMC-H100-SXM-80GB,ssd,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,377.88,378.89,0.003,5
+training_results_v4.0,smc-ac-power,8xSMC-H100-SXM-80GB,resnet,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,152.45,152.56,0.002,5
+training_results_v4.0,smc-ac-power,64xSMC-H100-SXM-80GB,llama2_70b_lora,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,115.78,117.22,0.03,10
+training_results_v4.0,smc-ac-power,64xSMC-H100-SXM-80GB,gpt3,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,3410.91,3412.16,0.001,3
+training_results_v4.0,HPE,HPE-Cray-XD670-Gen11-H100-SXM5-80GB_n1_pytorch_23.09,bert,1,8,8,NVIDIA H100-SXM5-80GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,292.62,331.45,0.119,10
+training_results_v4.0,HPE,HPE-Cray-XD670-Gen11-H100-SXM5-80GB_n1_mxnet_24.04,resnet,1,8,8,NVIDIA H100-SXM5-80GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,815.95,817.36,0.002,5
+training_results_v4.0,HPE,HPE-Cray-XD670-Gen11-H100-SXM5-80GB_n1_mxnet_24.04,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,400.62,692.89,1.14,40
+training_results_v4.0,HPE,HPE-Cray-XD670-Gen11-H100-SXM5-80GB_n2_pytorch_23.09,bert,2,8,16,NVIDIA H100-SXM5-80GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,164.29,199.19,0.177,10
+training_results_v4.0,HPE,HPE-Cray-XD670-Gen11-H100-SXM5-80GB_n1_pytorch_24.04,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,1455.55,1682.33,0.265,10
+training_results_v4.0,HPE,HPE-Cray-XD670-Gen11-H100-SXM5-80GB_n1_pytorch_24.04,ssd,1,8,8,NVIDIA H100-SXM5-80GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,2117.83,2120.23,0.004,5
+training_results_v4.0,HPE,HPE-Cray-XD670-Gen11-H100-SXM5-80GB_n2_pytorch_24.04,llama2_70b_lora,2,8,16,NVIDIA H100-SXM5-80GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,994.99,1148.55,0.267,10
+training_results_v4.0,HPE,HPE-Cray-XD670-Gen11-H100-SXM5-80GB_n2_pytorch_24.04,ssd,2,8,16,NVIDIA H100-SXM5-80GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,1104.0,1105.55,0.002,5
+training_results_v4.0,HPE,HPE-Cray-XD670-Gen11-H100-SXM5-80GB_n2_mxnet_24.04,resnet,2,8,16,NVIDIA H100-SXM5-80GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,474.72,476.04,0.004,5
+training_results_v4.0,ASUSTeK,ESC8000A-E12-8xH100-PCIE-80GB,ssd,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,3243.01,3246.66,0.004,5
+training_results_v4.0,ASUSTeK,ESC8000A-E12-8xH100-PCIE-80GB,resnet,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,1243.75,1244.76,0.001,4
+training_results_v4.0,ASUSTeK,ESC8000A-E12-8xH100-PCIE-80GB,bert,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,567.12,685.51,0.238,10
+training_results_v4.0,ASUSTeK,ESC8000A-E12-8xH100-PCIE-80GB,unet3d,1,8,8,NVIDIA H100-PCIe-80GB,PCIe 5.0,,,,672.57,1090.6,1.36,40
+training_results_v4.0,ASUSTeK,ESC_N8A-E12,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,214.33,229.08,0.14,10
+training_results_v4.0,ASUSTeK,ESC_N8A-E12,gnn,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,563.11,682.87,0.284,10
+training_results_v4.0,ASUSTeK,ESC_N8A-E12,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1756.33,1766.42,0.136,10
+training_results_v4.0,ASUSTeK,ESC_N8A-E12,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2158.78,2159.61,0.002,5
+training_results_v4.0,ASUSTeK,ESC_N8A-E12,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,793.22,801.06,0.022,5
+training_results_v4.0,ASUSTeK,ESC_N8A-E12,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,260.26,339.96,0.294,10
+training_results_v4.0,ASUSTeK,ESC_N8A-E12,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,318.46,723.2,1.467,40
+training_results_v4.0,Intel-HabanaLabs,HLS-Gaudi2-N128-PT,gpt3,128,8,1024,Intel(R) Gaudi(R) 2 AI Accelerator,24x 100Gb/s Ethernet,300.0,2x Mellanox ConnectX-5 Ex 100Gb/s Ethernet,25.0,3874.68,4014.35,0.04,3
+training_results_v4.0,Intel-HabanaLabs,HLS-Gaudi2-PT,llama2_70b_lora,1,8,8,Intel(R) Gaudi(R) 2 AI Accelerator,24x 100Gb/s Ethernet,300.0,2x Mellanox ConnectX-5 Ex 100Gb/s Ethernet,25.0,4478.52,4525.48,0.162,10
+training_results_v4.0,tinycorp,tinybox_red,resnet,1,6,6,AMD Radeon RX 7900 XTX,,,,,9769.03,9859.88,0.067,5
+training_results_v4.0,tinycorp,tinybox_green,resnet,1,6,6,NVIDIA GeForce RTX 4090,,,,,7290.94,7320.72,0.006,4
+training_results_v4.0,Supermicro,SYS-421GE-TNHR2-LCC-1,gnn,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,600.46,672.04,0.169,10
+training_results_v4.0,Supermicro,SYS-421GE-TNHR2-LCC-1,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,1671.3,1687.6,0.134,10
+training_results_v4.0,Supermicro,SYS-421GE-TNHR2-LCC-1,ssd,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,2122.67,2126.91,0.004,5
+training_results_v4.0,Supermicro,SYS-421GE-TNHR2-LCC-1,resnet,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,792.81,794.8,0.005,5
+training_results_v4.0,Supermicro,SYS-421GE-TNHR2-LCC-1,bert,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,270.43,327.93,0.234,10
+training_results_v4.0,Supermicro,SYS-421GE-TNHR2-LCC-1,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,493.73,737.07,1.608,40
+training_results_v4.0,Supermicro,SYS-421GE-TNHR2-LCC-8,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,293.54,294.43,0.134,10
+training_results_v4.0,Supermicro,SYS-421GE-TNHR2-LCC-8,bert,8,8,64,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,50.0,53.48,0.128,10
+training_results_v4.0,Supermicro,AS-8125GS-TNHR-1,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,213.31,228.87,0.202,10
+training_results_v4.0,Supermicro,AS-8125GS-TNHR-1,gnn,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,633.86,675.01,0.183,10
+training_results_v4.0,Supermicro,AS-8125GS-TNHR-1,ssd,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,2148.39,2151.18,0.003,5
+training_results_v4.0,Supermicro,AS-8125GS-TNHR-1,resnet,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,792.02,794.09,0.007,5
+training_results_v4.0,Supermicro,AS-8125GS-TNHR-1,bert,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,259.81,319.76,0.31,10
+training_results_v4.0,Supermicro,AS-8125GS-TNHR-1,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,416.43,753.27,1.087,40
+training_results_v4.0,Supermicro,SYS-821GE-TNHR-1,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,214.58,230.16,0.136,10
+training_results_v4.0,Supermicro,SYS-821GE-TNHR-1,gnn,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,632.83,672.85,0.123,10
+training_results_v4.0,Supermicro,SYS-821GE-TNHR-1,ssd,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,2162.91,2164.6,0.002,5
+training_results_v4.0,Supermicro,SYS-821GE-TNHR-1,resnet,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,800.71,802.22,0.006,5
+training_results_v4.0,Supermicro,SYS-821GE-TNHR-1,bert,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,298.26,318.72,0.189,10
+training_results_v4.0,Supermicro,SYS-821GE-TNHR-1,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,457.2,679.61,0.904,40
+training_results_v4.0,Supermicro,AS-8125GS-TNHR_8_H100-SXM-80GB,llama2_70b_lora,1,8,8,NVIDIA H100-SXM-80GB,NVLINK + NVSWITCH,,Management: 1x Ethernet 10GB/Sec,,1787.97,1798.09,0.137,10
+training_results_v4.0,Supermicro,AS-8125GS-TNHR_8_H100-SXM-80GB,resnet,1,8,8,NVIDIA H100-SXM-80GB,NVLINK + NVSWITCH,,Management: 1x Ethernet 10GB/Sec,,831.79,832.02,0.0,5
+training_results_v4.0,Supermicro,AS-8125GS-TNHR_8_H100-SXM-80GB,bert,1,8,8,NVIDIA H100-SXM-80GB,NVLINK + NVSWITCH,,Management: 1x Ethernet 10GB/Sec,,280.15,339.86,0.233,10
+training_results_v4.0,Supermicro,AS-8125GS-TNHR_8_H100-SXM-80GB,unet3d,1,8,8,NVIDIA H100-SXM-80GB,NVLINK + NVSWITCH,,Management: 1x Ethernet 10GB/Sec,,490.31,728.03,1.247,40
+training_results_v4.0,Fujitsu,PRIMERGY-CDI-L40Sx16,ssd,1,16,16,NVIDIA L40S,PCIe gen4 x16,,,,3512.66,3519.15,0.014,5
+training_results_v4.0,Fujitsu,PRIMERGY-CDI-L40Sx16,bert,1,16,16,NVIDIA L40S,PCIe gen4 x16,,,,1201.37,1409.1,0.239,9
+training_results_v4.0,Fujitsu,GX2560M7_H100_SXM_80GBx4,dlrm_dcnv2,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,409.38,443.48,0.21,10
+training_results_v4.0,Fujitsu,GX2560M7_H100_SXM_80GBx4,llama2_70b_lora,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,3086.32,3558.94,0.266,10
+training_results_v4.0,Fujitsu,GX2560M7_H100_SXM_80GBx4,ssd,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,4176.4,4182.95,0.003,5
+training_results_v4.0,Fujitsu,GX2560M7_H100_SXM_80GBx4,resnet,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,1527.68,1528.4,0.001,5
+training_results_v4.0,Fujitsu,GX2560M7_H100_SXM_80GBx4,bert,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,615.33,720.58,0.15,10
+training_results_v4.0,Fujitsu,GX2560M7_H100_SXM_80GBx4,stable_diffusion,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,4118.43,5144.34,0.397,10
+training_results_v4.0,Fujitsu,GX2560M7_H100_SXM_80GBx4,unet3d,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,741.6,1328.18,1.041,40
+training_results_v4.0,Fujitsu,PRIMERGY-CDI-L40Sx14,unet3d,1,14,14,NVIDIA L40S,PCIe gen4 x16,,,,559.94,937.5,1.992,40
+training_results_v4.0,Fujitsu,PRIMERGY-CDI-L40Sx8,resnet,1,8,8,NVIDIA L40S,PCIe gen4 x16,,,,3031.21,3033.65,0.002,4
+training_results_v4.0,smc-dc-power,1xSMC-H100-SXM-80GB,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,226.09,226.43,0.135,10
+training_results_v4.0,smc-dc-power,1xSMC-H100-SXM-80GB,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1685.18,1687.01,0.006,10
+training_results_v4.0,smc-dc-power,1xSMC-H100-SXM-80GB,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2169.44,2170.8,0.001,5
+training_results_v4.0,smc-dc-power,1xSMC-H100-SXM-80GB,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,799.85,802.15,0.003,5
+training_results_v4.0,smc-dc-power,1xSMC-H100-SXM-80GB,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,277.05,335.74,0.234,10
+training_results_v4.0,smc-dc-power,1xSMC-H100-SXM-80GB,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,472.48,706.21,0.966,40
+training_results_v4.0,smc-dc-power,9xSMC-H100-SXM-80GB,unet3d,9,8,72,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,68.17,104.06,1.203,40
+training_results_v4.0,smc-dc-power,8xSMC-H100-SXM-80GB,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,317.45,318.58,0.005,10
+training_results_v4.0,smc-dc-power,8xSMC-H100-SXM-80GB,ssd,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,377.88,378.89,0.003,5
+training_results_v4.0,smc-dc-power,8xSMC-H100-SXM-80GB,resnet,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,152.45,152.56,0.002,5
+training_results_v4.0,smc-dc-power,64xSMC-H100-SXM-80GB,llama2_70b_lora,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,115.78,117.22,0.03,10
+training_results_v4.0,smc-dc-power,64xSMC-H100-SXM-80GB,gpt3,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,3410.91,3412.16,0.001,3
+training_results_v4.0,Quanta_Cloud_Technology,D54U-3U,dlrm_dcnv2,1,4,4,NVIDIA H100-PCIe-80GB,NVLINK 600 GB/s + PCIe Gen5,600.0,ConnectX-5 25Gb/s Ethernet,3.125,2158.57,2539.01,0.34,10
+training_results_v4.0,Quanta_Cloud_Technology,D54U-3U,ssd,1,4,4,NVIDIA H100-PCIe-80GB,NVLINK 600 GB/s + PCIe Gen5,600.0,ConnectX-5 25Gb/s Ethernet,3.125,6492.52,6499.54,0.003,5
+training_results_v4.0,Quanta_Cloud_Technology,D54U-3U,resnet,1,4,4,NVIDIA H100-PCIe-80GB,NVLINK 600 GB/s + PCIe Gen5,600.0,ConnectX-5 25Gb/s Ethernet,3.125,2670.33,2672.2,0.006,5
+training_results_v4.0,Quanta_Cloud_Technology,D54U-3U,bert,1,4,4,NVIDIA H100-PCIe-80GB,NVLINK 600 GB/s + PCIe Gen5,600.0,ConnectX-5 25Gb/s Ethernet,3.125,1202.87,1317.72,0.175,10
+training_results_v4.0,Quanta_Cloud_Technology,D74H-7U,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,212.13,227.55,0.135,10
+training_results_v4.0,Quanta_Cloud_Technology,D74H-7U,gnn,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,667.99,707.53,0.11,10
+training_results_v4.0,Quanta_Cloud_Technology,D74H-7U,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,1697.62,1705.73,0.14,10
+training_results_v4.0,Quanta_Cloud_Technology,D74H-7U,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,2175.66,2177.29,0.002,5
+training_results_v4.0,Quanta_Cloud_Technology,D74H-7U,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,791.66,792.63,0.001,5
+training_results_v4.0,Quanta_Cloud_Technology,D74H-7U,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,322.61,342.01,0.116,10
+training_results_v4.0,Quanta_Cloud_Technology,D74H-7U,stable_diffusion,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,2591.41,2596.25,0.003,10
+training_results_v4.0,Quanta_Cloud_Technology,D74H-7U,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,465.96,751.61,3.241,40
+training_results_v4.0,Google,cloud-tpu-v5p-12288-maxtext,gpt3,1536,4,6144,TPU-v5p,,,,,730.15,732.25,0.026,3
+training_results_v4.0,Google,cloud-tpu-v5p-2048-maxtext,gpt3,256,4,1024,TPU-v5p,,,,,3414.86,3416.87,0.003,3
+training_results_v4.0,Google,cloud-tpu-v5p-1024-maxtext,gpt3,128,4,512,TPU-v5p,,,,,6886.07,6887.63,0.005,3
+training_results_v4.0,Google,cloud-tpu-v5p-3072-maxtext,gpt3,384,4,1536,TPU-v5p,,,,,2311.15,2360.13,0.023,3
+training_results_v4.0,Oracle,8xBM.GPU.H100.8,ssd,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,383.77,384.27,0.004,5
+training_results_v4.0,Oracle,8xBM.GPU.H100.8,resnet,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,148.89,149.0,0.001,5
+training_results_v4.0,Oracle,8xBM.GPU.H100.8,stable_diffusion,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,369.99,370.13,0.202,10
+training_results_v4.0,Oracle,9xBM.GPU.H100.8,unet3d,9,8,72,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,77.5,120.85,1.113,40
+training_results_v4.0,Oracle,1xBM.GPU.H100.8,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,230.03,246.22,0.265,10
+training_results_v4.0,Oracle,1xBM.GPU.H100.8,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,1716.65,1718.51,0.134,10
+training_results_v4.0,Oracle,1xBM.GPU.H100.8,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,2200.36,2201.09,0.001,5
+training_results_v4.0,Oracle,1xBM.GPU.H100.8,resnet,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,795.95,796.39,0.001,5
+training_results_v4.0,Oracle,1xBM.GPU.H100.8,unet3d,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,407.49,686.08,1.203,40
+training_results_v4.0,Oracle,16xBM.GPU.H100.8,stable_diffusion,16,8,128,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,217.91,261.83,0.336,10
+training_results_v4.1,Dell,8xXE9680x8H100-SXM-80GB-POWER,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,255.75,297.92,0.26,10
+training_results_v4.1,Dell,XE8640x4H100-SXM-80GB,llama2_70b_lora,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,2942.88,3392.45,0.265,10
+training_results_v4.1,Dell,XE8640x4H100-SXM-80GB,ssd,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,4202.92,4209.49,0.002,5
+training_results_v4.1,Dell,XE8640x4H100-SXM-80GB,bert,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,528.4,567.32,0.202,10
+training_results_v4.1,Dell,XE8640x4H100-SXM-80GB,stable_diffusion,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,2642.38,3523.99,0.502,10
+training_results_v4.1,Dell,2xXE9680x8H100-SXM-80GB,llama2_70b_lora,2,8,16,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,911.86,1196.43,0.365,10
+training_results_v4.1,Dell,4xXE9680x8H100-SXM-80GB,llama2_70b_lora,4,8,32,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,533.5,579.34,0.263,10
+training_results_v4.1,Dell,4xXE9680x8H100-SXM-80GB,ssd,4,8,32,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,582.14,725.51,0.2,5
+training_results_v4.1,Dell,8xXE9680x8H100-SXM-80GB,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,255.75,297.92,0.26,10
+training_results_v4.1,Dell,8xXE9680x8H100-SXM-80GB,ssd,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,371.64,371.82,0.592,5
+training_results_v4.1,Dell,XE9680x8H200-SXM-141GB,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,203.43,220.03,0.268,10
+training_results_v4.1,Dell,XE9680x8H200-SXM-141GB,gnn,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,414.93,468.93,0.219,10
+training_results_v4.1,Dell,XE9680x8H200-SXM-141GB,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1359.16,1359.87,0.133,10
+training_results_v4.1,Dell,XE9680x8H200-SXM-141GB,ssd,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2038.32,2038.9,0.001,5
+training_results_v4.1,Dell,XE9680x8H200-SXM-141GB,bert,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,268.69,307.26,0.245,10
+training_results_v4.1,Dell,XE9680x8H200-SXM-141GB,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1802.59,1803.6,0.001,10
+training_results_v4.1,Dell,XE9680x8H100-SXM-80GB,gnn,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,629.8,668.99,0.173,10
+training_results_v4.1,Dell,XE9680x8H100-SXM-80GB,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1607.19,1611.96,0.137,10
+training_results_v4.1,Dell,XE9680x8H100-SXM-80GB,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2174.36,2179.03,0.003,5
+training_results_v4.1,Dell,XE9680x8H100-SXM-80GB,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,297.88,337.79,0.178,10
+training_results_v4.1,Dell,XE9680x8H100-SXM-80GB,stable_diffusion,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1877.34,1893.0,0.301,10
+training_results_v4.1,Dell,XE9640x4H100-SXM-80GB,gnn,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,1160.64,1303.17,0.181,10
+training_results_v4.1,Dell,XE9640x4H100-SXM-80GB,llama2_70b_lora,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,3424.41,3882.34,0.235,10
+training_results_v4.1,Dell,XE9640x4H100-SXM-80GB,ssd,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,4266.29,4268.23,0.002,5
+training_results_v4.1,Dell,R760x2H100NVL-PCIe-94GB,ssd,1,2,2,H100 NVL Tensor Core GPU (PCIe),,,Ethernet,,8535.43,11285.37,0.253,5
+training_results_v4.1,GigaComputing,G593-ZD1_dgl,gnn,1,8,8,NVIDIA H200-SXM5-141GB,NVLink,,Giga Ethernet,,414.26,465.53,0.164,10
+training_results_v4.1,GigaComputing,G593-ZD1_hugectr,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLink,,Giga Ethernet,,198.22,212.53,0.203,10
+training_results_v4.1,GigaComputing,G593-ZD1_pytorch,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLink,,Giga Ethernet,,1381.83,1385.36,0.134,10
+training_results_v4.1,GigaComputing,G593-ZD1_pytorch,ssd,1,8,8,NVIDIA H200-SXM5-141GB,NVLink,,Giga Ethernet,,2033.72,2035.15,0.003,5
+training_results_v4.1,GigaComputing,G593-ZD1_pytorch,bert,1,8,8,NVIDIA H200-SXM5-141GB,NVLink,,Giga Ethernet,,287.86,307.5,0.189,10
+training_results_v4.1,GigaComputing,G593-ZD1_pytorch,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLink,,Giga Ethernet,,1797.54,1816.54,0.262,10
+training_results_v4.1,NVIDIA,eos_n8_ngc24.09_nemo,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,226.57,261.24,0.403,10
+training_results_v4.1,NVIDIA,eos_n8_ngc24.09_nemo,stable_diffusion,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,321.06,384.75,0.171,10
+training_results_v4.1,NVIDIA,eos_n8_ngc24.06_merlin_hugectr,dlrm_dcnv2,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,76.57,77.06,0.115,10
+training_results_v4.1,NVIDIA,h200_ngc24.09_nemo,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1392.21,1397.88,0.264,10
+training_results_v4.1,NVIDIA,h200_ngc24.09_nemo,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1828.37,1829.54,0.252,10
+training_results_v4.1,NVIDIA,eos_n64_ngc24.09_dgl,gnn,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,51.89,56.8,0.139,10
+training_results_v4.1,NVIDIA,b200_preview_nemo,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,736.98,753.5,0.151,10
+training_results_v4.1,NVIDIA,b200_preview_nemo,stable_diffusion,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,1064.45,1074.94,0.262,10
+training_results_v4.1,NVIDIA,eos_n64_ngc24.09_nemo,gpt3,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,2986.49,2987.71,0.075,3
+training_results_v4.1,NVIDIA,eos_n64_ngc24.09_nemo,stable_diffusion,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,91.06,92.36,0.294,9
+training_results_v4.1,NVIDIA,eos_n128_ngc24.09_nemo,llama2_70b_lora,128,8,1024,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,67.34,70.43,0.126,10
+training_results_v4.1,NVIDIA,eos_ngc24.09_dgl,gnn,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,656.86,663.96,0.086,10
+training_results_v4.1,NVIDIA,eos_ngc23.04_pytorch,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,270.86,328.6,0.235,10
+training_results_v4.1,NVIDIA,b200_preview_pytorch,ssd,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,1344.69,1351.55,0.245,5
+training_results_v4.1,NVIDIA,b200_preview_pytorch,bert,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,222.27,222.75,0.128,10
+training_results_v4.1,NVIDIA,eos_n128_ngc24.04_nemo,stable_diffusion,128,8,1024,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,73.28,83.97,0.289,10
+training_results_v4.1,NVIDIA,eos_n16_ngc24.06_merlin_hugectr,dlrm_dcnv2,16,8,128,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,55.41,55.77,0.058,10
+training_results_v4.1,NVIDIA,b200_preview_dgl,gnn,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,315.42,333.13,0.092,10
+training_results_v4.1,NVIDIA,b200_n8_preview_nemo,gpt3,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,11552.19,11624.3,0.007,3
+training_results_v4.1,NVIDIA,eos_n8_ngc23.04_pytorch,bert,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,49.05,52.68,0.196,9
+training_results_v4.1,NVIDIA,eos_n32_ngc24.09_nemo,gpt3,32,8,256,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,5784.25,5799.87,0.042,3
+training_results_v4.1,NVIDIA,eos_ngc24.09_pytorch,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,2135.08,2142.68,0.007,5
+training_results_v4.1,NVIDIA,eos_n8_ngc24.09_dgl,gnn,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,119.77,124.03,0.094,10
+training_results_v4.1,NVIDIA,eos-dfw_n1452_ngc24.04_nemo,gpt3,1452,8,11616,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage+Management: 1x NVIDIA BlueField 2 DPU 100Gb/s, Compute: 8x NVIDIA ConnectX-7 IB NDR 400Gb/s",50.0,206.36,206.66,0.003,3
+training_results_v4.1,NVIDIA,eos_ngc24.09_nemo,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1585.82,1604.17,0.143,10
+training_results_v4.1,NVIDIA,eos_ngc24.09_nemo,stable_diffusion,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1855.25,1881.76,0.252,10
+training_results_v4.1,NVIDIA,h200_ngc24.04_merlin_hugectr,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,193.75,208.16,0.075,10
+training_results_v4.1,NVIDIA,h200_ngc24.04_pytorch,ssd,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,2045.7,2053.02,0.008,5
+training_results_v4.1,NVIDIA,eos_n316_ngc24.04_pytorch,ssd,316,8,2528,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,43.23,48.07,0.193,5
+training_results_v4.1,NVIDIA,eos_n8_ngc24.09_pytorch,ssd,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,359.5,359.74,0.002,5
+training_results_v4.1,NVIDIA,h200_ngc24.04_dgl,gnn,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,435.32,462.35,0.108,10
+training_results_v4.1,NVIDIA,eos_ngc24.04_merlin_hugectr,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,213.46,229.31,0.134,10
+training_results_v4.1,NVIDIA,h200_ngc23.09_pytorch,bert,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,281.84,319.63,0.177,10
+training_results_v4.1,NVIDIA,b200_preview_merlin_hugectr,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,129.32,139.64,0.142,10
+training_results_v4.1,NVIDIA,eos_n434_ngc23.09_pytorch,bert,434,8,3472,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,6.68,7.13,0.174,10
+training_results_v4.1,Lenovo,SR675V3-8xH100_NVL_94GB_400W,ssd,1,8,8,H100 NVL Tensor Core GPU (PCIe),"18x 4th Gen NVLink, 600GB/s",600.0,,,2711.1,2715.59,0.003,5
+training_results_v4.1,Lenovo,SR685aV3-8xH200_SXM_141GB_700W,gnn,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,433.01,458.15,0.108,10
+training_results_v4.1,Lenovo,SR685aV3-8xH200_SXM_141GB_700W,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,1340.49,1341.08,0.133,10
+training_results_v4.1,Lenovo,SR685aV3-8xH200_SXM_141GB_700W,ssd,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,2020.3,2022.92,0.002,5
+training_results_v4.1,Lenovo,SR685aV3-8xH200_SXM_141GB_700W,bert,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,264.16,319.86,0.232,10
+training_results_v4.1,Lenovo,SR685aV3-8xH200_SXM_141GB_700W,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,1779.92,1781.55,0.003,10
+training_results_v4.1,Lenovo,SR780aV3-8xH200_SXM_141GB_700W,gnn,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,441.99,466.05,0.157,10
+training_results_v4.1,Lenovo,SR780aV3-8xH200_SXM_141GB_700W,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,1172.63,1351.45,0.265,10
+training_results_v4.1,Lenovo,SR780aV3-8xH200_SXM_141GB_700W,ssd,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,2034.11,2035.37,0.001,5
+training_results_v4.1,Lenovo,SR780aV3-8xH200_SXM_141GB_700W,bert,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,263.28,319.2,0.235,10
+training_results_v4.1,Lenovo,SR680aV3-8xH200_SXM_141GB_700W,gnn,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,434.43,460.47,0.212,10
+training_results_v4.1,Lenovo,SR680aV3-8xH200_SXM_141GB_700W,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,1334.89,1336.04,0.134,10
+training_results_v4.1,Lenovo,SR680aV3-8xH200_SXM_141GB_700W,ssd,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,2016.47,2020.53,0.002,5
+training_results_v4.1,Lenovo,SR680aV3-8xH200_SXM_141GB_700W,bert,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,262.11,299.5,0.249,10
+training_results_v4.1,Lenovo,SR680aV3-8xH200_SXM_141GB_700W,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,,,1760.61,1762.25,0.002,10
+training_results_v4.1,ASUSTeK,ESC_N8_E11,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,199.52,213.94,0.2,10
+training_results_v4.1,ASUSTeK,ESC_N8_E11,gnn,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,453.57,456.44,0.109,10
+training_results_v4.1,ASUSTeK,ESC_N8_E11,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1470.26,1471.18,0.145,10
+training_results_v4.1,ASUSTeK,ESC_N8_E11,ssd,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2006.52,2010.49,0.003,5
+training_results_v4.1,ASUSTeK,ESC_N8_E11,bert,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,259.36,313.66,0.234,10
+training_results_v4.1,ASUSTeK,ESC_N8_E11,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1767.51,1769.67,0.252,10
+training_results_v4.1,tinycorp,tinybox_red,bert,1,6,6,AMD Radeon RX 7900 XTX,,,,,19367.06,24284.37,0.336,10
+training_results_v4.1,tinycorp,tinybox_green,bert,1,6,6,NVIDIA GeForce RTX 4090,,,,,17213.67,21347.34,0.336,9
+training_results_v4.1,Cisco,C885a-8xH100-SXM-80G,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x MT43244 BlueField-3 200Gb/s, Management: 2x100Gb/s Ethernet NIC",25.0,2174.78,2176.86,0.036,5
+training_results_v4.1,FlexAI,TEST.H100.8.nvidia_impl,bert,1,8,8,NVIDIA H100 80GB HBM3,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,MT2910 Family [ConnectX-7],,295.35,355.33,0.302,10
+training_results_v4.1,Supermicro,SYS-421GE-TNHR2-LCC-1,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,201.09,216.32,0.132,10
+training_results_v4.1,Supermicro,SYS-421GE-TNHR2-LCC-1,ssd,1,8,8,NVIDIA H200-SXM5-141GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,1974.84,1975.81,0.001,5
+training_results_v4.1,Supermicro,SYS-421GE-TNHR2-LCC-1,bert,1,8,8,NVIDIA H200-SXM5-141GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,255.47,309.63,0.234,10
+training_results_v4.1,Supermicro,SYS-421GE-TNHR2-LCC-1,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,1768.83,1773.26,0.255,10
+training_results_v4.1,Supermicro,AS-8125GS-TNHR-1,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,217.48,233.74,0.137,10
+training_results_v4.1,Supermicro,AS-8125GS-TNHR-1,gnn,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,628.51,667.18,0.118,10
+training_results_v4.1,Supermicro,AS-8125GS-TNHR-1,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,1379.67,1593.31,0.265,10
+training_results_v4.1,Supermicro,AS-8125GS-TNHR-1,ssd,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,2174.01,2177.92,0.004,5
+training_results_v4.1,Supermicro,AS-8125GS-TNHR-1,bert,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,278.47,337.42,0.235,10
+training_results_v4.1,Supermicro,AS-8125GS-TNHR-1,stable_diffusion,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,1879.63,1887.07,0.255,10
+training_results_v4.1,Supermicro,SYS-821GE-TNHR-1,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,233.25,234.96,0.072,10
+training_results_v4.1,Supermicro,SYS-821GE-TNHR-1,gnn,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,659.14,699.64,0.12,10
+training_results_v4.1,Supermicro,SYS-821GE-TNHR-1,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,1620.68,1625.0,0.135,10
+training_results_v4.1,Supermicro,SYS-821GE-TNHR-1,ssd,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,2166.33,2170.9,0.005,5
+training_results_v4.1,Supermicro,SYS-821GE-TNHR-1,bert,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,272.61,330.7,0.235,10
+training_results_v4.1,Supermicro,SYS-821GE-TNHR-1,stable_diffusion,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,"Ethernet, Infiniband",,1411.0,1883.18,0.5,10
+training_results_v4.1,Supermicro,AS-4125GS-TNHR2-LCC-1,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,Ethernet,,215.57,231.48,0.137,10
+training_results_v4.1,Supermicro,AS-4125GS-TNHR2-LCC-1,gnn,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,Ethernet,,643.9,685.04,0.173,10
+training_results_v4.1,Supermicro,AS-4125GS-TNHR2-LCC-1,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,Ethernet,,1439.68,1660.61,0.265,10
+training_results_v4.1,Supermicro,AS-4125GS-TNHR2-LCC-1,ssd,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,Ethernet,,2167.93,2169.66,0.002,5
+training_results_v4.1,Supermicro,AS-4125GS-TNHR2-LCC-1,bert,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,Ethernet,,280.15,339.06,0.235,10
+training_results_v4.1,Supermicro,AS-4125GS-TNHR2-LCC-1,stable_diffusion,1,8,8,NVIDIA H100-SXM5-80GB,"NVLINK 4.0, NVSWITCH 3.0 900GB/s",900.0,Ethernet,,1395.94,1862.0,0.502,10
+training_results_v4.1,Krai,7920T_2xA5000_ssd,bert,1,2,2,NVIDIA RTX A5000,NVIDIA NVLink,,,,19170.34,20822.92,0.136,10
+training_results_v4.1,Krai,7920T_2xA5000_hdd,bert,1,2,2,NVIDIA RTX A5000,NVIDIA NVLink,,,,18669.36,22396.54,0.248,10
+training_results_v4.1,Lambda,lambda_1cc_n2_H100-SXM-80GB_ngc24.04_nemo,llama2_70b_lora,2,8,16,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA Quantum-2 400Gb/s InfiniBand, Management: 2x100Gb/s Ethernet NIC",50.0,888.67,1004.97,0.23,10
+training_results_v4.1,Lambda,lambda_1cc_n2_H100-SXM-80GB_ngc24.04_nemo,bert,2,8,16,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA Quantum-2 400Gb/s InfiniBand, Management: 2x100Gb/s Ethernet NIC",50.0,157.5,194.1,0.308,10
+training_results_v4.1,Lambda,lambda_1cc_n2_H100-SXM-80GB_ngc24.04_nemo,stable_diffusion,2,8,16,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA Quantum-2 400Gb/s InfiniBand, Management: 2x100Gb/s Ethernet NIC",50.0,1087.12,1374.6,0.399,10
+training_results_v4.1,Lambda,lambda_1cc_n8_H100-SXM-80GB_ngc24.04_nemo,bert,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA Quantum-2 400Gb/s InfiniBand, Management: 2x100Gb/s Ethernet NIC",50.0,55.23,58.01,0.099,10
+training_results_v4.1,Lambda,lambda_1cc_n4_H100-SXM-80GB_ngc24.04_nemo,llama2_70b_lora,4,8,32,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA Quantum-2 400Gb/s InfiniBand, Management: 2x100Gb/s Ethernet NIC",50.0,455.65,513.3,0.119,10
+training_results_v4.1,Lambda,lambda_1cc_n4_H100-SXM-80GB_ngc24.04_nemo,stable_diffusion,4,8,32,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA Quantum-2 400Gb/s InfiniBand, Management: 2x100Gb/s Ethernet NIC",50.0,839.69,854.29,0.04,10
+training_results_v4.1,Fujitsu,GX2560M7_H100_SXM_80GBx4,dlrm_dcnv2,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,400.52,428.86,0.136,10
+training_results_v4.1,Fujitsu,GX2560M7_H100_SXM_80GBx4,llama2_70b_lora,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,3380.39,3386.06,0.134,10
+training_results_v4.1,Fujitsu,GX2560M7_H100_SXM_80GBx4,ssd,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,4186.65,4188.47,0.001,5
+training_results_v4.1,Fujitsu,GX2560M7_H100_SXM_80GBx4,bert,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,562.58,632.95,0.167,10
+training_results_v4.1,Fujitsu,GX2560M7_H100_SXM_80GBx4,stable_diffusion,1,4,4,NVIDIA H100-SXM5-80GB,NVLink Gen4 900GB/s,900.0,4x ConnectX-7 IB NDR 400Gb/Sec,,3567.04,3569.71,0.252,10
+training_results_v4.1,Fujitsu,PRIMERGY_CDI_H100_NVL_94GBx16,ssd,1,16,16,H100 NVL Tensor Core GPU (PCIe),,,,,1589.38,1591.24,0.002,5
+training_results_v4.1,Azure,ND_H200_v5_n64_nemo,llama2_70b_lora,64,8,512,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,89.39,99.49,0.108,10
+training_results_v4.1,Clemson,7x8xH100-SXM5-80GB,llama2_70b_lora,7,8,56,NVIDIA H100-SXM5-80GB,4th Gen NVLINK - 900 GB /Sec ,,"Management: 1 x 100 Gb / Sec Ethernet, Compute: 8 x ConnectX - 7 IB NDR 400 Gb / Sec, Storage: 1x ConnectX - 7 IB NDR200 200Gb / Sec",,340.91,389.7,0.251,10
+training_results_v4.1,Clemson,8xR750-2xA100-PCIe-80GB,bert,8,2,16,NVIDIA A100 - PCIe - 80 GB,PCIe Gen4: 64 GB / s,,"Management: 1 x 25 Gb / Sec Ethernet, Compute: 1 x ConnectX - 6 IB HDR100 100 Gb / Sec",,1028.75,1073.89,0.125,10
+training_results_v4.1,Clemson,16xR750-2xA100-PCIe-80GB,bert,16,2,32,NVIDIA A100 - PCIe - 80 GB,PCIe Gen4: 64 GB / s,,"Management: 1 x 25 Gb / Sec Ethernet, Compute: 1 x ConnectX - 6 IB HDR100 100 Gb / Sec",,474.45,553.42,0.238,10
+training_results_v4.1,Clemson,6x8xH100-SXM5-80GB,bert,6,8,48,NVIDIA H100-SXM5-80GB,4th Gen NVLINK - 900 GB /Sec ,,"Management: 1 x 100 Gb / Sec Ethernet, Compute: 8 x ConnectX - 7 IB NDR 400 Gb / Sec, Storage: 1x ConnectX - 7 IB NDR200 200Gb / Sec",,73.59,78.56,0.174,10
+training_results_v4.1,Quanta_Cloud_Technology,D74H-7U,dlrm_dcnv2,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,231.22,248.15,0.199,10
+training_results_v4.1,Quanta_Cloud_Technology,D74H-7U,gnn,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,655.35,693.28,0.115,10
+training_results_v4.1,Quanta_Cloud_Technology,D74H-7U,llama2_70b_lora,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,1397.7,1612.26,0.268,10
+training_results_v4.1,Quanta_Cloud_Technology,D74H-7U,ssd,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,2195.69,2196.37,0.001,5
+training_results_v4.1,Quanta_Cloud_Technology,D74H-7U,bert,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,278.98,338.43,0.234,10
+training_results_v4.1,Quanta_Cloud_Technology,D74H-7U,stable_diffusion,1,8,8,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,1897.88,1902.91,0.253,10
+training_results_v4.1,Google,cloud-tpu-v5p-1024-maxdiffusion,stable_diffusion,128,4,512,TPU-v5p,,,,,177.47,179.34,0.616,10
+training_results_v4.1,Google,cloud-tpu-v5p-12288-maxtext,gpt3,1536,4,6144,TPU-v5p,,,,,705.17,705.91,0.002,3
+training_results_v4.1,Google,cloud-tpu-trillium-3072-maxtext,gpt3,768,4,3072,TPU-trillium,,,,,1236.73,1245.66,0.16,3
+training_results_v4.1,Google,cloud-tpu-v5p-2048-maxdiffusion,stable_diffusion,256,4,1024,TPU-v5p,,,,,144.06,146.81,0.595,10
+training_results_v4.1,Google,cloud-tpu-trillium-512-maxtext,gpt3,128,4,512,TPU-trillium,,,,,6116.68,6124.77,0.01,3
+training_results_v4.1,Google,cloud-tpu-v5p-128-maxdiffusion,stable_diffusion,16,4,64,TPU-v5p,,,,,511.22,518.06,0.225,10
+training_results_v4.1,Google,cloud-tpu-v5p-4096-maxtext,gpt3,512,4,2048,TPU-v5p,,,,,1770.21,1776.98,0.006,3
+training_results_v4.1,Google,cloud-tpu-v5p-16-maxdiffusion,stable_diffusion,2,4,8,TPU-v5p,,,,,2965.79,2979.52,0.27,10
+training_results_v4.1,Google,cloud-tpu-trillium-1024-maxtext,gpt3,256,4,1024,TPU-trillium,,,,,2984.7,2985.76,0.006,3
+training_results_v4.1,Google,cloud-tpu-trillium-2048-maxtext,gpt3,512,4,2048,TPU-trillium,,,,,1636.87,1639.77,0.002,3
+training_results_v4.1,Google,cloud-tpu-v5p-8192-maxtext,gpt3,1024,4,4096,TPU-v5p,,,,,974.59,975.3,0.002,3
+training_results_v4.1,Oracle,512xBM.GPU.H100.8,llama2_70b_lora,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,111.36,122.41,0.174,10
+training_results_v4.1,Oracle,1536xBM.GPU.H100.8,gpt3,192,8,1536,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,1136.9,1181.38,0.038,3
+training_results_v4.1,Oracle,128xBM.GPU.H100.8,llama2_70b_lora,16,8,128,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,173.99,192.9,0.193,10
+training_results_v4.1,Oracle,3072xBM.GPU.H100.8,gpt3,384,8,3072,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,697.66,725.54,0.051,3
+training_results_v4.1,Oracle,64xBM.GPU.H100.8,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,271.2,272.11,0.27,10
+training_results_v5.0,Dell,1xXE9712x4GB200,retinanet,1,4,4,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,2878.4,2900.5,0.01,5
+training_results_v5.0,Dell,1xXE9712x4GB200,bert,1,4,4,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,350.77,374.19,0.129,10
+training_results_v5.0,Dell,1xXE9712x4GB200,stable_diffusion,1,4,4,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,1358.37,1415.73,0.324,10
+training_results_v5.0,Dell,4xXE9712x4GB200,retinanet,4,4,16,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,734.57,737.22,0.015,5
+training_results_v5.0,Dell,4xXE9712x4GB200,llama2_70b_lora,4,4,16,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,360.94,361.53,0.143,10
+training_results_v5.0,Dell,4xXE9712x4GB200,bert,4,4,16,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,106.65,121.48,0.178,10
+training_results_v5.0,Dell,4xXE9712x4GB200,stable_diffusion,4,4,16,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,391.19,524.0,0.258,10
+training_results_v5.0,Dell,XE7740x8H200-NVL-141GB,retinanet,1,8,8,NVIDIA H200-NVL-141GB,4-way NVIDIA NVLINK bridge,,,,2175.56,2177.29,0.002,5
+training_results_v5.0,Dell,XE7740x8H200-NVL-141GB,llama2_70b_lora,1,8,8,NVIDIA H200-NVL-141GB,4-way NVIDIA NVLINK bridge,,,,1501.49,1503.05,0.134,10
+training_results_v5.0,Dell,1xXE9680x8MI300X,llama2_70b_lora,1,8,8,AMD Instinct MI300X 192GB HBM3,Infinity Fabric Link,,,,1678.01,1681.09,0.134,10
+training_results_v5.0,Dell,8xXE9712x4GB200,retinanet,8,4,32,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,532.54,540.85,0.022,5
+training_results_v5.0,Dell,8xXE9712x4GB200,llama2_70b_lora,8,4,32,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,180.61,181.2,0.135,10
+training_results_v5.0,Dell,8xXE9712x4GB200,bert,8,4,32,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,80.47,85.58,0.161,10
+training_results_v5.0,Dell,8xXE9712x4GB200,stable_diffusion,8,4,32,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,195.25,263.14,0.511,10
+training_results_v5.0,Dell,2xXE9680Lx8B200-SXM-180GB,retinanet,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,839.19,840.45,0.006,5
+training_results_v5.0,Dell,2xXE9680Lx8B200-SXM-180GB,bert,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,134.0,140.13,0.093,10
+training_results_v5.0,Dell,2xXE9712x4GB200,retinanet,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,1388.34,1427.2,0.033,5
+training_results_v5.0,Dell,2xXE9712x4GB200,bert,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,164.75,202.03,0.31,9
+training_results_v5.0,Dell,9xXE9712x4GB200,retinanet,9,4,36,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,478.52,485.97,0.021,5
+training_results_v5.0,Dell,9xXE9712x4GB200,llama2_70b_lora,9,4,36,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,164.64,186.61,0.12,9
+training_results_v5.0,Dell,9xXE9712x4GB200,stable_diffusion,9,4,36,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,234.93,235.96,0.263,9
+training_results_v5.0,Dell,2xXE9680Lx8H200-SXM-141GB,rgat,2,8,16,NVIDIA H200-SXM5-141GB,,,,,282.41,308.79,0.138,9
+training_results_v5.0,Dell,2xXE9680Lx8H200-SXM-141GB,retinanet,2,8,16,NVIDIA H200-SXM5-141GB,,,,,1053.04,1053.62,0.001,5
+training_results_v5.0,Dell,2xXE9680Lx8H200-SXM-141GB,llama2_70b_lora,2,8,16,NVIDIA H200-SXM5-141GB,,,,,751.83,849.4,0.232,10
+training_results_v5.0,Dell,2xXE9680Lx8H200-SXM-141GB,bert,2,8,16,NVIDIA H200-SXM5-141GB,,,,,158.72,181.28,0.186,10
+training_results_v5.0,Dell,2xXE9680Lx8H200-SXM-141GB,stable_diffusion,2,8,16,NVIDIA H200-SXM5-141GB,,,,,897.58,1123.27,0.301,10
+training_results_v5.0,Dell,XE9680x8H200-SXM-141GB,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,203.43,220.03,0.268,10
+training_results_v5.0,Dell,XE9680x8H200-SXM-141GB,rgat,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,414.93,468.93,0.219,10
+training_results_v5.0,Dell,XE9680x8H200-SXM-141GB,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2026.88,2028.33,0.003,5
+training_results_v5.0,Dell,XE9680x8H200-SXM-141GB,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1353.05,1354.45,0.132,10
+training_results_v5.0,Dell,XE9680x8H200-SXM-141GB,bert,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,264.89,303.31,0.244,10
+training_results_v5.0,Dell,XE9680x8H200-SXM-141GB,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1327.56,1769.35,0.252,10
+training_results_v5.0,Dell,16xXE9712x4GB200,retinanet,16,4,64,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,255.56,257.6,0.021,5
+training_results_v5.0,Dell,16xXE9712x4GB200,llama2_70b_lora,16,4,64,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,105.89,106.34,0.138,10
+training_results_v5.0,Dell,16xXE9712x4GB200,stable_diffusion,16,4,64,NVIDIA Blackwell GPU (GB200),NVLINK Gen5,,,,153.52,153.66,0.259,9
+training_results_v5.0,Dell,R7715x3H200-NVL-141GB,retinanet,1,3,3,NVIDIA H200-NVL-141GB,,,,,5644.3,5645.65,0.002,5
+training_results_v5.0,Dell,1xXE7745x4H200-NVL-141GB,dlrm_dcnv2,1,4,4,NVIDIA H200-NVL-141GB,,,,,375.45,403.61,0.284,10
+training_results_v5.0,Dell,1xXE7745x4H200-NVL-141GB,llama2_70b_lora,1,4,4,NVIDIA H200-NVL-141GB,,,,,2963.2,2966.77,0.266,10
+training_results_v5.0,Dell,1xXE9680Lx8H200-SXM-141GB,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen5,,,,2026.32,2029.44,0.003,5
+training_results_v5.0,Dell,1xXE9680Lx8H200-SXM-141GB,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen5,,,,1184.6,1365.43,0.396,10
+training_results_v5.0,Dell,1xXE9680Lx8H200-SXM-141GB,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen5,,,,1788.82,1901.48,0.231,10
+training_results_v5.0,Dell,1xXE9680Lx8B200-SXM-180GB,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,278.82,311.51,0.152,10
+training_results_v5.0,Dell,1xXE9680Lx8B200-SXM-180GB,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,1317.17,1319.28,0.004,5
+training_results_v5.0,Dell,1xXE9680Lx8B200-SXM-180GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,655.07,656.41,0.134,10
+training_results_v5.0,Dell,1xXE9680Lx8B200-SXM-180GB,bert,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,178.68,204.66,0.19,10
+training_results_v5.0,Dell,1xXE9680Lx8B200-SXM-180GB,stable_diffusion,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,694.83,928.53,0.252,10
+training_results_v5.0,Nebius,nebius_soperator_8xH200_n128_ngc25.01_nemo,llama31_405b,128,8,1024,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,6399.59,6402.65,0.001,3
+training_results_v5.0,Nebius,nebius_soperator_8xH200_n64_ngc25.01_nemo,llama31_405b,64,8,512,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,12566.72,12579.14,0.001,3
+training_results_v5.0,GigaComputing,G893-SD1_hugectr,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,130.46,139.93,0.27,10
+training_results_v5.0,GigaComputing,G893-SD1_pytorch,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,1350.94,1354.16,0.003,5
+training_results_v5.0,GigaComputing,G893-SD1_pytorch,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,567.04,653.96,0.133,10
+training_results_v5.0,GigaComputing,G893-SD1_pytorch,bert,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,157.9,221.52,0.294,10
+training_results_v5.0,GigaComputing,G893-SD1_pytorch,stable_diffusion,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,706.74,707.34,0.339,10
+training_results_v5.0,GigaComputing,G893-ZX1-AAX2_pytorch,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3e,,,Giga Ethernet,,1111.64,1280.93,0.264,10
+training_results_v5.0,GigaComputing,G893-SD1_dgl,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,275.48,306.75,0.154,10
+training_results_v5.0,NVIDIA,tyche_ngpu512_ngc25.04_nemo,llama31_405b,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,6331.04,6331.38,0.01,3
+training_results_v5.0,NVIDIA,tyche_ngpu512_ngc25.04_nemo,llama2_70b_lora,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,31.6,33.63,0.122,10
+training_results_v5.0,NVIDIA,tyche_ngpu512_ngc25.04_nemo,stable_diffusion,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,45.57,63.55,0.432,10
+training_results_v5.0,NVIDIA,eos-dfw_n256_ngc25.01_nemo,llama31_405b,256,8,2048,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage+Management: 1x NVIDIA BlueField 2 DPU 100Gb/s, Compute: 8x NVIDIA ConnectX-7 IB NDR 400Gb/s",50.0,3594.37,3610.02,0.167,3
+training_results_v5.0,NVIDIA,eos-dfw_n304_ngc25.01_nemo,llama31_405b,304,8,2432,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage+Management: 1x NVIDIA BlueField 2 DPU 100Gb/s, Compute: 8x NVIDIA ConnectX-7 IB NDR 400Gb/s",50.0,3571.39,3624.82,0.032,3
+training_results_v5.0,NVIDIA,tyche_ngpu72_ngc25.04_nemo,llama2_70b_lora,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,91.46,103.81,0.238,10
+training_results_v5.0,NVIDIA,tyche_ngpu72_ngc25.04_nemo,stable_diffusion,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,135.0,135.78,0.258,10
+training_results_v5.0,NVIDIA,tyche_ngpu8_ngc25.04_nemo,llama2_70b_lora,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,630.56,639.89,0.15,10
+training_results_v5.0,NVIDIA,tyche_ngpu8_ngc25.04_nemo,stable_diffusion,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,653.04,876.46,0.528,10
+training_results_v5.0,NVIDIA,nyx_n1_ngc25.03_dgl,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,8x ConnectX-7 IB NDR 400Gb/s,400.0,291.56,307.13,0.102,10
+training_results_v5.0,NVIDIA,eos-dfw_n64_ngc25.01_nemo,llama31_405b,64,8,512,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage+Management: 1x NVIDIA BlueField 2 DPU 100Gb/s, Compute: 8x NVIDIA ConnectX-7 IB NDR 400Gb/s",50.0,13837.0,13840.54,0.001,3
+training_results_v5.0,NVIDIA,tyche_ngpu256_ngc25.04_nemo,llama31_405b,64,4,256,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,12336.44,12377.26,0.004,3
+training_results_v5.0,NVIDIA,tyche_ngpu8_ngc25.03_hugectr,dlrm_dcnv2,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,123.38,132.07,0.206,10
+training_results_v5.0,NVIDIA,tyche_ngpu64_ngc25.03_hugectr,dlrm_dcnv2,16,4,64,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,42.35,47.39,0.16,10
+training_results_v5.0,NVIDIA,tyche_ngpu144_ngc25.04_nemo,llama2_70b_lora,36,4,144,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,58.92,71.67,0.268,10
+training_results_v5.0,NVIDIA,eos-dfw_n320_ngc25.01_nemo,llama31_405b,320,8,2560,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage+Management: 1x NVIDIA BlueField 2 DPU 100Gb/s, Compute: 8x NVIDIA ConnectX-7 IB NDR 400Gb/s",50.0,2981.83,3021.01,0.026,3
+training_results_v5.0,NVIDIA,tyche_ngpu72_ngc25.04_pytorch,retinanet,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,222.74,223.05,0.003,5
+training_results_v5.0,NVIDIA,tyche_ngpu64_ngc25.04_pytorch,bert,16,4,64,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,35.73,40.41,0.123,9
+training_results_v5.0,NVIDIA,tyche_ngpu8_ngc25.04_pytorch,retinanet,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,1328.92,1338.48,0.016,5
+training_results_v5.0,NVIDIA,tyche_ngpu8_ngc25.04_pytorch,bert,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,189.68,201.95,0.123,10
+training_results_v5.0,NVIDIA,tyche_ngpu512_ngc25.04_pytorch,retinanet,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,82.78,83.32,0.008,5
+training_results_v5.0,NVIDIA,tyche_ngpu512_ngc25.04_pytorch,bert,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,16.66,18.61,0.146,10
+training_results_v5.0,NVIDIA,nyx_n1_ngc25.04_nemo,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,8x ConnectX-7 IB NDR 400Gb/s,400.0,567.84,663.9,0.399,10
+training_results_v5.0,NVIDIA,nyx_n1_ngc25.04_nemo,stable_diffusion,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,8x ConnectX-7 IB NDR 400Gb/s,400.0,698.1,928.79,0.263,10
+training_results_v5.0,NVIDIA,tyche_ngpu8_ngc25.03_dgl,rgat,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,279.05,293.95,0.103,10
+training_results_v5.0,NVIDIA,nyx_n1_ngc25.03_hugectr,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,8x ConnectX-7 IB NDR 400Gb/s,400.0,128.29,137.76,0.135,10
+training_results_v5.0,NVIDIA,eos-dfw_n1024_ngc25.01_nemo,llama31_405b,1024,8,8192,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage+Management: 1x NVIDIA BlueField 2 DPU 100Gb/s, Compute: 8x NVIDIA ConnectX-7 IB NDR 400Gb/s",50.0,1178.18,1178.28,0.002,3
+training_results_v5.0,NVIDIA,tyche_ngpu72_ngc25.03_dgl,rgat,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,62.41,66.72,0.221,10
+training_results_v5.0,NVIDIA,nyx_n1_ngc25.04_pytorch,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,8x ConnectX-7 IB NDR 400Gb/s,400.0,1317.6,1324.06,0.007,5
+training_results_v5.0,NVIDIA,nyx_n1_ngc25.04_pytorch,bert,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,8x ConnectX-7 IB NDR 400Gb/s,400.0,166.97,217.74,0.307,10
+training_results_v5.0,NVIDIA,tyche_ngpu256_ngc25.03_dgl,rgat,64,4,256,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,46.05,50.06,0.165,10
+training_results_v5.0,Lenovo,SR780aV3-8xB200_SXM_180GB,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,1339.49,1341.13,0.002,5
+training_results_v5.0,Lenovo,SR780aV3-8xB200_SXM_180GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,655.79,656.07,0.133,10
+training_results_v5.0,Lenovo,SR780aV3-8xB200_SXM_180GB,bert,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,194.53,220.18,0.179,10
+training_results_v5.0,Lenovo,SR780aV3-8xB200_SXM_180GB,stable_diffusion,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,706.21,943.67,0.252,10
+training_results_v5.0,Lenovo,4xSR680Ax8H200-SXM-141GB,retinanet,4,8,32,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,562.62,562.68,0.002,5
+training_results_v5.0,Lenovo,4xSR680Ax8H200-SXM-141GB,llama2_70b_lora,4,8,32,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,349.42,402.69,0.264,10
+training_results_v5.0,Lenovo,4xSR680Ax8H200-SXM-141GB,stable_diffusion,4,8,32,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,588.48,708.03,0.337,10
+training_results_v5.0,AMD,MI325X_EPYC_9575F_pytorch,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3e,XGMI,,10G Ethernet,,1109.75,1279.06,0.133,10
+training_results_v5.0,AMD,MI300X_EPYC_9575F_pytorch,llama2_70b_lora,1,8,8,AMD Instinct MI300X 192GB HBM3,XGMI,,10G Ethernet,,1694.59,1696.32,0.132,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n4_24.09,dlrm_dcnv2,4,8,32,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,108.19,129.14,0.214,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n4_24.09,retinanet,4,8,32,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,558.67,559.02,0.002,5
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n4_24.09,llama2_70b_lora,4,8,32,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,505.5,505.99,0.311,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n4_24.09,bert,4,8,32,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,96.02,106.86,0.257,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n4_24.09,stable_diffusion,4,8,32,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,570.82,686.59,0.335,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n1_24.09,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,202.46,202.94,0.07,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n1_24.09,rgat,1,8,8,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,420.28,447.09,0.171,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n1_24.09,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,2001.54,2003.82,0.002,5
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n1_24.09,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,1490.58,1493.08,0.265,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n1_24.09,bert,1,8,8,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,259.2,276.84,0.197,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n1_24.09,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,1704.2,1705.1,0.253,9
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n2_24.09,dlrm_dcnv2,2,8,16,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,192.45,193.07,0.136,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n2_24.09,retinanet,2,8,16,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,1042.0,1043.06,0.002,5
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n2_24.09,llama2_70b_lora,2,8,16,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,786.27,890.21,0.117,10
+training_results_v5.0,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n2_24.09,bert,2,8,16,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,155.71,189.22,0.238,10
+training_results_v5.0,ASUSTeK,ESC_N8_E11_n2,rgat,2,8,16,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,330.66,334.54,0.058,10
+training_results_v5.0,ASUSTeK,ESC_N8_E11_n2,llama2_70b_lora,2,8,16,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,660.73,760.67,0.261,10
+training_results_v5.0,ASUSTeK,ESC_N8_E11,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,199.52,213.94,0.2,10
+training_results_v5.0,ASUSTeK,ESC_N8_E11,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2006.52,2010.49,0.003,5
+training_results_v5.0,ASUSTeK,ESC_N8_E11,bert,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,259.36,313.66,0.234,10
+training_results_v5.0,ASUSTeK,ESC_N8_E11,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1767.51,1769.67,0.252,10
+training_results_v5.0,MangoBoost,MI300X-LLMBoost-GPUBoost-4node,llama2_70b_lora,4,8,32,AMD Instinct MI300X 192GB HBM3,,,Ethernet(RoCEv2),,551.65,635.33,0.253,10
+training_results_v5.0,MangoBoost,MI300X-LLMBoost-GPUBoost-1node,llama2_70b_lora,1,8,8,AMD Instinct MI300X 192GB HBM3,,,Ethernet(RoCEv2),,1493.14,1717.54,0.261,10
+training_results_v5.0,MangoBoost,MI300X-LLMBoost-GPUBoost-2node,llama2_70b_lora,2,8,16,AMD Instinct MI300X 192GB HBM3,,,Ethernet(RoCEv2),,828.19,949.33,0.258,10
+training_results_v5.0,tinycorp,tinybox_red,bert,1,6,6,AMD Radeon RX 7900 XTX,,,,,14863.72,18544.35,0.381,10
+training_results_v5.0,tinycorp,tinybox_green,retinanet,1,6,6,NVIDIA GeForce RTX 4090,,,,,47404.14,48216.42,0.021,4
+training_results_v5.0,tinycorp,tinybox_green,bert,1,6,6,NVIDIA GeForce RTX 4090,,,,,11273.78,12577.98,0.286,10
+training_results_v5.0,tinycorp,tinybox_8xMI300X,bert,1,8,8,AMD Instinct MI300X 192GB HBM3,,,,,5516.34,6707.81,0.336,10
+training_results_v5.0,Cisco,hpf_n8,bert,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x BF3 ConnectX-7 400Gb/s, Compute: 8x BF3 ConnectX-7 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,49.24,52.77,0.134,9
+training_results_v5.0,SCITIX,scitix_n8_ngc24.09_nemo,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage&Compute: 4x ConnectX-7 IB NDR 400Gb/s, Management: 25Gb/s Ethernet NIC",50.0,229.58,264.31,0.133,10
+training_results_v5.0,Supermicro,AS-A126GS-TNBR,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,279.47,294.95,0.152,10
+training_results_v5.0,Supermicro,AS-A126GS-TNBR,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,1307.97,1309.64,0.004,5
+training_results_v5.0,Supermicro,AS-A126GS-TNBR,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,564.94,651.51,0.266,10
+training_results_v5.0,Supermicro,AS-A126GS-TNBR,bert,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,181.37,206.66,0.185,10
+training_results_v5.0,Supermicro,AS-A126GS-TNBR,stable_diffusion,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,702.26,704.22,0.338,10
+training_results_v5.0,Supermicro,ARS-121GL-NBO_16,dlrm_dcnv2,16,4,64,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,40.62,42.81,0.055,10
+training_results_v5.0,Supermicro,AS-4126GS-NBR-LCC_N2,retinanet,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,678.94,845.25,0.203,5
+training_results_v5.0,Supermicro,AS-4126GS-NBR-LCC_N2,llama2_70b_lora,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,305.98,353.05,0.266,10
+training_results_v5.0,Supermicro,AS-4126GS-NBR-LCC_N2,bert,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,139.41,146.22,0.14,10
+training_results_v5.0,Supermicro,SYS-A21GE-NBRT,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,135.79,145.13,0.133,10
+training_results_v5.0,Supermicro,SYS-A21GE-NBRT,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,277.24,297.85,0.142,10
+training_results_v5.0,Supermicro,SYS-A21GE-NBRT,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,1342.99,1344.39,0.002,5
+training_results_v5.0,Supermicro,SYS-A21GE-NBRT,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,568.09,656.5,0.266,10
+training_results_v5.0,Supermicro,SYS-A21GE-NBRT,bert,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,168.79,207.19,0.249,10
+training_results_v5.0,Supermicro,SYS-A21GE-NBRT,stable_diffusion,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,709.11,711.54,0.676,10
+training_results_v5.0,Supermicro,AS-4125GS-TNHR2-LCC,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,201.97,216.97,0.27,10
+training_results_v5.0,Supermicro,AS-4125GS-TNHR2-LCC,rgat,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,437.14,489.72,0.111,10
+training_results_v5.0,Supermicro,AS-4125GS-TNHR2-LCC,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,2013.35,2016.71,0.002,5
+training_results_v5.0,Supermicro,AS-4125GS-TNHR2-LCC,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,1335.89,1338.28,0.133,10
+training_results_v5.0,Supermicro,AS-4125GS-TNHR2-LCC,bert,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,280.06,298.9,0.191,10
+training_results_v5.0,Supermicro,AS-4125GS-TNHR2-LCC,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,1326.44,1776.06,0.255,10
+training_results_v5.0,Supermicro,ARS-121GL-NBO_18,retinanet,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,227.54,228.43,0.005,5
+training_results_v5.0,Supermicro,ARS-121GL-NBO_18,llama2_70b_lora,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,88.49,100.58,0.24,10
+training_results_v5.0,Supermicro,ARS-121GL-NBO_18,stable_diffusion,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,129.82,130.14,0.255,10
+training_results_v5.0,Supermicro,8xMI325X_2xEPYC_9575F,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3E DLC,XGMI,,"Ethernet, Infiniband",,1233.35,1234.17,0.132,10
+training_results_v5.0,Supermicro,AS-A126GS-TNBR_N1,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,1307.46,1309.78,0.003,5
+training_results_v5.0,Supermicro,AS-A126GS-TNBR_N1,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,650.37,737.17,0.118,10
+training_results_v5.0,Supermicro,AS-A126GS-TNBR_N1,bert,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,180.16,218.47,0.235,10
+training_results_v5.0,Supermicro,SYS-422GA-NBRT-LCC,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,129.55,139.11,0.274,10
+training_results_v5.0,Supermicro,SYS-422GA-NBRT-LCC,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,280.69,308.88,0.15,10
+training_results_v5.0,Supermicro,SYS-422GA-NBRT-LCC,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,1328.88,1331.19,0.005,5
+training_results_v5.0,Supermicro,SYS-422GA-NBRT-LCC,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,563.95,650.56,0.267,10
+training_results_v5.0,Supermicro,SYS-422GA-NBRT-LCC,bert,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,167.48,206.22,0.311,10
+training_results_v5.0,Supermicro,SYS-422GA-NBRT-LCC,stable_diffusion,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"Ethernet, Infiniband",,702.14,702.62,0.337,10
+training_results_v5.0,Supermicro,AS-4126GS-NBR-LCC_N1,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,1330.36,1337.26,0.006,5
+training_results_v5.0,Supermicro,AS-4126GS-NBR-LCC_N1,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,571.53,660.33,0.267,10
+training_results_v5.0,Supermicro,AS-4126GS-NBR-LCC_N1,bert,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,170.37,210.08,0.313,10
+training_results_v5.0,Supermicro,SYS-821GE-TNHR,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,223.77,225.57,0.02,10
+training_results_v5.0,Supermicro,SYS-821GE-TNHR,rgat,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,393.06,443.94,0.232,10
+training_results_v5.0,Supermicro,SYS-821GE-TNHR,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,2032.32,2037.12,0.007,5
+training_results_v5.0,Supermicro,SYS-821GE-TNHR,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,1175.22,1361.69,0.306,10
+training_results_v5.0,Supermicro,SYS-821GE-TNHR,bert,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,270.71,323.92,0.233,10
+training_results_v5.0,Supermicro,SYS-821GE-TNHR,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Ethernet, Infiniband",,1334.84,1783.02,0.5,10
+training_results_v5.0,IBM+CoreWeave+NVIDIA,carina_ngpu512_ngc25.04_nemo,llama31_405b,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,6284.33,6296.81,0.009,3
+training_results_v5.0,IBM+CoreWeave+NVIDIA,carina_ngpu1024_ngc25.04_nemo,llama31_405b,256,4,1024,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,3190.88,3191.98,0.0,3
+training_results_v5.0,IBM+CoreWeave+NVIDIA,carina_ngpu2496_ngc25.04_nemo,llama31_405b,624,4,2496,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,1615.55,1619.4,0.003,3
+training_results_v5.0,IBM+CoreWeave+NVIDIA,carina_ngpu2048_ngc25.04_nemo,llama31_405b,512,4,2048,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,1917.72,1919.68,0.004,3
+training_results_v5.0,IBM+CoreWeave+NVIDIA,carina_ngpu1536_ngc25.04_nemo,llama31_405b,384,4,1536,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,2148.05,2183.8,0.164,3
+training_results_v5.0,krai,7920T_2xA5000_ssd,bert,1,2,2,NVIDIA RTX A5000,NVIDIA NVLink,,,,19170.34,20822.92,0.136,10
+training_results_v5.0,krai,7920T_2xA5000_hdd,bert,1,2,2,NVIDIA RTX A5000,NVIDIA NVLink,,,,18669.36,22396.54,0.248,10
+training_results_v5.0,Lambda,1cc_b200_n1_ngc25.04_nemo,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,Infiniband; Data bandwidth for GPU-PCIe: 504GB/s; PCIe-NIC: 500GB/s,504.0,654.4,655.23,0.134,10
+training_results_v5.0,QCT,D74H-7U,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,217.57,235.38,0.14,10
+training_results_v5.0,QCT,D74H-7U,rgat,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,462.0,488.84,0.153,10
+training_results_v5.0,QCT,D74H-7U,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,2053.38,2054.23,0.001,5
+training_results_v5.0,QCT,D74H-7U,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,1372.12,1376.94,0.266,10
+training_results_v5.0,QCT,D74H-7U,bert,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,266.01,320.87,0.235,10
+training_results_v5.0,QCT,D74H-7U,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,1793.69,1795.29,0.252,10
+training_results_v5.0,QCT,D75T-7U,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3e,XGMI,,100Gb/s Ethernet,12.5,1295.59,1300.99,0.136,10
+training_results_v5.0,Google,h200_nemo,stable_diffusion,1,8,8,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,Ethernet on switching network,,1356.18,1632.31,0.235,10
+training_results_v5.0,Google,cloud-tpu-trillium-256-maxdiffusion,stable_diffusion,64,4,256,TPU-trillium,,,,,248.46,253.59,0.129,10
+training_results_v5.0,Google,h200_n8_nemo,stable_diffusion,8,8,64,NVIDIA H200-SXM5-141GB,"18x 4th Gen NVLink, 900GB/s",900.0,Ethernet on switching network,,283.89,336.24,1.022,10
+training_results_v5.0,Oracle,64xBM.GPU.H200.8,llama2_70b_lora,64,8,512,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,108.91,117.02,0.118,10
+training_results_v5.0,Oracle,1xBM.GPU.GB200.4,llama2_70b_lora,1,4,4,NVIDIA Blackwell GPU (GB200),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1281.85,1282.57,0.001,10
+training_results_v5.0,Oracle,1xBM.GPU.B200.8,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1367.88,1371.62,0.009,5
+training_results_v5.0,Oracle,1xBM.GPU.B200.8,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,657.62,658.49,0.134,10
+training_results_v5.0,Oracle,1xBM.GPU.B200.8,stable_diffusion,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,714.29,954.66,0.253,10
+training_results_v5.0,Oracle,1xBM.GPU.MI300X.8,llama2_70b_lora,1,8,8,AMD Instinct MI300X 192GB HBM3,None,,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,1502.13,1768.83,0.165,10
+training_results_v5.0,Oracle,8xBM.GPU.B200.8,retinanet,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,266.42,266.56,0.003,5
+training_results_v5.0,Oracle,8xBM.GPU.B200.8,llama2_70b_lora,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,100.76,117.08,0.143,10
+training_results_v5.0,Oracle,8xBM.GPU.B200.8,stable_diffusion,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,166.88,167.01,0.003,10
+training_results_v5.0,Oracle,1xBM.GPU.H200.8,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,2065.34,2067.08,0.002,5
+training_results_v5.0,Oracle,1xBM.GPU.H200.8,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1352.9,1375.26,0.021,10
+training_results_v5.0,Oracle,18xBM.GPU.GB200.4,llama2_70b_lora,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,87.7,99.56,0.12,10
+training_results_v5.0,Oracle,8xBM.GPU.H200.8,retinanet,8,8,64,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,442.93,443.12,0.001,5
+training_results_v5.0,Oracle,8xBM.GPU.H200.8,bert,8,8,64,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,49.93,53.32,0.065,10
+training_results_v5.0,Oracle,2xBM.GPU.GB200.4,llama2_70b_lora,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x ConnectX-7 IB NDR 400Gb/s, Compute: 8x ConnectX-7 IB NDR 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,636.72,637.04,0.134,10
+training_results_v5.1,Dell,1xXE7745x8RTXPro6000-PCIe-96GB,retinanet,1,8,8,NVIDIA RTX Pro 6000 SE PCIe 96GB,,,,,4745.59,4749.48,0.002,5
+training_results_v5.1,Dell,1xXE9780x8B200-SXM-180GB,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,278.82,311.51,0.152,10
+training_results_v5.1,Dell,1xXE9780x8B200-SXM-180GB,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,1317.17,1319.28,0.004,5
+training_results_v5.1,Dell,1xXE9780x8B200-SXM-180GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,566.2,567.78,0.137,9
+training_results_v5.1,Dell,2xXE9680Lx8B200-SXM-180GB,dlrm_dcnv2,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,131.5,140.98,0.133,10
+training_results_v5.1,Dell,2xXE9680Lx8B200-SXM-180GB,rgat,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,180.98,182.6,0.107,10
+training_results_v5.1,Dell,2xXE9680Lx8B200-SXM-180GB,retinanet,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,732.92,735.15,0.004,5
+training_results_v5.1,Dell,2xXE9680Lx8B200-SXM-180GB,llama2_70b_lora,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,338.45,421.82,0.2,10
+training_results_v5.1,Dell,2xXE9680Lx8B200-SXM-180GB,llama31_8b,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,3669.35,3684.78,0.006,10
+training_results_v5.1,Dell,2xXE9685Lx8B200-SXM-180GB,dlrm_dcnv2,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,137.89,138.31,0.031,10
+training_results_v5.1,Dell,2xXE9685Lx8B200-SXM-180GB,rgat,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,195.56,204.24,0.087,10
+training_results_v5.1,Dell,2xXE9685Lx8B200-SXM-180GB,retinanet,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,663.49,827.44,0.202,5
+training_results_v5.1,Dell,2xXE9685Lx8B200-SXM-180GB,llama2_70b_lora,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,370.68,412.08,0.308,10
+training_results_v5.1,Dell,2xXE9685Lx8B200-SXM-180GB,llama31_8b,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,3638.36,3650.64,0.007,10
+training_results_v5.1,Dell,1xXE9680x8H200-SXM-141GB,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,203.43,220.03,0.268,10
+training_results_v5.1,Dell,1xXE9680x8H200-SXM-141GB,rgat,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,414.93,468.93,0.219,10
+training_results_v5.1,Dell,1xXE9680x8H200-SXM-141GB,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,2026.88,2028.33,0.003,5
+training_results_v5.1,Dell,1xXE9680x8H200-SXM-141GB,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,,,1353.05,1354.45,0.132,10
+training_results_v5.1,Dell,XE9785L_8xMI355X,llama2_70b_lora,1,8,8,AMD Instinct MI355X,Infinity Fabric Link,,,,594.34,594.89,0.133,10
+training_results_v5.1,Dell,XE9785L_8xMI355X,llama31_8b,1,8,8,AMD Instinct MI355X,Infinity Fabric Link,,,,6016.97,6447.99,0.134,10
+training_results_v5.1,Dell,1xXE9685Lx8B200-SXM-180GB,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,141.92,152.79,0.346,10
+training_results_v5.1,Dell,1xXE9685Lx8B200-SXM-180GB,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,296.04,310.93,0.055,10
+training_results_v5.1,Dell,1xXE9685Lx8B200-SXM-180GB,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,1302.37,1307.14,0.005,5
+training_results_v5.1,Dell,1xXE9685Lx8B200-SXM-180GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,486.87,636.87,0.237,10
+training_results_v5.1,Dell,1xXE9780x8B300-SXM-270GB,dlrm_dcnv2,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,148.71,160.07,0.141,10
+training_results_v5.1,Dell,1xXE9780x8B300-SXM-270GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,568.39,570.42,0.136,10
+training_results_v5.1,Dell,1xXE9780x8B300-SXM-270GB,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,5602.19,5605.76,0.085,10
+training_results_v5.1,Dell,1xXE9680Lx8H200-SXM-141GB,rgat,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen5,,,,419.09,444.38,0.111,9
+training_results_v5.1,Dell,1xXE9680Lx8H200-SXM-141GB,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen5,,,,2027.8,2038.79,0.006,5
+training_results_v5.1,Dell,1xXE9680Lx8H200-SXM-141GB,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen5,,,,1360.56,1362.05,0.134,10
+training_results_v5.1,Dell,1xXE9680Lx8B200-SXM-180GB,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,139.48,150.6,0.138,10
+training_results_v5.1,Dell,1xXE9680Lx8B200-SXM-180GB,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,278.82,311.51,0.152,10
+training_results_v5.1,Dell,1xXE9680Lx8B200-SXM-180GB,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,1317.17,1319.28,0.004,5
+training_results_v5.1,Dell,1xXE9680Lx8B200-SXM-180GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,514.34,515.19,0.165,10
+training_results_v5.1,Dell,1xXE9680Lx8B200-SXM-180GB,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,5012.39,5013.62,0.071,10
+training_results_v5.1,Nebius,nebius_b200_n1,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,568.12,574.78,0.138,10
+training_results_v5.1,Nebius,nebius_b200_n1,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,5070.84,5078.25,0.073,10
+training_results_v5.1,Nebius,nebius_h200_n64,llama31_405b,64,8,512,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,12566.72,12579.14,0.001,3
+training_results_v5.1,Nebius,nebius_b200_n4,flux1,4,8,32,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,5134.5,5629.39,0.118,10
+training_results_v5.1,Nebius,nebius_b200_n4,llama2_70b_lora,4,8,32,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,155.64,179.87,0.27,10
+training_results_v5.1,Nebius,nebius_b200_n4,llama31_8b,4,8,32,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,1589.75,1696.13,0.252,10
+training_results_v5.1,Nebius,nebius_b200_n2,llama2_70b_lora,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,300.45,349.75,0.275,10
+training_results_v5.1,Nebius,nebius_b200_n2,llama31_8b,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,2935.12,3131.61,0.127,10
+training_results_v5.1,Nebius,nebius_h200_n128,llama31_405b,128,8,1024,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,8x ConnectX-7 IB NDR 400Gb/s + 200Gb/s Ethernet NIC,400.0,6399.59,6402.65,0.001,3
+training_results_v5.1,Nebius,nebius_b300_n1,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-8 IB XDR 800Gb/s + 400Gb/s Ethernet NIC,800.0,452.02,526.42,0.153,10
+training_results_v5.1,Nebius,nebius_b300_n1,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-8 IB XDR 800Gb/s + 400Gb/s Ethernet NIC,800.0,4388.98,4700.42,0.068,10
+training_results_v5.1,GigaComputing,G894-AD1_dgl,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,289.92,304.59,0.108,10
+training_results_v5.1,GigaComputing,G894-AD1_hugectr,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,127.67,136.87,0.266,10
+training_results_v5.1,GigaComputing,G893-ZX1-AAX4_pytorch,llama2_70b_lora,1,8,8,AMD Instinct MI355X,,,Giga Ethernet,,524.17,603.6,0.263,10
+training_results_v5.1,GigaComputing,G893-ZX1-AAX4_pytorch,llama31_8b,1,8,8,AMD Instinct MI355X,,,Giga Ethernet,,6064.94,6498.51,0.135,10
+training_results_v5.1,GigaComputing,G894-AD1_pytorch,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,1316.1,1316.64,0.001,5
+training_results_v5.1,GigaComputing,G894-AD1_pytorch,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,489.68,565.52,0.135,10
+training_results_v5.1,MiTAC,8xMI325X_2xEPYC_9755,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3E,XGMI,,10G Ethernet,,1057.52,1219.16,0.265,10
+training_results_v5.1,Wiwynn,8xKinabalux18x4GB200,llama2_70b_lora,144,4,576,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,23.06,26.28,0.148,10
+training_results_v5.1,Wiwynn,1xKinabalux18x4GB200,llama2_70b_lora,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,77.08,87.48,0.24,10
+training_results_v5.1,NVIDIA,tyche_ngpu72_ngc25.09_nemo,flux1,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,2860.43,2993.26,0.058,10
+training_results_v5.1,NVIDIA,tyche_ngpu72_ngc25.09_nemo,llama2_70b_lora,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,77.63,88.47,0.14,10
+training_results_v5.1,NVIDIA,tyche_ngpu72_ngc25.09_nemo,llama31_8b,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,829.26,898.19,0.093,10
+training_results_v5.1,NVIDIA,hsg_ngpu5120_ngc25.09_nemo,llama31_405b,1280,4,5120,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,598.26,599.67,0.07,3
+training_results_v5.1,NVIDIA,hsg_ngpu2560_ngc25.09_nemo,llama31_405b,640,4,2560,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,1119.32,1127.63,0.008,3
+training_results_v5.1,NVIDIA,tyche_ngpu8_ngc25.03_hugectr,dlrm_dcnv2,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,123.38,132.07,0.206,10
+training_results_v5.1,NVIDIA,tyche_ngpu64_ngc25.03_hugectr,dlrm_dcnv2,16,4,64,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,42.35,47.39,0.16,10
+training_results_v5.1,NVIDIA,theia_ngpu512_ngc25.09_nemo,flux1,128,4,512,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,963.16,1032.35,0.194,10
+training_results_v5.1,NVIDIA,theia_ngpu512_ngc25.09_nemo,llama31_405b,128,4,512,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,3650.49,3876.31,0.059,3
+training_results_v5.1,NVIDIA,theia_ngpu512_ngc25.09_nemo,llama2_70b_lora,128,4,512,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,21.92,23.42,0.188,10
+training_results_v5.1,NVIDIA,theia_ngpu512_ngc25.09_nemo,llama31_8b,128,4,512,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,288.38,305.86,0.223,10
+training_results_v5.1,NVIDIA,tyche_ngpu8_ngc25.09_nemo,llama2_70b_lora,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,496.31,516.07,0.28,10
+training_results_v5.1,NVIDIA,tyche_ngpu8_ngc25.09_nemo,llama31_8b,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,4513.99,4820.43,0.107,10
+training_results_v5.1,NVIDIA,tyche_ngpu16_ngc25.09_nemo,flux1,4,4,16,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,9048.98,9670.15,0.131,10
+training_results_v5.1,NVIDIA,theia_ngpu72_ngc25.09_nemo,flux1,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,2548.17,2669.95,0.069,10
+training_results_v5.1,NVIDIA,theia_ngpu72_ngc25.09_nemo,llama2_70b_lora,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,67.72,76.64,0.235,10
+training_results_v5.1,NVIDIA,theia_ngpu72_ngc25.09_nemo,llama31_8b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,727.11,775.14,0.07,10
+training_results_v5.1,NVIDIA,tyche_ngpu72_ngc25.04_pytorch,retinanet,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,222.74,223.05,0.003,5
+training_results_v5.1,NVIDIA,tyche_ngpu8_ngc25.04_pytorch,retinanet,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,1328.92,1338.48,0.016,5
+training_results_v5.1,NVIDIA,tyche_ngpu512_ngc25.09_nemo,flux1,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,1006.76,1081.48,0.114,10
+training_results_v5.1,NVIDIA,tyche_ngpu512_ngc25.09_nemo,llama31_405b,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,4817.63,5096.41,0.062,3
+training_results_v5.1,NVIDIA,tyche_ngpu512_ngc25.09_nemo,llama2_70b_lora,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,24.71,28.21,0.303,10
+training_results_v5.1,NVIDIA,tyche_ngpu512_ngc25.09_nemo,llama31_8b,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,282.23,318.71,0.225,10
+training_results_v5.1,NVIDIA,hsg_ngpu1152_ngc25.09_nemo,flux1,288,4,1152,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,709.97,744.76,0.172,10
+training_results_v5.1,NVIDIA,tyche_ngpu512_ngc25.04_pytorch,retinanet,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,82.78,83.32,0.008,5
+training_results_v5.1,NVIDIA,theia_ngpu16_ngc25.09_nemo,flux1,4,4,16,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,8096.87,8652.74,0.195,10
+training_results_v5.1,NVIDIA,tyche_ngpu8_ngc25.03_dgl,rgat,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,279.05,293.95,0.103,10
+training_results_v5.1,NVIDIA,tyche_ngpu72_ngc25.03_dgl,rgat,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,62.41,66.72,0.221,10
+training_results_v5.1,NVIDIA,theia_ngpu8_ngc25.09_nemo,llama2_70b_lora,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,340.74,343.59,0.237,10
+training_results_v5.1,NVIDIA,theia_ngpu8_ngc25.09_nemo,llama31_8b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,3853.57,4132.69,0.071,10
+training_results_v5.1,NVIDIA,tyche_ngpu256_ngc25.03_dgl,rgat,64,4,256,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400Gb/s,200.0,46.05,50.06,0.165,10
+training_results_v5.1,Lenovo,SR680aV4-8xB300_SXM,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,549.26,549.7,0.138,10
+training_results_v5.1,Lenovo,SR680aV4-8xB300_SXM,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,4515.98,4526.58,0.073,10
+training_results_v5.1,Lenovo,SR680aV3-8xB200_SXM_180GB,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,130.03,139.62,0.204,10
+training_results_v5.1,Lenovo,SR680aV3-8xB200_SXM_180GB,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,277.82,306.02,0.147,10
+training_results_v5.1,Lenovo,SR680aV3-8xB200_SXM_180GB,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,1327.95,1329.42,0.002,5
+training_results_v5.1,Lenovo,SR680aV3-8xB200_SXM_180GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,561.56,561.99,0.134,10
+training_results_v5.1,Lenovo,SR680aV3-8xB200_SXM_180GB,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,4549.05,5292.14,0.141,10
+training_results_v5.1,Lenovo,SR780aV3-8xB200_SXM_180GB,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,127.89,137.2,0.135,10
+training_results_v5.1,Lenovo,SR780aV3-8xB200_SXM_180GB,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,276.06,306.84,0.15,10
+training_results_v5.1,Lenovo,SR780aV3-8xB200_SXM_180GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,570.8,571.21,0.134,10
+training_results_v5.1,Lenovo,SR780aV3-8xB200_SXM_180GB,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,,,5022.86,5023.92,0.071,10
+training_results_v5.1,AMD,MI325X_EPYC_9575F_pytorch_llama2_70b,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3E,XGMI,,"2 x Broadcom Inc. and subsidiaries, 4 x I350 Gigabit Network Connection",,1218.98,1219.77,0.133,10
+training_results_v5.1,AMD,MI300X_EPYC_9575F_pytorch_llama2_70b,llama2_70b_lora,1,8,8,AMD Instinct MI300X 192GB HBM3,XGMI,,"2 x MT2894 Family [ConnectX-6 Lx], 2 x MT2910 Family [ConnectX-7]",,1609.14,1635.84,0.261,10
+training_results_v5.1,AMD,MI350X_EPYC_9575F_pytorch,llama2_70b_lora,1,8,8,AMD Instinct MI350X,XGMI,,"6 x BCM57508 NetXtreme-E 10Gb/25Gb/40Gb/50Gb/100Gb/200Gb Ethernet, 2 x Ethernet Controller X710 for 10GBASE-T, 2 x Ethernet Controller 10G X550T",,704.49,716.25,0.132,10
+training_results_v5.1,AMD,MI350X_EPYC_9575F_pytorch,llama31_8b,1,8,8,AMD Instinct MI350X,XGMI,,"6 x BCM57508 NetXtreme-E 10Gb/25Gb/40Gb/50Gb/100Gb/200Gb Ethernet, 2 x Ethernet Controller X710 for 10GBASE-T, 2 x Ethernet Controller 10G X550T",,7064.99,7582.55,0.135,10
+training_results_v5.1,AMD,MI355X_EPYC_9575F_pytorch,llama2_70b_lora,1,8,8,AMD Instinct MI355X,XGMI,,"2 x Ethernet Controller X710 for 10GBASE-T, 2 x Ethernet Controller 10G X550T",,587.1,589.82,0.136,10
+training_results_v5.1,AMD,MI355X_EPYC_9575F_pytorch,llama31_8b,1,8,8,AMD Instinct MI355X,XGMI,,"2 x Ethernet Controller X710 for 10GBASE-T, 2 x Ethernet Controller 10G X550T",,5744.65,6158.76,0.133,10
+training_results_v5.1,HPE,HPE-Cray-XD670-H200-SXM5-141GB_n8_25.09,llama31_8b,8,8,64,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,2148.2,2242.04,0.084,10
+training_results_v5.1,ASUSTeK,ESC_A8A_MI325X,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3E,XGMI,,10G Ethernet,,1079.94,1245.18,0.398,10
+training_results_v5.1,ASUSTeK,ESC_NB8_E11,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,143.82,155.98,0.276,10
+training_results_v5.1,ASUSTeK,ESC_NB8_E11,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,298.49,330.7,0.156,10
+training_results_v5.1,MangoBoost,MI325X-LLMBoost-GPUBoost-1node,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3E,,,Ethernet(RoCEv2),,1039.59,1204.12,0.268,10
+training_results_v5.1,MangoBoost,MI325X-LLMBoost-GPUBoost-2node,llama2_70b_lora,2,8,16,AMD Instinct MI325X 256GB HBM3E,,,Ethernet(RoCEv2),,648.74,745.62,0.132,10
+training_results_v5.1,MangoBoost,AS-8126GS-TNMR,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3E DLC,XGMI,,"Ethernet, Infiniband",,1071.18,1236.56,0.137,10
+training_results_v5.1,MangoBoost,MI300X-LLMBoost-GPUBoost-1node,llama2_70b_lora,1,8,8,AMD Instinct MI300X 192GB HBM3,,,Ethernet(RoCEv2),,1442.84,1660.67,0.132,10
+training_results_v5.1,MangoBoost,MI300X-LLMBoost-GPUBoost-2node,llama2_70b_lora,2,8,16,AMD Instinct MI300X 192GB HBM3,,,Ethernet(RoCEv2),,907.3,914.0,0.009,10
+training_results_v5.1,Verda,b200_8x8_ngc25.09,llama31_8b,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLink,,100GbE InfiniBand,,1053.63,1130.77,0.135,10
+training_results_v5.1,Cisco,hpf_n16,llama2_70b_lora,16,8,128,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x BF3 ConnectX-7 400Gb/s, Compute: 8x BF3 ConnectX-7 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,148.81,182.88,0.375,10
+training_results_v5.1,Cisco,hpf_n16,llama31_8b,16,8,128,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x BF3 ConnectX-7 400Gb/s, Compute: 8x BF3 ConnectX-7 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,1911.25,1930.54,0.065,10
+training_results_v5.1,Cisco,hpf_n8,dlrm_dcnv2,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x BF3 ConnectX-7 400Gb/s, Compute: 8x BF3 ConnectX-7 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,87.78,92.72,0.104,9
+training_results_v5.1,Cisco,hpf_n8,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x BF3 ConnectX-7 400Gb/s, Compute: 8x BF3 ConnectX-7 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,225.02,257.84,0.261,10
+training_results_v5.1,Cisco,hpf_n8,llama31_8b,8,8,64,NVIDIA H100-SXM5-80GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Storage: 2x BF3 ConnectX-7 400Gb/s, Compute: 8x BF3 ConnectX-7 400Gb/s, Management: 100Gb/s Ethernet NIC",50.0,2627.52,2632.93,0.099,10
+training_results_v5.1,Cisco,1xC885A_M8-8xMI350X-OAM-288GB,llama2_70b_lora,1,8,8,AMD Instinct MI350X,XGMI,,N/A,,723.28,724.31,0.134,10
+training_results_v5.1,Cisco,1xC885A_M8-8xMI350X-OAM-288GB,llama31_8b,1,8,8,AMD Instinct MI350X,XGMI,,N/A,,7327.79,7844.09,0.071,10
+training_results_v5.1,Cisco,2xC885A_M8-8xH200-SXM-141GB,llama2_70b_lora,2,8,16,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x MT43244 BlueField-3 200Gb/s, Management: 2x100Gb/s Ethernet NIC",25.0,647.51,746.06,0.264,10
+training_results_v5.1,Cisco,1xC885A_M8-8xH200-SXM-141GB,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x MT43244 BlueField-3 200Gb/s, Management: 2x100Gb/s Ethernet NIC",25.0,1984.7,1987.03,0.003,5
+training_results_v5.1,Cisco,1xC885A_M8-8xH200-SXM-141GB,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x MT43244 BlueField-3 200Gb/s, Management: 2x100Gb/s Ethernet NIC",25.0,1188.37,1369.05,0.265,10
+training_results_v5.1,Supermicro,AS-A126GS-TNBR,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,128.37,137.3,0.129,10
+training_results_v5.1,Supermicro,AS-A126GS-TNBR,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,280.1,295.02,0.101,10
+training_results_v5.1,Supermicro,AS-A126GS-TNBR,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,1289.89,1290.68,0.001,5
+training_results_v5.1,Supermicro,AS-A126GS-TNBR,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,567.24,567.66,0.135,10
+training_results_v5.1,Supermicro,ARS-121GL-NB3,flux1,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),5th-gen NVLink and NVLink SWitches,,"Ethernet, Infiniband",,2578.14,2700.01,0.093,10
+training_results_v5.1,Supermicro,ARS-121GL-NB3,llama2_70b_lora,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),5th-gen NVLink and NVLink SWitches,,"Ethernet, Infiniband",,71.25,71.3,0.133,10
+training_results_v5.1,Supermicro,AS-4126GS-NBR-LCC,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,334.91,365.02,0.166,10
+training_results_v5.1,Supermicro,AS-4126GS-NBR-LCC,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,1309.79,1311.23,0.002,5
+training_results_v5.1,Supermicro,AS-4126GS-NBR-LCC,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,567.54,643.29,0.119,10
+training_results_v5.1,Supermicro,AS-4126GS-NBR-LCC,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,5006.1,5359.54,0.066,10
+training_results_v5.1,Supermicro,8xMI355X_2xEPYC_9575F,llama2_70b_lora,1,8,8,AMD Instinct MI355X,,,,,592.88,593.42,0.263,10
+training_results_v5.1,Supermicro,8xMI355X_2xEPYC_9575F,llama31_8b,1,8,8,AMD Instinct MI355X,,,,,5947.51,6370.39,0.133,10
+training_results_v5.1,Supermicro,SYS-422GS-NBRT-LCC,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,326.74,356.91,0.129,10
+training_results_v5.1,Supermicro,SYS-422GS-NBRT-LCC,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,1337.14,1339.73,0.002,5
+training_results_v5.1,Supermicro,SYS-422GS-NBRT-LCC,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,491.67,568.01,0.269,10
+training_results_v5.1,Supermicro,SYS-422GS-NBRT-LCC,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,5017.81,5018.58,0.071,10
+training_results_v5.1,Supermicro,AS-8126GS-NB3RT,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,476.25,548.97,0.267,10
+training_results_v5.1,Supermicro,AS-8126GS-NB3RT,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,5185.01,5630.73,0.163,10
+training_results_v5.1,Supermicro,SYS-822GS-NB3RT,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,551.38,551.96,0.135,10
+training_results_v5.1,Supermicro,AS-8126GS-TNMR_8xMI325X,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3E,XGMI,,Ethernet,,1084.35,1250.33,0.134,10
+training_results_v5.1,Krai,Cray-XD670-H200-SXM5-141GB_n4_v5.0,llama2_70b_lora,4,8,32,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,387.77,392.58,0.27,10
+training_results_v5.1,Krai,Cray-XD670-H200-SXM5-141GB_n8_v5.0,llama2_70b_lora,8,8,64,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,251.2,251.41,0.425,10
+training_results_v5.1,Krai,PowerEdge-XE9680-MI300X-192GB_n1_v5.0,llama2_70b_lora,1,8,8,AMD Instinct MI300X 192GB HBM3,XGMI,,Infiniband:Data bandwidth for GPU-PCIe: 504GB/s; PCIe-NIC: 500GB/s,504.0,1472.35,1694.48,0.262,10
+training_results_v5.1,Krai,Cray-XD670-H200-SXM5-141GB_n2_v5.0,llama2_70b_lora,2,8,16,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,626.38,720.83,0.269,10
+training_results_v5.1,Krai,PowerEdge-XE9680-MI300X-192GB_n1_v5.1,llama2_70b_lora,1,8,8,AMD Instinct MI300X 192GB HBM3,XGMI,,Infiniband:Data bandwidth for GPU-PCIe: 504GB/s; PCIe-NIC: 500GB/s,504.0,1637.44,1639.29,0.133,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n56,llama31_405b,56,8,448,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,8622.52,8634.56,0.071,3
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n8,flux1,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,3365.57,3695.84,0.114,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n8,rgat,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,236.78,247.99,0.097,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n8,retinanet,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,1055.85,1058.86,0.005,5
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n8,llama2_70b_lora,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,123.18,123.58,0.11,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n8,llama31_8b,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,1043.77,1047.41,0.072,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n9,flux1,9,8,72,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,3140.15,3291.83,0.069,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n16,flux1,16,8,128,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,2821.65,2868.36,0.044,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n16,retinanet,16,8,128,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,599.65,606.6,0.013,5
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n16,llama2_70b_lora,16,8,128,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,95.0,115.24,0.234,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n16,llama31_8b,16,8,128,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,676.28,676.67,0.111,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n1,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,196.45,198.56,0.174,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n1,rgat,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,485.98,516.36,0.069,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n1,retinanet,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,3317.71,3332.68,0.016,5
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n1,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,496.5,572.89,0.268,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n1,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,5560.76,5580.19,0.009,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n4,flux1,4,8,32,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,5419.26,5590.08,0.089,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n4,retinanet,4,8,32,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,1648.75,1655.41,0.032,5
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n4,llama2_70b_lora,4,8,32,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,211.72,212.14,0.106,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n4,llama31_8b,4,8,32,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,2076.5,2151.66,0.043,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n2,flux1,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,10229.61,10366.11,0.045,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n2,retinanet,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,2260.0,2292.1,0.053,5
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n2,llama2_70b_lora,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,358.31,359.86,0.111,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n2,llama31_8b,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,3552.77,3579.13,0.009,10
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n32,llama31_405b,32,8,256,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,14151.86,14475.28,0.025,3
+training_results_v5.1,University-of-Florida,hpg.dgxb200x8.n32,llama31_8b,32,8,256,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,599.89,600.12,0.058,10
+training_results_v5.1,Lambda,gb300_n18_ngc25.04_nemo,llama2_70b_lora,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,70.69,80.22,0.239,10
+training_results_v5.1,Lambda,gb300_n18_ngc25.04_nemo,llama31_8b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,798.34,854.35,0.13,10
+training_results_v5.1,Quanta_Cloud_Technology,D74H-7U,dlrm_dcnv2,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,216.53,234.05,0.21,10
+training_results_v5.1,Quanta_Cloud_Technology,D74H-7U,rgat,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,414.29,468.59,0.17,10
+training_results_v5.1,Quanta_Cloud_Technology,D74H-7U,retinanet,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,2042.39,2045.13,0.002,5
+training_results_v5.1,Quanta_Cloud_Technology,D74H-7U,llama2_70b_lora,1,8,8,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,ConnectX-6 25Gb/s Ethernet,3.125,1358.77,1359.1,0.264,10
+training_results_v5.1,Quanta_Cloud_Technology,D75T-7U,llama2_70b_lora,1,8,8,AMD Instinct MI325X 256GB HBM3E,XGMI,,100Gb/s Ethernet,12.5,1086.27,1255.32,0.268,10
+training_results_v5.1,Oracle,9xBM.GPU.B200.8,flux1,9,8,72,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen4,1800.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,3263.51,3336.11,0.048,10
+training_results_v5.1,Oracle,2xBM.GPU.B200.8,flux1,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen4,1800.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,9778.16,10437.49,0.097,10
+training_results_v5.1,Oracle,1xBM.GPU.B200.8,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen4,1800.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,5022.36,5048.53,0.081,10
+training_results_v5.1,Oracle,8xBM.GPU.B200.8,llama31_8b,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen4,1800.0,ROCE2; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 500 GB/s,504.0,1045.89,1122.53,0.074,10
+training_results_v6.0,vultr,8xMI355X_2xEPYC_9575F,llama2_70b_lora,1,8,8,AMD Instinct MI355X 288GB HBM3e,XGMI,,"8 x AMD Pensando DSC Ethernet Controller [1dd8:1002], 2 x Broadcom BCM57608 Thor2 10Gb/25Gb/50Gb/100Gb/200Gb/400Gb [14e4:1760]",,479.12,558.0,0.282,10
+training_results_v6.0,vultr,8xMI355X_2xEPYC_9575F,llama31_8b,1,8,8,AMD Instinct MI355X 288GB HBM3e,XGMI,,"8 x AMD Pensando DSC Ethernet Controller [1dd8:1002], 2 x Broadcom BCM57608 Thor2 10Gb/25Gb/50Gb/100Gb/200Gb/400Gb [14e4:1760]",,4961.35,5320.38,0.134,10
+training_results_v6.0,Dell,1xXE9785_8xMI355X,llama2_70b_lora,1,8,8,AMD Instinct MI355X 288GB HBM3e,Infinity Fabric Link,,,,486.0,497.27,0.172,10
+training_results_v6.0,Dell,8xXE9712x4GB300,flux1,8,4,32,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,3540.6,4017.07,0.176,10
+training_results_v6.0,Dell,8xXE9712x4GB300,llama31_8b,8,4,32,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,1170.32,1211.33,0.068,10
+training_results_v6.0,Dell,1xXE9780x8B200-SXM-180GB,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,143.46,153.18,0.261,10
+training_results_v6.0,Dell,1xXE9780x8B200-SXM-180GB,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,4805.92,4938.39,0.079,10
+training_results_v6.0,Dell,1xXE9780Lx8B300-SXM-270GB,dlrm_dcnv2,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,125.47,134.82,0.136,10
+training_results_v6.0,Dell,1xXE9780Lx8B300-SXM-270GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,393.5,394.07,0.183,10
+training_results_v6.0,Dell,1xXE9780Lx8B300-SXM-270GB,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,4761.01,5059.3,0.118,10
+training_results_v6.0,Dell,1xXE9780LAPB300-SXM-270GB,dlrm_dcnv2,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,130.12,139.41,0.134,10
+training_results_v6.0,Dell,2xXE9780x8B300-SXM-270GB,dlrm_dcnv2,2,8,16,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,108.07,108.42,0.114,9
+training_results_v6.0,Dell,2xXE9780x8B300-SXM-270GB,gpt_oss_20b,2,8,16,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,2975.4,3274.28,0.092,10
+training_results_v6.0,Dell,2xXE9780x8B300-SXM-270GB,llama31_8b,2,8,16,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,2480.81,2483.66,0.126,10
+training_results_v6.0,Dell,16xXE9712x4GB300,flux1,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,2054.46,2237.34,0.189,10
+training_results_v6.0,Dell,16xXE9712x4GB300,llama2_70b_lora,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,75.88,76.53,0.141,10
+training_results_v6.0,Dell,16xXE9712x4GB300,gpt_oss_20b,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,1241.85,1326.6,0.076,10
+training_results_v6.0,Dell,16xXE9712x4GB300,llama31_8b,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,712.33,754.66,0.154,10
+training_results_v6.0,Dell,1xXE7740x8H200-NVL-141GB,llama2_70b_lora,1,8,8,NVIDIA H200-NVL-141GB,NVLINK Gen5,,,,1570.26,1813.66,0.264,10
+training_results_v6.0,Dell,1xXE7740x8H200-NVL-141GB,llama31_8b,1,8,8,NVIDIA H200-NVL-141GB,NVLINK Gen5,,,,14736.1,15867.62,0.072,10
+training_results_v6.0,Dell,2xXE9712x4GB300,llama2_70b_lora,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,345.38,347.51,0.186,10
+training_results_v6.0,Dell,2xXE9712x4GB300,gpt_oss_20b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,4174.92,4436.83,0.062,10
+training_results_v6.0,Dell,2xXE9712x4GB300,llama31_8b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,3810.38,3819.93,0.01,10
+training_results_v6.0,Dell,1xXE9780x8B300-SXM-270GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,384.86,385.29,0.185,10
+training_results_v6.0,Dell,1xXE9780x8B300-SXM-270GB,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,4105.01,4416.62,0.142,10
+training_results_v6.0,Dell,1xXE9785L_8xMI355X,llama2_70b_lora,1,8,8,AMD Instinct MI355X 288GB HBM3e,Infinity Fabric Link,,,,487.78,489.55,0.165,10
+training_results_v6.0,Dell,1xXE9785L_8xMI355X,llama31_8b,1,8,8,AMD Instinct MI355X 288GB HBM3e,Infinity Fabric Link,,,,5343.29,5359.68,0.068,10
+training_results_v6.0,Dell,1xXE9780Lx8B200-SXM-180GB,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,137.97,147.91,0.209,10
+training_results_v6.0,Dell,1xXE9780Lx8B200-SXM-180GB,gpt_oss_20b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),,,,,5684.49,6042.1,0.118,10
+training_results_v6.0,Dell,4xXE9712x4GB300,flux1,4,4,16,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,6507.82,6745.81,0.043,10
+training_results_v6.0,Dell,4xXE9712x4GB300,llama31_8b,4,4,16,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,2031.42,2165.6,0.123,10
+training_results_v6.0,Dell,1xXE9712x4GB300,llama2_70b_lora,1,4,4,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,670.74,672.12,0.008,10
+training_results_v6.0,Dell,1xXE9712x4GB300,gpt_oss_20b,1,4,4,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,8789.26,9359.47,0.064,10
+training_results_v6.0,Dell,1xXE9712x4GB300,llama31_8b,1,4,4,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,6776.6,7301.93,0.147,10
+training_results_v6.0,Dell,1xXE7745x8H200-NVL-141GB,llama2_70b_lora,1,8,8,NVIDIA H200-NVL-141GB,NVLINK Gen5,,,,2113.33,2441.73,0.268,10
+training_results_v6.0,Dell,1xXE7745x8H200-NVL-141GB,llama31_8b,1,8,8,NVIDIA H200-NVL-141GB,NVLINK Gen5,,,,17232.52,17373.05,0.058,10
+training_results_v6.0,Dell,1xXE9785Lx8B300-SXM-270GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,383.33,383.64,0.184,10
+training_results_v6.0,Dell,1xXE9785Lx8B300-SXM-270GB,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,4963.92,4966.46,0.06,10
+training_results_v6.0,Nebius,nebius_b300_n8,flux1,8,8,64,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-8 IB XDR 800Gb/s + 400Gb/s Ethernet NIC,800.0,2733.93,2746.35,0.104,9
+training_results_v6.0,Nebius,nebius_b300_n8,gpt_oss_20b,8,8,64,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-8 IB XDR 800Gb/s + 400Gb/s Ethernet NIC,800.0,1347.83,1424.91,0.077,10
+training_results_v6.0,Nebius,nebius_b300_n8,llama31_8b,8,8,64,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-8 IB XDR 800Gb/s + 400Gb/s Ethernet NIC,800.0,795.88,887.73,0.208,10
+training_results_v6.0,Nebius,nebius_gb300_n18,flux1,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,2097.57,2298.95,0.134,10
+training_results_v6.0,Nebius,nebius_gb300_n18,gpt_oss_20b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,1006.66,1069.23,0.118,10
+training_results_v6.0,Nebius,nebius_gb300_n18,llama31_8b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,668.37,738.3,0.096,10
+training_results_v6.0,Nebius,nebius_gb300_n8,flux1,8,4,32,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,3480.37,3937.24,0.146,10
+training_results_v6.0,Nebius,nebius_b300_n4,flux1,4,8,32,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-8 IB XDR 800Gb/s + 400Gb/s Ethernet NIC,800.0,4318.4,4589.73,0.146,10
+training_results_v6.0,Nebius,nebius_gb300_n2,gpt_oss_20b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,4183.25,4443.09,0.118,10
+training_results_v6.0,Nebius,nebius_gb300_n2,llama31_8b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,,,3824.49,3828.33,0.072,10
+training_results_v6.0,Nebius,nebius_b300_n1,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-8 IB XDR 800Gb/s + 400Gb/s Ethernet NIC,800.0,4932.69,4940.88,0.059,10
+training_results_v6.0,Nebius,nebius_b300_n1,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,8x ConnectX-8 IB XDR 800Gb/s + 400Gb/s Ethernet NIC,800.0,4318.26,4321.17,0.001,10
+training_results_v6.0,GigaComputing,DLB2-CB3_hugectr,dlrm_dcnv2,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,37.37,39.8,0.171,10
+training_results_v6.0,GigaComputing,DLB2-CB3_pytorch,flux1,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,2136.86,2142.58,0.075,10
+training_results_v6.0,GigaComputing,DLB2-CB3_pytorch,llama2_70b_lora,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,65.47,74.0,0.234,10
+training_results_v6.0,GigaComputing,DLB2-CB3_pytorch,gpt_oss_20b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,1005.22,1060.77,0.111,10
+training_results_v6.0,GigaComputing,DLB2-CB3_pytorch,llama31_8b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,701.72,701.86,0.05,10
+training_results_v6.0,GigaComputing,G894-SD3-AAX7_hugectr,dlrm_dcnv2,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,117.22,125.6,0.264,10
+training_results_v6.0,GigaComputing,G893-ZX1-AAX4_pytorch,llama2_70b_lora,1,8,8,AMD Instinct MI355X 288GB HBM3e,,,Giga Ethernet,,484.15,485.01,0.327,10
+training_results_v6.0,GigaComputing,G893-ZX1-AAX4_pytorch,llama31_8b,1,8,8,AMD Instinct MI355X 288GB HBM3e,,,Giga Ethernet,,5282.34,5645.05,0.068,10
+training_results_v6.0,GigaComputing,G894-SD3-AAX7_pytorch,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,392.06,392.84,0.184,10
+training_results_v6.0,GigaComputing,G894-SD3-AAX7_pytorch,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,4722.85,5025.1,0.118,10
+training_results_v6.0,GigaComputing,G894-SD3-AAX7_pytorch,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,,,4128.92,4445.48,0.142,10
+training_results_v6.0,MiTAC,8xMI350X_2xEPYC_9575F_SUTA,llama2_70b_lora,1,8,8,AMD Instinct MI350X 288GB HBM3e,XGMI,,10G Ethernet,,610.48,617.69,0.175,10
+training_results_v6.0,MiTAC,MI325X_1node,llama31_8b,1,8,8,AMD Instinct MI325X 256GB HBM3e,XGMI,,Single-node (no inter-node fabric used),,12555.82,14105.94,0.204,9
+training_results_v6.0,MiTAC,MI350X_akash_1node_primus,llama2_70b_lora,1,8,8,AMD Instinct MI350X 288GB HBM3e,XGMI,,"8 x AMD Pensando DSC 400Gb Ethernet, 1 x BCM57608 NetXtreme-E 400Gb Ethernet",,581.84,582.52,0.166,10
+training_results_v6.0,MiTAC,MI350X_akash_1node_primus,llama31_8b,1,8,8,AMD Instinct MI350X 288GB HBM3e,XGMI,,"8 x AMD Pensando DSC 400Gb Ethernet, 1 x BCM57608 NetXtreme-E 400Gb Ethernet",,6430.72,6590.92,0.092,10
+training_results_v6.0,MiTAC,8xMI355X_2xEPYC_9755,llama2_70b_lora,1,8,8,AMD Instinct MI355X 288GB HBM3e,XGMI,,,,499.5,506.45,0.028,10
+training_results_v6.0,MiTAC,8xMI355X_2xEPYC_9755,llama31_8b,1,8,8,AMD Instinct MI355X 288GB HBM3e,XGMI,,,,5298.91,5656.62,0.065,10
+training_results_v6.0,MiTAC,8xMI350X_2xEPYC_9575F_SUTB,llama31_8b,1,8,8,AMD Instinct MI350X 288GB HBM3e,XGMI,,10G Ethernet,,6421.46,6437.17,0.07,10
+training_results_v6.0,NVIDIA,theia_ngpu512_ngc26.04_nemo,deepseekv3_671b,128,4,512,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,1030.88,1051.02,0.02,3
+training_results_v6.0,NVIDIA,theia_ngpu512_ngc26.04_nemo,llama2_70b_lora,128,4,512,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,21.81,24.48,0.385,10
+training_results_v6.0,NVIDIA,theia_ngpu512_ngc26.04_nemo,gpt_oss_20b,128,4,512,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,416.8,433.52,0.107,10
+training_results_v6.0,NVIDIA,theia_ngpu512_ngc26.04_nemo,llama31_8b,128,4,512,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,271.33,271.74,0.059,10
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu2048_ngc26.04_nemo,deepseekv3_671b,512,4,2048,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,460.31,470.67,0.06,3
+training_results_v6.0,NVIDIA,hsg_ngpu5120_ngc25.09_nemo,llama31_405b,1280,4,5120,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,598.26,599.67,0.07,3
+training_results_v6.0,NVIDIA,theia-cmh_ngpu512_ngc26.04_nemo,llama31_405b,128,4,512,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 Ethernet NDR 2x400 Gb/s,200.0,3493.71,3500.15,0.065,3
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu512_ngc26.04_nemo,deepseekv3_671b,128,4,512,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,1557.94,1656.74,0.1,3
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu1024_ngc26.04_nemo,llama31_8b,256,4,1024,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,244.43,262.46,0.169,10
+training_results_v6.0,NVIDIA,hsg_ngpu2560_ngc25.09_nemo,llama31_405b,640,4,2560,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,1119.32,1127.63,0.008,3
+training_results_v6.0,NVIDIA,theia-cmh_ngpu72_ngc26.03_nemo,flux1,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 Ethernet NDR 2x400 Gb/s,200.0,2110.56,2271.2,0.447,10
+training_results_v6.0,NVIDIA,theia_ngpu512_ngc25.09_nemo,flux1,128,4,512,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,963.16,1032.35,0.194,10
+training_results_v6.0,NVIDIA,theia-cmh_ngpu2048_ngc26.04_nemo,llama31_405b,512,4,2048,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 Ethernet NDR 2x400 Gb/s,200.0,1059.59,1110.34,0.065,3
+training_results_v6.0,NVIDIA,theia-cmh_ngpu32_ngc26.03_nemo,flux1,8,4,32,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 Ethernet NDR 2x400 Gb/s,200.0,3480.26,3958.71,0.151,10
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu72_ngc26.04_nemo,gpt_oss_20b,18,4,72,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,1111.66,1179.16,0.063,10
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu4096_ngc26.04_nemo,deepseekv3_671b,1024,4,4096,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,285.05,290.02,0.021,3
+training_results_v6.0,NVIDIA,theia_ngpu8_ngc26.04_nemo,llama2_70b_lora,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,329.79,331.63,0.184,10
+training_results_v6.0,NVIDIA,theia_ngpu8_ngc26.04_nemo,gpt_oss_20b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,4134.9,4394.66,0.121,10
+training_results_v6.0,NVIDIA,theia_ngpu8_ngc26.04_nemo,llama31_8b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,3780.36,4052.36,0.075,10
+training_results_v6.0,NVIDIA,theia_ngpu64_ngc26.03_hugectr,dlrm_dcnv2,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,37.13,39.39,0.214,10
+training_results_v6.0,NVIDIA,theia_ngpu8_ngc26.03_hugectr,dlrm_dcnv2,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,123.8,124.34,0.202,10
+training_results_v6.0,NVIDIA,theia_ngpu72_ngc26.04_nemo,llama2_70b_lora,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,59.05,67.95,0.401,10
+training_results_v6.0,NVIDIA,theia_ngpu72_ngc26.04_nemo,gpt_oss_20b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,1002.94,1077.92,0.118,10
+training_results_v6.0,NVIDIA,theia_ngpu72_ngc26.04_nemo,llama31_8b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,665.47,701.12,0.15,10
+training_results_v6.0,NVIDIA,theia_ngpu256_ngc26.04_nemo,deepseekv3_671b,64,4,256,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,1964.88,2005.81,0.04,3
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu8192_ngc26.04_nemo,deepseekv3_671b,2048,4,8192,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,191.63,192.92,0.012,3
+training_results_v6.0,NVIDIA,tyche-hsg_ngpu8_ngc26.04_nemo,gpt_oss_20b,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,5536.1,5620.59,0.083,10
+training_results_v6.0,AMD,8xMI325X_EPYC_9575F_pytorch,flux1,8,8,64,AMD Instinct MI325X 256GB HBM3e,XGMI,,"26 x Broadcom Inc. and subsidiaries, 2 x Ethernet Controller X710 for 10GBASE-T",,4869.02,5775.23,0.223,10
+training_results_v6.0,AMD,MI350X_EPYC_9575F_primus,llama2_70b_lora,1,8,8,AMD Instinct MI350X 288GB HBM3e,XGMI,,"2 x BCM57508 NetXtreme-E 10Gb/25Gb/40Gb/50Gb/100Gb/200Gb Ethernet, 2 x Ethernet Controller X710 for 10GBASE-T, 2 x Ethernet Controller X550",,586.51,589.99,0.17,10
+training_results_v6.0,AMD,MI350X_EPYC_9575F_primus,llama31_8b,1,8,8,AMD Instinct MI350X 288GB HBM3e,XGMI,,"2 x BCM57508 NetXtreme-E 10Gb/25Gb/40Gb/50Gb/100Gb/200Gb Ethernet, 2 x Ethernet Controller X710 for 10GBASE-T, 2 x Ethernet Controller X550",,6413.61,6430.97,0.07,10
+training_results_v6.0,AMD,MI355X_EPYC_9575F_primus,llama2_70b_lora,1,8,8,AMD Instinct MI355X 288GB HBM3e,XGMI,,"2 x Ethernet Controller X710 for 10GBASE-T, 2 x Ethernet Controller 10G X550T",,474.77,475.08,0.167,10
+training_results_v6.0,AMD,MI355X_EPYC_9575F_primus,llama31_8b,1,8,8,AMD Instinct MI355X 288GB HBM3e,XGMI,,"2 x Ethernet Controller X710 for 10GBASE-T, 2 x Ethernet Controller 10G X550T",,5153.33,5167.98,0.071,10
+training_results_v6.0,TTA,RTX6000Pro_8x96GB,llama31_8b,1,8,8,NVIDIA RTX PRO 6000 Blackwell Server Edition,PCIe Gen5 x16,,Intel I350 1GbE,,20713.82,22342.35,0.144,10
+training_results_v6.0,HPE,HPE-Compute-XD685-B200-SXM5-192GB_n1_25.09,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"8x 5th Gen NVLink, 1800GB/s",1800.0,"Infiniband, Ethernet",,555.11,556.81,0.144,10
+training_results_v6.0,HPE,HPE-Compute-XD685-B200-SXM5-192GB_n1_25.09,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"8x 5th Gen NVLink, 1800GB/s",1800.0,"Infiniband, Ethernet",,4858.03,5206.02,0.133,10
+training_results_v6.0,HPE,HPE-GB200-ngpu32_ngc25.09,llama2_70b_lora,8,4,32,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,165.27,165.35,0.001,10
+training_results_v6.0,HPE,HPE-GB200-ngpu32_ngc25.09,llama31_8b,8,4,32,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,2327.22,2338.17,0.162,10
+training_results_v6.0,HPE,HPE-GB300-ngpu32_ngc26.04,llama2_70b_lora,8,4,32,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,124.41,143.32,0.262,10
+training_results_v6.0,HPE,HPE-GB300-ngpu32_ngc26.04,gpt_oss_20b,8,4,32,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,1637.72,1639.3,0.002,10
+training_results_v6.0,HPE,HPE-GB300-ngpu32_ngc26.04,llama31_8b,8,4,32,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,1194.95,1327.2,0.1,10
+training_results_v6.0,HPE,HPE-GB200-ngpu16_ngc25.09,llama2_70b_lora,4,4,16,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,268.41,309.91,0.268,10
+training_results_v6.0,HPE,HPE-GB200-ngpu16_ngc25.09,llama31_8b,4,4,16,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,2655.3,2974.68,0.124,10
+training_results_v6.0,HPE,HPE-GB300-ngpu8_ngc26.04,llama2_70b_lora,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,352.93,353.85,0.169,10
+training_results_v6.0,HPE,HPE-GB300-ngpu8_ngc26.04,gpt_oss_20b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,4366.21,4372.61,0.06,10
+training_results_v6.0,HPE,HPE-GB300-ngpu8_ngc26.04,llama31_8b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,3774.03,3777.67,0.073,10
+training_results_v6.0,HPE,HPE-Compute-XD690-B300-SXM6-288GB_n1_ngc26.04,dlrm_dcnv2,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,142.91,144.68,0.118,10
+training_results_v6.0,HPE,HPE-Compute-XD690-B300-SXM6-288GB_n1_ngc26.04,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,435.85,435.94,0.225,10
+training_results_v6.0,HPE,HPE-Compute-XD690-B300-SXM6-288GB_n1_ngc26.04,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,4789.39,5094.06,0.118,10
+training_results_v6.0,HPE,HPE-Compute-XD690-B300-SXM6-288GB_n1_ngc26.04,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,4103.08,4463.6,0.152,10
+training_results_v6.0,HPE,HPE-Compute-XD685-MI355X-288GBx8,llama2_70b_lora,1,8,8,AMD Instinct MI355X 288GB HBM3e,XGMI,,"2 x Ethernet Controller X710 for 10GBASE-T, 2 x Ethernet Controller 10G X550T",,481.76,490.38,0.18,10
+training_results_v6.0,HPE,HPE-Compute-XD685-MI355X-288GBx8,llama31_8b,1,8,8,AMD Instinct MI355X 288GB HBM3e,XGMI,,"2 x Ethernet Controller X710 for 10GBASE-T, 2 x Ethernet Controller 10G X550T",,5305.88,5663.27,0.07,10
+training_results_v6.0,HPE,HPE-Compute-XD685-B200-SXM5-192GB_n2_25.09,llama2_70b_lora,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),"8x 5th Gen NVLink, 1800GB/s",1800.0,"Infiniband, Ethernet",,347.75,384.86,0.29,10
+training_results_v6.0,HPE,HPE-Compute-XD685-B200-SXM5-192GB_n2_25.09,llama31_8b,2,8,16,NVIDIA Blackwell GPU (B200-SXM-180GB),"8x 5th Gen NVLink, 1800GB/s",1800.0,"Infiniband, Ethernet",,3120.84,3135.87,0.059,10
+training_results_v6.0,HPE,HPE-GB200-ngpu8_ngc25.09,llama2_70b_lora,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,549.07,556.89,0.132,10
+training_results_v6.0,HPE,HPE-GB200-ngpu8_ngc25.09,llama31_8b,2,4,8,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,4552.22,4908.12,0.104,10
+training_results_v6.0,HPE,HPE-GB300-ngpu72_ngc26.04_reduced_warmup,llama31_405b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,9504.96,9512.22,0.001,3
+training_results_v6.0,HPE,HPE-GB200-ngpu4_ngc25.09,llama2_70b_lora,1,4,4,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-7 IB NDR 400 Gb/s,200.0,1115.21,1119.71,0.012,10
+training_results_v6.0,HPE,HPE-GB300-ngpu72_ngc26.04,llama31_405b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,28511.24,28511.73,0.001,3
+training_results_v6.0,HPE,HPE-GB300-ngpu72_ngc26.04,llama2_70b_lora,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,65.79,66.35,0.141,10
+training_results_v6.0,HPE,HPE-GB300-ngpu72_ngc26.04,gpt_oss_20b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,1002.31,1058.48,0.11,10
+training_results_v6.0,HPE,HPE-GB300-ngpu72_ngc26.04,llama31_8b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,665.73,700.73,0.149,10
+training_results_v6.0,HPE,HPE-GB300-ngpu16_ngc26.04,llama2_70b_lora,4,4,16,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,254.61,284.02,0.205,10
+training_results_v6.0,HPE,HPE-GB300-ngpu16_ngc26.04,gpt_oss_20b,4,4,16,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,2395.71,2582.1,0.074,10
+training_results_v6.0,HPE,HPE-GB300-ngpu16_ngc26.04,llama31_8b,4,4,16,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,1986.23,1987.0,0.067,10
+training_results_v6.0,HPE,HPE-GB300-ngpu72_ngc26.04_reduced_gbs,llama31_405b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,3016.89,3018.17,0.001,3
+training_results_v6.0,ASUSTeK,XA_NB3I_E12,dlrm_dcnv2,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s",,,,138.02,138.44,0.137,10
+training_results_v6.0,ASUSTeK,XA_NB3I_E12,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s",,,,381.44,381.78,0.185,10
+training_results_v6.0,ASUSTeK,XA_NB3I_E12,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s",,,,4718.86,5010.81,0.117,10
+training_results_v6.0,ASUSTeK,XA_NB3I_E12,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4 TB/s",,,,4407.91,4409.36,0.072,10
+training_results_v6.0,tinycorp,tinybox_8xMI350X,llama31_8b,1,8,8,AMD Instinct MI350X 288GB HBM3e,,,,,10776.65,11468.83,0.069,10
+training_results_v6.0,Cisco,Zeus_16xH100_SXM_80GB,llama2_70b_lora,16,8,128,NVIDIA H100-SXM5-80GB,"NVLink 4.0, 18 links per GPU (900 GB/s bidirectional)",900.0,"8x ConnectX-8 400Gb/s RDMA over Ethernet, 1x BlueField-3 ConnectX-7",400.0,148.81,182.88,0.375,10
+training_results_v6.0,Cisco,Zeus_16xH100_SXM_80GB,gpt_oss_20b,16,8,128,NVIDIA H100-SXM5-80GB,"NVLink 4.0, 18 links per GPU (900 GB/s bidirectional)",900.0,"8x ConnectX-8 400Gb/s RDMA over Ethernet, 1x BlueField-3 ConnectX-7",400.0,2041.94,2118.21,0.08,10
+training_results_v6.0,Cisco,Zeus_16xH100_SXM_80GB,llama31_8b,16,8,128,NVIDIA H100-SXM5-80GB,"NVLink 4.0, 18 links per GPU (900 GB/s bidirectional)",900.0,"8x ConnectX-8 400Gb/s RDMA over Ethernet, 1x BlueField-3 ConnectX-7",400.0,1241.24,1310.08,0.106,10
+training_results_v6.0,Cisco,Zeus_2xMI350X,llama2_70b_lora,2,8,16,AMD Instinct MI350X 288GB HBM3e,AMD Infinity Fabric (XGMI),,"8x AMD Pensando Pollara 400 AI NIC (400Gb/s RDMA over Ethernet), 2x ConnectX-7",400.0,429.47,493.81,0.263,10
+training_results_v6.0,Cisco,Zeus_2xMI350X,llama31_8b,2,8,16,AMD Instinct MI350X 288GB HBM3e,AMD Infinity Fabric (XGMI),,"8x AMD Pensando Pollara 400 AI NIC (400Gb/s RDMA over Ethernet), 2x ConnectX-7",400.0,3280.93,3518.06,0.135,10
+training_results_v6.0,Cisco,Zeus_8xH100_SXM_80GB,dlrm_dcnv2,8,8,64,NVIDIA H100-SXM5-80GB,"NVLink 4.0, 18 links per GPU (900 GB/s bidirectional)",900.0,"8x ConnectX-8 400Gb/s RDMA over Ethernet, 1x BlueField-3 ConnectX-7",400.0,81.16,86.01,0.164,10
+training_results_v6.0,Cisco,Zeus_8xH100_SXM_80GB,llama2_70b_lora,8,8,64,NVIDIA H100-SXM5-80GB,"NVLink 4.0, 18 links per GPU (900 GB/s bidirectional)",900.0,"8x ConnectX-8 400Gb/s RDMA over Ethernet, 1x BlueField-3 ConnectX-7",400.0,256.3,257.0,0.134,10
+training_results_v6.0,Cisco,Zeus_8xH100_SXM_80GB,gpt_oss_20b,8,8,64,NVIDIA H100-SXM5-80GB,"NVLink 4.0, 18 links per GPU (900 GB/s bidirectional)",900.0,"8x ConnectX-8 400Gb/s RDMA over Ethernet, 1x BlueField-3 ConnectX-7",400.0,3272.84,3320.37,0.119,10
+training_results_v6.0,Cisco,Zeus_8xH100_SXM_80GB,llama31_8b,8,8,64,NVIDIA H100-SXM5-80GB,"NVLink 4.0, 18 links per GPU (900 GB/s bidirectional)",900.0,"8x ConnectX-8 400Gb/s RDMA over Ethernet, 1x BlueField-3 ConnectX-7",400.0,1949.84,1952.56,0.144,10
+training_results_v6.0,Cisco,2xC885A_M8-8xH200-SXM-141GB,llama31_8b,2,8,16,NVIDIA H200-SXM5-141GB,NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA B3140 BlueField-3 DPU 1x400Gb/s, Management: 2x10Gb/s Ethernet NIC",50.0,6595.41,7215.22,0.173,10
+training_results_v6.0,Cisco,2xC880A_M8-8xB300-SXM-288GB,llama2_70b_lora,2,8,16,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA BlueField-3 B3240 DPU 2x400Gb/s, Management: 2x10Gb/s Ethernet NIC",50.0,229.29,229.57,0.193,10
+training_results_v6.0,Cisco,2xC880A_M8-8xB300-SXM-288GB,llama31_8b,2,8,16,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA BlueField-3 B3240 DPU 2x400Gb/s, Management: 2x10Gb/s Ethernet NIC",50.0,2702.33,2704.08,0.072,10
+training_results_v6.0,Cisco,1xC880A_M8-8xB300-SXM-288GB,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA BlueField-3 B3240 DPU 2x400Gb/s, Management: 2x10Gb/s Ethernet NIC",50.0,382.6,383.14,0.186,10
+training_results_v6.0,Cisco,1xC880A_M8-8xB300-SXM-288GB,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA BlueField-3 B3240 DPU 2x400Gb/s, Management: 2x10Gb/s Ethernet NIC",50.0,4713.65,5010.93,0.118,10
+training_results_v6.0,Cisco,1xC880A_M8-8xB300-SXM-288GB,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLINK Gen4 900 GB/s + NVSWITCH Gen3,900.0,"Compute: 8x NVIDIA BlueField-3 B3240 DPU 2x400Gb/s, Management: 2x10Gb/s Ethernet NIC",50.0,4405.96,4406.68,0.072,10
+training_results_v6.0,SCITIX,scitix.b200x8.n8,llama31_8b,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand; Data bandwidth for GPU-PCIe: 504 GB/s; PCIe-NIC: 400 GB/s,504.0,1055.82,1131.5,0.068,10
+training_results_v6.0,Inventec,P9000IG7_ngc26.04_nemo,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"8x ConnectX-8 (E/W), 1x BF3220 (N/S)",,390.58,392.21,0.182,10
+training_results_v6.0,Inventec,P9000IG7_ngc26.04_nemo,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"8x ConnectX-8 (E/W), 1x BF3220 (N/S)",,4726.85,5025.98,0.117,10
+training_results_v6.0,Inventec,P9000IG7_ngc26.04_nemo,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,"8x ConnectX-8 (E/W), 1x BF3220 (N/S)",,4633.01,4640.0,0.002,10
+training_results_v6.0,Supermicro,ARS-121GL-NB3,flux1,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),5th-gen NVLink and NVLink SWitches,,"Ethernet, Infiniband",,2173.42,2284.07,0.097,10
+training_results_v6.0,Supermicro,ARS-121GL-NB3,llama2_70b_lora,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),5th-gen NVLink and NVLink SWitches,,"Ethernet, Infiniband",,64.99,73.46,0.117,10
+training_results_v6.0,Supermicro,ARS-121GL-NB3,gpt_oss_20b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),5th-gen NVLink and NVLink SWitches,,"Ethernet, Infiniband",,1057.87,1073.42,0.065,10
+training_results_v6.0,Supermicro,ARS-121GL-NB3,llama31_8b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),5th-gen NVLink and NVLink SWitches,,"Ethernet, Infiniband",,663.64,732.97,0.095,10
+training_results_v6.0,Supermicro,SYS-422GS-NB3RT-LCC-8xB300_SXM,dlrm_dcnv2,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,129.13,129.56,0.067,10
+training_results_v6.0,Supermicro,SYS-422GS-NB3RT-LCC-8xB300_SXM,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,386.19,386.42,0.191,10
+training_results_v6.0,Supermicro,SYS-422GS-NB3RT-LCC-8xB300_SXM,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,4684.73,4975.72,0.118,10
+training_results_v6.0,Supermicro,SYS-422GS-NB3RT-LCC-8xB300_SXM,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,4209.33,4515.58,0.135,10
+training_results_v6.0,Supermicro,AS-4126GS-NBR-LCC,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,455.11,455.58,0.17,10
+training_results_v6.0,Supermicro,AS-4126GS-NBR-LCC,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,Ethernet,,4759.52,5105.41,0.069,10
+training_results_v6.0,Supermicro,AS-4126GS-NMR-LCC_8xMI355X_OAM,llama2_70b_lora,1,8,8,AMD Instinct MI355X 288GB HBM3e,XGMI,,"8x AMD Pensando Pollara 400 AI NIC 400GbE, 2x AOC-S400G-B1C 400GbE, 1x Intel X710 10GbE",,483.26,484.51,0.166,10
+training_results_v6.0,Supermicro,AS-4126GS-NMR-LCC_8xMI355X_OAM,llama31_8b,1,8,8,AMD Instinct MI355X 288GB HBM3e,XGMI,,"8x AMD Pensando Pollara 400 AI NIC 400GbE, 2x AOC-S400G-B1C 400GbE, 1x Intel X710 10GbE",,5335.44,5361.62,0.069,10
+training_results_v6.0,Supermicro,AS-4126GS-NB3RT-LCC-8xB300_SXM,dlrm_dcnv2,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,120.13,129.14,0.268,10
+training_results_v6.0,Supermicro,AS-4126GS-NB3RT-LCC-8xB300_SXM,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,384.0,384.08,0.184,10
+training_results_v6.0,Supermicro,AS-4126GS-NB3RT-LCC-8xB300_SXM,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,4689.76,4987.21,0.118,10
+training_results_v6.0,Supermicro,AS-4126GS-NB3RT-LCC-8xB300_SXM,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,4221.2,4524.23,0.133,10
+training_results_v6.0,Supermicro,AS-8126GS-NB3RT,llama2_70b_lora,2,8,16,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLink Gen5 1800 GB/s + NVSwitch Gen5,1800.0,InfiniBand XDR + Ethernet,,346.68,383.76,0.289,10
+training_results_v6.0,Supermicro,AS-8126GS-NB3RT,llama31_8b,2,8,16,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),NVLink Gen5 1800 GB/s + NVSwitch Gen5,1800.0,InfiniBand XDR + Ethernet,,3301.56,3302.96,0.002,10
+training_results_v6.0,Supermicro,SYS-222GS-NB3OT-ALC-8xB300_SXM,dlrm_dcnv2,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,120.83,129.83,0.203,10
+training_results_v6.0,Supermicro,SYS-222GS-NB3OT-ALC-8xB300_SXM,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,388.11,388.54,0.185,10
+training_results_v6.0,Supermicro,SYS-222GS-NB3OT-ALC-8xB300_SXM,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,4709.4,5002.54,0.118,10
+training_results_v6.0,Supermicro,SYS-222GS-NB3OT-ALC-8xB300_SXM,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,4236.12,4539.88,0.135,10
+training_results_v6.0,Supermicro,SYS-A22GA-NBRT-8xB200_SXM,dlrm_dcnv2,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,127.31,136.84,0.14,10
+training_results_v6.0,Supermicro,SYS-A22GA-NBRT-8xB200_SXM,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,459.85,460.31,0.169,10
+training_results_v6.0,Supermicro,SYS-A22GA-NBRT-8xB200_SXM,gpt_oss_20b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,5418.72,6145.08,0.12,10
+training_results_v6.0,Supermicro,SYS-A22GA-NBRT-8xB200_SXM,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4TB/s",,"Ethernet, Infiniband",,4744.71,5078.63,0.067,10
+training_results_v6.0,Netweb_Technologies_India_LTD,tyrone_ngpu8,llama2_70b_lora,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,454.47,456.01,0.008,10
+training_results_v6.0,Netweb_Technologies_India_LTD,tyrone_ngpu8,gpt_oss_20b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),NVLINK Gen5,,,,5734.8,5739.18,0.066,10
+training_results_v6.0,Krai,Cray-XD670-H200-SXM5-141GB_n4_v5.0,llama2_70b_lora,4,8,32,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,387.77,392.58,0.27,10
+training_results_v6.0,Krai,Isambard-AI-Phase2-GH200-96GB_n8_v6.0,llama2_70b_lora,8,4,32,NVIDIA Hopper GPU (GH200),NVIDIA NVLink-C2C,,N/A,,510.42,578.22,0.124,10
+training_results_v6.0,Krai,Isambard-AI-Phase2-GH200-96GB_n16_v6.0,llama2_70b_lora,16,4,64,NVIDIA Hopper GPU (GH200),NVIDIA NVLink-C2C,,N/A,,297.58,369.59,0.487,10
+training_results_v6.0,Krai,Isambard-AI-Phase2-GH200-96GB_n1_v6.0,llama2_70b_lora,1,4,4,NVIDIA Hopper GPU (GH200),NVIDIA NVLink-C2C,,N/A,,3881.95,3883.95,0.001,10
+training_results_v6.0,Krai,Cray-XD670-H200-SXM5-141GB_n8_v5.0,llama2_70b_lora,8,8,64,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,251.2,251.41,0.425,10
+training_results_v6.0,Krai,PowerEdge-XE9680-MI300X-192GB_n1_v5.0,llama2_70b_lora,1,8,8,AMD Instinct MI300X 192GB HBM3,XGMI,,Infiniband:Data bandwidth for GPU-PCIe: 504GB/s; PCIe-NIC: 500GB/s,504.0,1472.35,1694.48,0.262,10
+training_results_v6.0,Krai,Isambard-AI-Phase2-GH200-96GB_n2_v6.0,llama2_70b_lora,2,4,8,NVIDIA Hopper GPU (GH200),NVIDIA NVLink-C2C,,N/A,,1685.84,1947.07,0.135,10
+training_results_v6.0,Krai,Isambard-AI-Phase2-GH200-96GB_n4_v6.0,llama2_70b_lora,4,4,16,NVIDIA Hopper GPU (GH200),NVIDIA NVLink-C2C,,N/A,,995.19,997.09,0.135,10
+training_results_v6.0,Krai,Cray-XD670-H200-SXM5-141GB_n2_v5.0,llama2_70b_lora,2,8,16,NVIDIA H200-SXM5-141GB,"8x 4th Gen NVLink, 900GB/s",900.0,"Infiniband, Ethernet",,626.38,720.83,0.269,10
+training_results_v6.0,Krai,PowerEdge-XE9680-MI300X-192GB_n1_v5.1,llama2_70b_lora,1,8,8,AMD Instinct MI300X 192GB HBM3,XGMI,,Infiniband:Data bandwidth for GPU-PCIe: 504GB/s; PCIe-NIC: 500GB/s,504.0,1637.44,1639.29,0.133,10
+training_results_v6.0,Lambda,b200_n1_ngc25.09_nemo,gpt_oss_20b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,Infiniband; Data bandwidth for GPU-PCIe: 504GB/s; PCIe-NIC: 500GB/s,504.0,5390.65,5744.79,0.124,10
+training_results_v6.0,Lambda,b200_n1_ngc25.09_nemo,llama31_8b,1,8,8,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,Infiniband; Data bandwidth for GPU-PCIe: 504GB/s; PCIe-NIC: 500GB/s,504.0,5024.41,5027.06,0.072,10
+training_results_v6.0,Lambda,gb300_n18_ngc25.09_nemo,gpt_oss_20b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,1015.11,1073.39,0.12,10
+training_results_v6.0,Lambda,gb300_n18_ngc25.09_nemo,llama31_8b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,668.57,703.96,0.1,10
+training_results_v6.0,CoreWeave,CoreWeave_B200_8x8,gpt_oss_20b,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand NDR 400 Gb/s,50.0,1600.47,1618.68,0.02,10
+training_results_v6.0,CoreWeave,CoreWeave_B200_8x8,llama31_8b,8,8,64,NVIDIA Blackwell GPU (B200-SXM-180GB),"18x 5th Gen NVLink, 14.4 TB/s aggregated bandwidth",,InfiniBand NDR 400 Gb/s,50.0,971.87,979.82,0.104,10
+training_results_v6.0,CoreWeave,CoreWeave_GB300_2048x4,deepseekv3_671b,2048,4,8192,NVIDIA Blackwell Ultra GPU (GB300),5th-gen NVLink and NVLink Switches,,"16x 200 Gb/s NVIDIA ConnectX-8 SuperNIC (C8280Z) RoCE ports per node (4 cards x 4x200 Gb/s breakout), connected to NVIDIA Spectrum-X RoCE switches in a 4-plane, multi-rail, non-blocking fat-tree fabric",400.0,113.46,116.7,0.038,3
+training_results_v6.0,CoreWeave,CoreWeave_GB300_512x4,deepseekv3_671b,512,4,2048,NVIDIA Blackwell Ultra GPU (GB300),5th-gen NVLink and NVLink Switches,,"16x 200 Gb/s NVIDIA ConnectX-8 SuperNIC (C8280Z) RoCE ports per node (4 cards x 4x200 Gb/s breakout), connected to NVIDIA Spectrum-X RoCE switches in a 4-plane, multi-rail, non-blocking fat-tree fabric",400.0,327.86,332.12,0.13,3
+training_results_v6.0,CoreWeave,CoreWeave_GB300_1024x4_nccl2297,llama31_405b,1024,4,4096,NVIDIA Blackwell Ultra GPU (GB300),5th-gen NVLink and NVLink Switches,,"16x 200 Gb/s NVIDIA ConnectX-8 SuperNIC (C8280Z) RoCE ports per node (4 cards x 4x200 Gb/s breakout), connected to NVIDIA Spectrum-X RoCE switches in a 4-plane, multi-rail, non-blocking fat-tree fabric",400.0,586.04,586.25,0.002,3
+training_results_v6.0,CoreWeave,CoreWeave_GB300_1024x4,deepseekv3_671b,1024,4,4096,NVIDIA Blackwell Ultra GPU (GB300),5th-gen NVLink and NVLink Switches,,"16x 200 Gb/s NVIDIA ConnectX-8 SuperNIC (C8280Z) RoCE ports per node (4 cards x 4x200 Gb/s breakout), connected to NVIDIA Spectrum-X RoCE switches in a 4-plane, multi-rail, non-blocking fat-tree fabric",400.0,176.81,178.57,0.026,3
+training_results_v6.0,Fujitsu,PRIMERGY_CDI_H200_NVL_144GBx8,llama2_70b_lora,1,8,8,NVIDIA H200-NVL-141GB,4-way NVLink interconnect,,Intel Corporation I210 Gigabit Network Connection,,1524.06,1757.83,0.265,10
+training_results_v6.0,Azure,2048xAzure_GB200,llama31_405b,2048,4,8192,NVIDIA Blackwell GPU (GB200),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 800 Gb/s Ethernet MRC,400.0,398.5,424.12,0.081,3
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu64,flux1,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,2181.83,2649.32,0.313,10
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu64,dlrm_dcnv2,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,37.44,41.79,0.108,10
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu64,llama2_70b_lora,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,72.86,73.3,0.135,10
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu64,gpt_oss_20b,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,1142.83,1214.07,0.102,10
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu64,llama31_8b,16,4,64,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,733.46,733.89,0.096,10
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu8,dlrm_dcnv2,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,116.03,124.52,0.268,10
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu8,llama2_70b_lora,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,328.41,328.97,0.182,10
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu8,gpt_oss_20b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,4404.18,4409.11,0.059,10
+training_results_v6.0,Quanta_Cloud_Technology,D75U-1U_ngpu8,llama31_8b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB XDR 800 Gb/s,400.0,3781.03,3782.25,0.072,10
+training_results_v6.0,Quanta_Cloud_Technology,D75H-10U,dlrm_dcnv2,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,8x ConnectX-8 IB XDR 800 Gb/s,800.0,151.53,162.42,0.134,10
+training_results_v6.0,Quanta_Cloud_Technology,D75H-10U,llama2_70b_lora,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,8x ConnectX-8 IB XDR 800 Gb/s,800.0,387.41,457.92,0.463,10
+training_results_v6.0,Quanta_Cloud_Technology,D75H-10U,gpt_oss_20b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,8x ConnectX-8 IB XDR 800 Gb/s,800.0,4712.04,5011.22,0.118,10
+training_results_v6.0,Quanta_Cloud_Technology,D75H-10U,llama31_8b,1,8,8,NVIDIA Blackwell Ultra GPU (B300-SXM-270GB),,,8x ConnectX-8 IB XDR 800 Gb/s,800.0,4424.56,4438.5,0.074,10
+training_results_v6.0,Google,gb200_nvl72_n64_ngc26.04_nemo,deepseekv3_671b,64,4,256,NVIDIA Blackwell GPU (GB200),NVLink 5 (1.8 TB/s per GPU) intra-rack; RoCEv2 over 4× ConnectX-7 (1.6 Tb/s aggregate per node) inter-rack,,4× NVIDIA ConnectX-7 RoCE 400 Gb/s,50.0,2966.05,2966.27,0.044,3
+training_results_v6.0,Oracle,32GPU.GB300.4.NVL72,flux1,8,4,32,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB/X800 800 Gb/s,400.0,3816.53,3913.93,0.029,10
+training_results_v6.0,Oracle,8xMI355X_2xEPYC_9575F,llama31_8b,1,8,8,AMD Instinct MI355X 288GB HBM3e,,,OCI RDMA cluster network,,5325.34,5346.77,0.069,10
+training_results_v6.0,Oracle,512xMI300X_Xeon_8480,flux1,64,8,512,AMD Instinct MI300X 192GB HBM3,AMD Infinity Fabric / XGMI,,"8x Mellanox ConnectX-7 RoCE RDMA interfaces (rdma0-rdma7), 1x Mellanox ConnectX-7 Ethernet (eth0), 1x Mellanox ConnectX-6 Dx Ethernet (eth1)",,4246.1,4356.23,0.076,10
+training_results_v6.0,Oracle,72GPU.GB300.4.NVL72,flux1,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB/X800 800 Gb/s,400.0,2026.75,2368.65,0.185,10
+training_results_v6.0,Oracle,72GPU.GB300.4.NVL72,llama31_8b,18,4,72,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB/X800 800 Gb/s,400.0,675.25,744.94,0.097,10
+training_results_v6.0,Oracle,8GPU.GB300.4.NVL72,llama2_70b_lora,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB/X800 800 Gb/s,400.0,323.87,325.35,0.015,10
+training_results_v6.0,Oracle,8GPU.GB300.4.NVL72,gpt_oss_20b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB/X800 800 Gb/s,400.0,4199.24,4430.94,0.114,10
+training_results_v6.0,Oracle,8GPU.GB300.4.NVL72,llama31_8b,2,4,8,NVIDIA Blackwell Ultra GPU (GB300),NVLINK Gen5 1800 GB/s + NVSWITCH Gen5,1800.0,4x ConnectX-8 IB/X800 800 Gb/s,400.0,3770.23,4024.34,0.068,10

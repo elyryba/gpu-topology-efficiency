@@ -1,0 +1,21 @@
+
+===== TOPOLOGY PREMIUM — v1 proxy (gpus_per_node) =====
+Spec: log_time ~ log_total_gpus + log_domain_size + model FE + gen FE
+The domain-size coefficient here IS the topology effect at fixed total scale.
+
+[nonrobust SE]      scale=-0.6905 (se=0.0087)   topology premium=-0.3316 (se=0.0497, p=4.46e-11)
+[clustered by org]  scale=-0.6905 (se=0.0120)   topology premium=-0.3316 (se=0.0900, p=2.31e-04)
+n=969, clusters=41, R2=0.9574
+
+===== TOPOLOGY PREMIUM — v2 corrected (NVLink domain) =====
+Spec: log_time ~ log_total_gpus + log_domain_size + model FE + gen FE
+The domain-size coefficient here IS the topology effect at fixed total scale.
+
+[nonrobust SE]      scale=-0.6845 (se=0.0098)   topology premium=-0.0961 (se=0.0237, p=5.44e-05)
+[clustered by org]  scale=-0.6845 (se=0.0124)   topology premium=-0.0961 (se=0.0432, p=2.59e-02)
+n=969, clusters=41, R2=0.9562
+
+Interpretation: the topology premium is the additional elasticity
+of training time with respect to NVLink-domain size, HOLDING TOTAL
+GPU COUNT FIXED. A premium of -0.10 means doubling domain size at
+constant cluster size cuts time-to-train by ~2^0.10 - 1 = ~7%.

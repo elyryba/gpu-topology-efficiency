@@ -1,0 +1,30 @@
+CONTINUOUS INTER-NODE BANDWIDTH MODEL
+Multi-node rows with parseable host bandwidth: n=232 (232/425 of all multi-node rows)
+models=11  gens=5  orgs=16
+ibw_per_gpu (GB/s): min=3.1  median=50.0  max=100.0
+
+SELECTION CHECK — is 'has parseable bandwidth' a biased filter?
+all multi-node rows (n=406):        log_domain           coef=-0.0560  se=0.0243  p=0.0214
+parseable-bw subsample (n=232):  log_domain           coef=-0.0616  se=0.0259  p=0.0174
+
+S1 — bandwidth as the sole topology feature
+log_ibw              coef=+0.0319  se=0.0332  p=0.336
+R2=0.9745
+
+S2 — horse race: domain size vs inter-node bandwidth, jointly
+log_domain           coef=-0.0610  se=0.0260  p=0.0189
+log_ibw              coef=+0.0313  se=0.0339  p=0.357
+corr(log_domain, log_ibw)=+0.474   R2=0.9749
+
+S3 — does inter-node bandwidth matter more for comm-bound jobs?
+log_ibw              coef=+0.1559  se=0.0523  p=0.00287
+ibw_x_comm           coef=-0.1755  se=0.0453  p=0.000108
+implied bandwidth elasticity for comm-bound workloads: -0.0196
+(Physics predicts ibw coefficients NEGATIVE — more egress bandwidth per GPU, less training time — and the interaction more negative still.)
+
+INTERPRETATION GUIDE
+A log_ibw coefficient of -0.05 means doubling per-GPU inter-node
+bandwidth at fixed scale and domain size cuts time-to-train ~3.4%.
+If S2 shows bandwidth absorbing the domain coefficient, the
+continuous feature subsumes the categorical one — the property a
+generalizable discount function needs.

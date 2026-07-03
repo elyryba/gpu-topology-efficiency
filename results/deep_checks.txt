@@ -1,0 +1,41 @@
+A. IDENTIFICATION AUDIT — within-generation variation in log_domain
+gen            n  sd(log_domain)  sd(log_gpn)
+A100          14           0.708        0.708
+B200         170           0.000        0.000
+B300          65           0.000        0.000
+GB200         90           1.004        0.000
+GB300         97           0.982        0.000
+H100         282           0.258        0.258
+H200         152           0.165        0.165
+L40S          14           0.524        0.524
+MI300X        15           0.000        0.000
+MI325X        14           0.000        0.000
+MI350X        13           0.000        0.000
+MI355X        24           0.000        0.000
+RTX           10           0.627        0.627
+TPU-v5p        9           0.000        0.000
+Within-gen share of log_domain variance: 37.3% (the part NOT absorbed by gen fixed effects)
+GB200/GB300 rows with total_gpus < 72 (sub-rack, where the correction creates variation): 92 of 187
+
+B. CLEAN-ID SUBSAMPLE — pre-Blackwell generations only (NVLink truly = server boundary)
+n=506, gens=['A100', 'H100', 'H200', 'L40S', 'MI300X', 'MI325X', 'RTX', 'TPU-v5p']
+topology premium: coef=-0.3028  se=0.0877  p=0.000554
+
+C. MECHANISM TEST — premium x communication-boundedness
+base premium (comm-light workloads):  coef=-0.0561  se=0.0707  p=0.427
+extra premium for comm-bound LLMs:    coef=-0.0608  se=0.0439  p=0.166
+implied total premium for comm-bound workloads: -0.1169
+(Physics predicts the interaction should be negative — larger domains should help communication-bound jobs more.)
+
+D. TEMPORAL HOLDOUT — fit v3.1–v5.0, test v5.1–v6.0
+early n=231: premium coef=-0.1208  se=0.0634  p=0.0565
+late  n=143: premium coef=-0.3101  se=0.1344  p=0.0211
+out-of-sample R^2 on late rounds (early-fit coefficients): 0.886   median |error| = 17.2% of time-to-train
+
+E. ESTIMATOR SENSITIVITY (heavy-tailed residuals, kurtosis ~15)
+Huber robust regression:  premium coef=-0.0837 se=0.0167
+Median (quantile) regr.:  premium coef=-0.0898 se=0.0150
+
+F. MEASUREMENT SENSITIVITY
+median run time instead of best: coef=-0.0866  se=0.0463  p=0.0618  (n=969)
+excluding PCIe / H200-NVL variants: coef=-0.0826  se=0.0397  p=0.0377  (n=934)

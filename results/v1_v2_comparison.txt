@@ -1,0 +1,9 @@
+V1 (gpus_per_node proxy)  vs  V2 (documented NVLink domain)
+--------------------------------------------------------------
+                                          v1          v2
+domain-size coefficient              -1.0221     -0.7806
+domain-size p-value                 8.98e-81   6.52e-187
+domain-count coefficient             -0.6905     -0.6845
+R^2                                   0.9574      0.9562
+AIC                                    388.1       416.1
+BIC                                    534.4       562.4
