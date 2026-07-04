@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Topology Discount Calculator — GPU Cluster Topology → Training Efficiency</title>
+<meta name="description" content="Estimate the time-to-train and cost impact of NVLink domain size, from measured MLPerf Training data.">
+<style>
+  :root {
+    --bg-page: #eef0f1;
+    --bg-panel: #f8f9f9;
+    --bg-panel-2: #eff1f1;
+    --bg-readout: #14181a;
+    --text: #1b1f22;
+    --text-muted: #5c6469;
+    --text-faint: #838d93;
+    --border: #d7dadc;
+    --border-strong: #c1c5c8;
+    --accent: #157a8c;
+    --accent-strong: #0f5f6e;
+    --accent-bright: #2fb4c7;
+    --ok: #3f8f5f;
+    --warn: #c4432b;
+    --readout-text: #eef3f4;
+    --readout-muted: #7c8a8d;
+    --focus-ring: #157a8c;
+
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-page: #13161a;
+      --bg-panel: #1c2024;
+      --bg-panel-2: #20252a;
+      --bg-readout: #0e1113;
+      --text: #e6e9ea;
+      --text-muted: #97a0a6;
+      --text-faint: #6b7379;
+      --border: #323739;
+      --border-strong: #40464a;
+      --accent: #2fb4c7;
+      --accent-strong: #5fd3e4;
+      --accent-bright: #5fd3e4;
+      --ok: #5fbe7c;
+      --warn: #e2684a;
+      --readout-text: #eef3f4;
+      --readout-muted: #7c8a8d;
+      --focus-ring: #2fb4c7;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg-page: #13161a; --bg-panel: #1c2024; --bg-panel-2: #20252a; --bg-readout: #0e1113;
+    --text: #e6e9ea; --text-muted: #97a0a6; --text-faint: #6b7379;
+    --border: #323739; --border-strong: #40464a;
+    --accent: #2fb4c7; --accent-strong: #5fd3e4; --accent-bright: #5fd3e4;
+    --ok: #5fbe7c; --warn: #e2684a; --focus-ring: #2fb4c7;
+  }
+  :root[data-theme="light"] {
+    --bg-page: #eef0f1; --bg-panel: #f8f9f9; --bg-panel-2: #eff1f1; --bg-readout: #14181a;
+    --text: #1b1f22; --text-muted: #5c6469; --text-faint: #838d93;
+    --border: #d7dadc; --border-strong: #c1c5c8;
+    --accent: #157a8c; --accent-strong: #0f5f6e; --accent-bright: #2fb4c7;
+    --ok: #3f8f5f; --warn: #c4432b; --focus-ring: #157a8c;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg-page);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-strong); }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .wrap {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 2.75rem 1.25rem 3.5rem;
+  }
+
+  /* ---------- nameplate ---------- */
+  .nameplate { margin-bottom: 2.25rem; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 0.6rem;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.875rem;
+    letter-spacing: 0.002em;
+    margin: 0 0 0.5rem;
+    text-wrap: balance;
+  }
+  .dek {
+    color: var(--text-muted);
+    max-width: 62ch;
+    margin: 0;
+  }
+  .stamp {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    margin-top: 0.9rem;
+  }
+  .stamp b { color: var(--text-muted); font-weight: 500; }
+
+  /* ---------- panel shell ---------- */
+  .panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .panel + .panel { margin-top: 1.25rem; }
+  .panel-label {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 1rem;
+  }
+
+  /* ---------- workload toggle ---------- */
+  .seg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .seg button {
+    appearance: none;
+    border: 0;
+    padding: 0.7rem 0.75rem;
+    background: var(--bg-panel-2);
+    color: var(--text-muted);
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .seg button[aria-pressed="true"] {
+    background: var(--accent);
+    color: #fff;
+  }
+  .seg button:hover:not([aria-pressed="true"]) { background: var(--bg-panel); color: var(--text); }
+  .seg button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+
+  /* ---------- domain slider ---------- */
+  .domain-row {
+    margin-top: 1.5rem;
+  }
+  .domain-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.6rem;
+  }
+  .domain-head label { font-size: 0.85rem; color: var(--text-muted); }
+  .domain-value {
+    font-family: var(--mono);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+  }
+  input[type="range"] {
+    width: 100%;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(to right, var(--accent) var(--fill, 25%), var(--border) 0);
+    margin: 0.9rem 0 0.6rem;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg-panel);
+    box-shadow: 0 0 0 1px var(--accent);
+    cursor: pointer;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg-panel);
+    box-shadow: 0 0 0 1px var(--accent);
+    cursor: pointer;
+  }
+  input[type="range"]:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+
+  .ticks {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.4rem;
+  }
+  .tick {
+    appearance: none;
+    flex: 1;
+    border: 1px solid var(--border);
+    background: var(--bg-panel-2);
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    padding: 0.3rem 0;
+    border-radius: 3px;
+    cursor: pointer;
+    font-variant-numeric: tabular-nums;
+  }
+  .tick:hover { border-color: var(--accent); color: var(--text); }
+  .tick.active { border-color: var(--accent); background: var(--accent); color: #fff; }
+  .tick:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 1px; }
+
+  /* ---------- readout screen ---------- */
+  .readout {
+    background: var(--bg-readout);
+    border-radius: 4px;
+    padding: 1.75rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .readout-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+  .readout-label {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--readout-muted);
+  }
+  .badge {
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    white-space: nowrap;
+  }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .badge.ok { color: var(--ok); background: color-mix(in srgb, var(--ok) 16%, transparent); }
+  .badge.warn { color: var(--warn); background: color-mix(in srgb, var(--warn) 16%, transparent); }
+
+  .readout-value {
+    font-family: var(--mono);
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--accent-bright);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    transition: opacity 0.12s ease;
+  }
+  @media (prefers-reduced-motion: reduce) { .readout-value { transition: none; } }
+  .readout-band {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    color: var(--readout-muted);
+    margin-top: 0.35rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .readout-plain {
+    color: var(--readout-text);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* ---------- market gauges ---------- */
+  .gauges {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 560px) { .gauges { grid-template-columns: 1fr; } }
+  .gauge {
+    background: var(--bg-panel-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1rem 1.1rem;
+  }
+  .gauge-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+  .gauge-value {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+  }
+  .gauge-sub {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    margin-top: 0.3rem;
+  }
+  .synthesis {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  /* ---------- caveats ---------- */
+  .caveats ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .caveats li {
+    position: relative;
+    padding-left: 1.1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .caveats li + li { margin-top: 0.65rem; }
+  .caveats li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--text-faint);
+  }
+  .caveats b { color: var(--text); font-weight: 600; }
+
+  /* ---------- footer ---------- */
+  footer { margin-top: 2rem; }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.9rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  .links a { text-decoration: none; border-bottom: 1px solid transparent; }
+  .links a:hover { border-bottom-color: var(--accent-strong); }
+  .attribution {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+  }
+
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  .load-error {
+    display: none;
+    background: color-mix(in srgb, var(--warn) 12%, var(--bg-panel));
+    border: 1px solid var(--warn);
+    color: var(--text);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="nameplate">
+    <p class="eyebrow">GPU Cluster Topology &middot; Training Efficiency</p>
+    <h1>Topology Discount Calculator</h1>
+    <p class="dek">Estimate the time-to-train impact of NVLink domain size, computed
+      client-side from the fitted models in the
+      <a href="https://github.com/elyryba/gpu-topology-efficiency">gpu-topology-efficiency</a>
+      research repo &mdash; measured on public MLPerf&reg; Training results.</p>
+    <p class="stamp" id="stamp">loading model parameters&hellip;</p>
+  </div>
+
+  <div class="load-error" id="loadError" role="alert">
+    Could not load <code>model_params.json</code>. The calculator can't compute anything
+    without it &mdash; try reloading, or check the
+    <a href="https://github.com/elyryba/gpu-topology-efficiency">repo</a> directly.
+  </div>
+
+  <div class="panel">
+    <p class="panel-label">Workload</p>
+    <div class="seg" role="group" aria-label="Workload type">
+      <button type="button" id="btnBound" aria-pressed="true">Communication-bound (LLM training)</button>
+      <button type="button" id="btnLight" aria-pressed="false">Communication-light</button>
+    </div>
+
+    <div class="domain-row">
+      <div class="domain-head">
+        <label for="domainSlider">NVLink domain size</label>
+        <span class="domain-value"><span id="domainValue">4</span> GPUs</span>
+      </div>
+      <input type="range" id="domainSlider" min="0" max="1000" value="193" aria-label="NVLink domain size">
+      <div class="ticks" id="ticks"></div>
+    </div>
+  </div>
+
+  <div class="readout" role="status" aria-live="polite">
+    <div class="readout-top">
+      <span class="readout-label">Time-to-train multiplier vs. 4-GPU domain</span>
+      <span class="badge ok" id="badge">&nbsp;</span>
+    </div>
+    <div class="readout-value" id="multValue">&mdash;</div>
+    <div class="readout-band" id="multBand">95% band: &mdash;</div>
+    <div class="readout-plain" id="plainEnglish">&nbsp;</div>
+  </div>
+
+  <div class="panel">
+    <p class="panel-label">Market context (reference, not driven by the controls above)</p>
+    <div class="gauges">
+      <div class="gauge">
+        <div class="gauge-label">Measured throughput premium</div>
+        <div class="gauge-value" id="perfGauge">&mdash;</div>
+        <div class="gauge-sub">per domain doubling &middot; 09 comm-bound curve</div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-label">Market price premium, gen-adjusted</div>
+        <div class="gauge-value" id="priceGauge">&mdash;</div>
+        <div class="gauge-sub" id="priceGaugeSub">per domain doubling &middot; 14, confounded</div>
+      </div>
+    </div>
+    <p class="synthesis" id="synthesis">&nbsp;</p>
+  </div>
+
+  <div class="panel caveats">
+    <p class="panel-label">Read before you trust a number here</p>
+    <ul>
+      <li><b>Observational, not causal.</b> n=969 MLPerf Training submissions (v3.1&ndash;v6.0).
+        Submitters co-optimize topology with software and effort &mdash; the premium is an
+        association, not a controlled experiment.</li>
+      <li><b>The comm-light curve is only marginally significant</b> (p&asymp;0.058); its 95%
+        band crosses 1.0&times; at domain=72. Treat that curve as directional, not precisely sized.</li>
+      <li><b>Market prices are list prices, not verified transactions</b> &mdash; on-demand
+        rates from 3 cloud providers, n=13 raw (n=8 after removing GPUs with no measured
+        MLPerf generation). Even after generation-adjustment, domain size and GPU generation
+        remain confounded in this snapshot; it is a descriptive comparison, not a matched estimate.</li>
+      <li>Findings have not been reviewed or verified by MLCommons.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <div class="links">
+      <a href="https://github.com/elyryba/gpu-topology-efficiency">GitHub repo</a>
+      <a href="https://github.com/elyryba/gpu-topology-efficiency#readme">Methodology (README)</a>
+      <a href="https://github.com/elyryba/gpu-topology-efficiency/releases/latest">Latest release</a>
+    </div>
+    <p class="attribution">
+      MLPerf&reg; is a registered trademark of the MLCommons&reg; Association. This is an
+      independent, third-party analysis; it is not endorsed by, sponsored by, or affiliated
+      with MLCommons, and its findings have not been verified by the MLCommons Association.
+      See <a href="https://github.com/elyryba/gpu-topology-efficiency/blob/main/DATA_LICENSE">DATA_LICENSE</a>
+      for full attribution terms. Code and this calculator are
+      <a href="https://github.com/elyryba/gpu-topology-efficiency/blob/main/LICENSE">MIT-licensed</a>.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var DOMAIN_MIN = 2, DOMAIN_MAX = 72;
+  var CANON = [4, 8, 16, 36, 72];
+  var state = { workload: "bound", domain: 4, params: null };
+
+  function posToDomain(pos) {
+    var t = pos / 1000;
+    return DOMAIN_MIN * Math.pow(DOMAIN_MAX / DOMAIN_MIN, t);
+  }
+  function domainToPos(d) {
+    return 1000 * Math.log(d / DOMAIN_MIN) / Math.log(DOMAIN_MAX / DOMAIN_MIN);
+  }
+
+  function fmtMult(x) { return x.toFixed(3) + "×"; }
+  function fmtPct(x) {
+    var pct = (x - 1) * 100;
+    var sign = pct <= 0 ? "" : "+";
+    return sign + pct.toFixed(1) + "%";
+  }
+
+  function curveFor(workload) {
+    return state.params.discount_curves[workload === "bound" ? "comm_bound" : "comm_light"];
+  }
+
+  function render() {
+    var p = state.params;
+    if (!p) { return; }
+    var curve = curveFor(state.workload);
+    var domain = state.domain;
+    var domainRef = p.discount_curves.domain_ref;
+    var z = p.discount_curves.z;
+    var logratio = Math.log(domain / domainRef);
+
+    var point = Math.exp(curve.slope * logratio);
+    var lo = Math.exp((curve.slope - z * curve.se) * logratio);
+    var hi = Math.exp((curve.slope + z * curve.se) * logratio);
+    var bandLo = Math.min(lo, hi), bandHi = Math.max(lo, hi);
+
+    document.getElementById("multValue").textContent = fmtMult(point);
+    document.getElementById("multBand").textContent =
+      "95% band: [" + bandLo.toFixed(3) + ", " + bandHi.toFixed(3) + "]";
+
+    var inRange = domain >= curve.observed_domain_range[0] &&
+                  domain <= curve.observed_domain_range[1];
+    var badge = document.getElementById("badge");
+    badge.textContent = inRange ? "Interpolation" : "Extrapolation";
+    badge.className = "badge " + (inRange ? "ok" : "warn");
+
+    var direction = point <= 1 ? "less" : "more";
+    var pctAbs = Math.abs((point - 1) * 100).toFixed(1);
+    var rangeNote = inRange
+      ? "within the observed data for this workload."
+      : "beyond the observed range for this workload (" +
+        curve.observed_domain_range[0] + "–" + curve.observed_domain_range[1] +
+        " GPUs) — treat this as a model-implied projection, not an empirical finding.";
+    document.getElementById("plainEnglish").textContent =
+      "≈" + pctAbs + "% " + direction + " time-to-train than a " + domainRef +
+      "-GPU domain, at this scale — " + rangeNote;
+
+    document.getElementById("domainValue").textContent = Math.round(domain);
+    var fillPct = domainToPos(domain) / 10;
+    document.getElementById("domainSlider").style.setProperty("--fill", fillPct + "%");
+
+    var ticks = document.querySelectorAll(".tick");
+    for (var i = 0; i < ticks.length; i++) {
+      var v = parseInt(ticks[i].getAttribute("data-domain"), 10);
+      ticks[i].classList.toggle("active", Math.round(domain) === v);
+    }
+  }
+
+  function renderMarket() {
+    var mp = state.params.market_premium;
+    document.getElementById("perfGauge").textContent =
+      fmtMult(Math.exp(curveFor("bound").slope * Math.log(2)));
+    document.getElementById("priceGauge").textContent =
+      mp.gen_adjusted.pooled.toFixed(3) + "×";
+    document.getElementById("priceGaugeSub").textContent =
+      "per domain doubling · 14, n=" + mp.gen_adjusted.n +
+      " · 95% sim [" + mp.gen_adjusted.pooled_ci95[0].toFixed(3) +
+      ", " + mp.gen_adjusted.pooled_ci95[1].toFixed(3) + "]";
+
+    var perf = Math.exp(curveFor("bound").slope * Math.log(2));
+    var price = mp.gen_adjusted.pooled;
+    var combined = perf * price;
+    var verdict = combined > 1.03
+      ? "the market currently charges more per domain doubling (combined cost ×" +
+        combined.toFixed(2) + ") than the measured performance benefit alone would justify."
+      : combined < 0.97
+        ? "the measured performance benefit outweighs the market's price premium (combined cost ×" +
+          combined.toFixed(2) + ")."
+        : "the price premium and performance gain roughly offset (combined cost ×" +
+          combined.toFixed(2) + ").";
+    document.getElementById("synthesis").textContent =
+      "Combining both: " + verdict + " Raw (non-adjusted) price premium is ×" +
+      mp.raw.pooled.toFixed(2) + " — see the repo's Market pricing comparison section " +
+      "before treating either as precise.";
+  }
+
+  function buildTicks() {
+    var el = document.getElementById("ticks");
+    CANON.forEach(function (v) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "tick";
+      b.textContent = v;
+      b.setAttribute("data-domain", v);
+      b.setAttribute("aria-label", "Set domain size to " + v + " GPUs");
+      b.addEventListener("click", function () {
+        setDomain(v);
+      });
+      el.appendChild(b);
+    });
+  }
+
+  function setDomain(d) {
+    state.domain = Math.max(DOMAIN_MIN, Math.min(DOMAIN_MAX, d));
+    document.getElementById("domainSlider").value = Math.round(domainToPos(state.domain));
+    render();
+  }
+
+  function setWorkload(w) {
+    state.workload = w;
+    document.getElementById("btnBound").setAttribute("aria-pressed", String(w === "bound"));
+    document.getElementById("btnLight").setAttribute("aria-pressed", String(w === "light"));
+    render();
+  }
+
+  document.getElementById("domainSlider").addEventListener("input", function (e) {
+    state.domain = posToDomain(parseFloat(e.target.value));
+    render();
+  });
+  document.getElementById("btnBound").addEventListener("click", function () { setWorkload("bound"); });
+  document.getElementById("btnLight").addEventListener("click", function () { setWorkload("light"); });
+
+  buildTicks();
+
+  fetch("model_params.json")
+    .then(function (r) {
+      if (!r.ok) { throw new Error("HTTP " + r.status); }
+      return r.json();
+    })
+    .then(function (data) {
+      state.params = data;
+      document.getElementById("stamp").innerHTML =
+        "<b>" + data.metadata.repo_version + "</b> &middot; n=" + data.metadata.dataset_n +
+        " MLPerf submissions &middot; params generated " +
+        data.metadata.generated_at.slice(0, 10);
+      render();
+      renderMarket();
+    })
+    .catch(function (err) {
+      document.getElementById("loadError").style.display = "block";
+      document.getElementById("stamp").textContent = "model parameters unavailable";
+      console.error(err);
+    });
+})();
+</script>
+</body>
+</html>

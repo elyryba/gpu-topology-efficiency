@@ -1,6 +1,16 @@
 # GPU Cluster Topology → Training Efficiency (full rebuild)
 
 [![Reproduce](https://github.com/elyryba/gpu-topology-efficiency/actions/workflows/reproduce.yml/badge.svg)](https://github.com/elyryba/gpu-topology-efficiency/actions/workflows/reproduce.yml)
+[![Deploy Pages](https://github.com/elyryba/gpu-topology-efficiency/actions/workflows/pages.yml/badge.svg)](https://github.com/elyryba/gpu-topology-efficiency/actions/workflows/pages.yml)
+
+## Live calculator
+
+**[elyryba.github.io/gpu-topology-efficiency](https://elyryba.github.io/gpu-topology-efficiency/)**
+-- pick a workload and NVLink domain size, get the time-to-train multiplier,
+its 95% band, and an interpolation/extrapolation flag, computed client-side
+straight from the fitted models below (`site/model_params.json`, exported by
+`scripts/15_export_model_params.py` and locked by a test so it can never
+silently drift from the actual regressions).
 
 Independent, from-scratch rebuild and extension of the MLPerf® topology-efficiency
 analysis. Everything below was re-derived by running the code in this repo
@@ -34,6 +44,7 @@ scripts/
   12_market_price_collection.py    collects current GPU rental pricing (AWS/Azure/OCI, cleared sources only)
   13_hedonic_comparison.py         market price premium vs. measured throughput premium, per domain doubling
   14_gen_adjusted_hedonic.py       same comparison, deflated by measured GPU-generation speed differences
+  15_export_model_params.py        exports the fitted parameters the live calculator (site/) runs on
 ```
 
 Run: `bash setup.sh` (creates a venv, installs the pinned `requirements.txt`,
@@ -401,6 +412,25 @@ H100/B200, domain=72 is only GB200/GB300) -- gen-adjustment corrects a
 real, externally-sourced confound, it doesn't manufacture the
 same-GPU-different-domain pairs that would make this a matched estimate.
 
+## Live calculator internals (15_export_model_params.py, site/)
+
+The [live calculator](https://elyryba.github.io/gpu-topology-efficiency/) is a
+static, vanilla HTML/CSS/JS page (`site/index.html`, no framework, no build
+step) hosted on GitHub Pages. It has zero server-side logic: on load it
+fetches `site/model_params.json` and does every computation -- the discount
+multiplier, its 95% band, the interpolation/extrapolation check -- in the
+browser, using the exact same formulas as `09_discount_function.py`.
+
+`model_params.json` is not hand-written. `15_export_model_params.py`
+recomputes the comm-bound/comm-light slopes, the gen speed multipliers, and
+the market premiums fresh from the same fitting code as 08/09/13/14, then
+writes the JSON. `tests/test_reproduction.py` regenerates it in-memory on
+every test run and asserts it matches the committed copy exactly (modulo
+the `generated_at` timestamp) -- the calculator cannot silently drift from
+the actual regressions without a test failure. Deployment
+(`.github/workflows/pages.yml`) publishes `site/` on every push to `main`
+that touches it.
+
 ## How to reproduce
 
 ```bash
@@ -439,7 +469,17 @@ python3 scripts/13_hedonic_comparison.py
 python3 scripts/14_gen_adjusted_hedonic.py
 ```
 
-CI (`.github/workflows/reproduce.yml`, badge above) runs the pinned
-`requirements.txt` install, scripts 02-06, and the pytest suite on every
-push/PR and on a monthly schedule, so a dependency drift or a new MLPerf
-round dropped into `data/` later gets caught automatically.
+15 only needs the committed CSVs too (no MLPerf clone needed) -- re-run it
+after changing any upstream model/data to refresh the live calculator:
+
+```bash
+python3 scripts/15_export_model_params.py   # writes site/model_params.json
+pytest tests/test_reproduction.py -k model_params   # confirms it matches
+```
+
+Two CI workflows. `.github/workflows/reproduce.yml` (badge above) runs the
+pinned `requirements.txt` install, scripts 02-06, and the pytest suite on
+every push/PR and on a monthly schedule, so a dependency drift or a new
+MLPerf round dropped into `data/` later gets caught automatically.
+`.github/workflows/pages.yml` deploys `site/` to GitHub Pages on every push
+to `main` that touches it.
