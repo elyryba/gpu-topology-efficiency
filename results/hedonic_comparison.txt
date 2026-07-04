@@ -1,0 +1,23 @@
+HEDONIC COMPARISON: market price premium vs. measured throughput premium, per NVLink-domain doubling
+
+CAVEAT (read before trusting any number below): every domain-size comparison in this market snapshot is confounded with GPU generation/model -- no provider in the collected data sells the same GPU model at more than one topology class. Unlike 09's throughput regression (model/gen fixed effects), this is a descriptive, first-order comparison, not a matched causal estimate.
+
+MARKET SNAPSHOT (n=13 SKUs, 3 providers, collected 2026-07-04T03:01:49Z)
+  domain=  1  n=6  mean=$0.866/GPU-hr  median=$0.742/GPU-hr  range=[$0.180, $2.000]
+  domain=  8  n=4  mean=$8.348/GPU-hr  median=$8.440/GPU-hr  range=[$2.271, $14.242]
+  domain= 72  n=3  mean=$20.347/GPU-hr  median=$18.000/GPU-hr  range=[$16.000, $27.040]
+
+MARKET PRICE SLOPE (descriptive OLS, n=13, no meaningful clustering with 3 providers -- these are NOT inferential p-values)
+  pooled (no provider FE):     slope=+0.8187  -> price x1.764 per domain doubling  R^2=0.797
+  with provider FE:            slope=+0.8248  -> price x1.771 per domain doubling  R^2=0.858
+
+MEASURED THROUGHPUT PREMIUM (09_discount_function.py comm-bound curve, recomputed fresh here)
+  comm-bound slope: coef=-0.1618  se=0.0370  -> time x0.894 per domain doubling (i.e. -10.6% change in time-to-train)
+
+COMBINED: total-cost-to-train multiplier per domain doubling (price multiplier x time multiplier)
+  using pooled market slope:       1.764 x 0.894 = 1.577
+    -> NET COST: bigger domains cost MORE overall even after finishing faster -- the market's price spread exceeds the measured performance spread.
+  using provider-FE market slope:  1.771 x 0.894 = 1.583
+    -> NET COST: bigger domains cost MORE overall even after finishing faster -- the market's price spread exceeds the measured performance spread.
+
+Read this as a first-order, confounded comparison (see caveat at top), not a precise valuation -- with n=13 market SKUs and no within-GPU-model domain variation, treat the direction as the finding, not the exact multiplier.
