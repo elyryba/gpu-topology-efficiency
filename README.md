@@ -1,4 +1,4 @@
-# GPU Cluster Topology → Training Efficiency (full rebuild)
+# GPU Cluster Topology → Training Efficiency
 
 [![Reproduce](https://github.com/elyryba/gpu-topology-efficiency/actions/workflows/reproduce.yml/badge.svg)](https://github.com/elyryba/gpu-topology-efficiency/actions/workflows/reproduce.yml)
 [![Deploy Pages](https://github.com/elyryba/gpu-topology-efficiency/actions/workflows/pages.yml/badge.svg)](https://github.com/elyryba/gpu-topology-efficiency/actions/workflows/pages.yml)
