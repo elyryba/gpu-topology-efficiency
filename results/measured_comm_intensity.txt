@@ -1,0 +1,26 @@
+MEASURED COMM-INTENSITY: TP*PP parsed from benchmark config filenames vs. hand-labeled COMM_BOUND binary
+
+Models with tp/pp naming ANYWHERE in v5.0/v5.1/v6.0: ['deepseekv3_671b', 'gpt-oss', 'gpt_oss_20b', 'llama2_70b_lora', 'llama31_405b', 'llama31_8b', 'llama3_8b']
+flux1 IS in COMM_BOUND but shows NO tp/pp config anywhere -- measured proxy treats it as pure data-parallel (comm_intensity=0), contradicting its hand-label.
+
+COVERAGE (n=969 total analysis rows)
+  measured                      303  (31.3%)
+  assumed_dp_default            240  (24.8%)
+  unmeasured_no_scale_match      65  (6.7%)
+  repo_unavailable              361  (37.3%)
+
+Restricted analysis sample (measured + assumed-DP): n=543 (56.0% of 969)
+
+A. ORIGINAL HAND-LABELED BINARY SPEC (09), refit on the restricted subsample
+  base premium (comm-light)   coef=-0.0644  se=0.0391  p=0.0999
+  interaction (extra for comm-bound)  coef=-0.0719  se=0.0316  p=0.0229
+  R^2=0.9659
+
+B. MEASURED CONTINUOUS SPEC (comm_intensity = log(TP*PP))
+  domain main effect           coef=-0.1011  se=0.0295  p=0.00061
+  comm_intensity main effect   coef=+0.1243  se=0.0824  p=0.131
+  interaction (domain x comm_intensity)  coef=-0.0384  se=0.0133  p=0.00404
+  R^2=0.9660
+
+COMPARISON: SHARPENS: the measured continuous interaction is more significant than the hand-labeled binary's.
+  (binary interaction p=0.0229 vs. continuous interaction p=0.00404, same n=543 subsample)
