@@ -24,6 +24,8 @@ MINED_CSV = os.path.join(os.path.dirname(__file__), "..", "data",
                         "nvl_config_mined.csv")
 COMM_INTENSITY_CSV = os.path.join(os.path.dirname(__file__), "..", "data",
                                  "comm_intensity_mined.csv")
+MARKET_CSV = os.path.join(os.path.dirname(__file__), "..", "data",
+                        "market_prices_snapshot.csv")
 
 # Copied verbatim from 06_continuous_bandwidth_model.py / 09_discount_function.py
 COMM_BOUND = {"gpt3", "llama31_405b", "deepseekv3_671b", "llama2_70b_lora",
@@ -246,3 +248,57 @@ def test_discount_function_insensitive_to_flux1_label():
     assert round(delta_heavy_72, 3) == -0.017
     assert abs(delta_light_72) < 0.02
     assert abs(delta_heavy_72) < 0.02
+
+
+def test_gen_adjusted_hedonic_premium():
+    """Locks 14_gen_adjusted_hedonic.py's headline gen-adjusted price
+    premium (pooled log-log slope, on the n=8 subset whose GPU model has
+    a measured MLPerf generation: A100/H100/B200/GB200/GB300 only -- T4,
+    L4, A10/A10G are excluded, not guessed). If this ever fails, either
+    the underlying market snapshot or the mined-augmented regression has
+    changed and the finding needs re-reporting, not a quiet threshold
+    bump."""
+    df = load_clean(DATASET_CSV)
+    mined = pd.read_csv(MINED_CSV)
+    high = mined[mined["confidence"] == "high"][
+        ["repo", "org", "system_id", "inferred_domain"]]
+    df = df.merge(high, on=["repo", "org", "system_id"], how="left")
+    df["true_domain_mined"] = df["inferred_domain"].fillna(df["true_domain"])
+    df["log_domain_mined"] = np.log(df["true_domain_mined"])
+
+    X = pd.concat([df[["log_gpus", "log_domain_mined"]],
+                  pd.get_dummies(df["model"], prefix="model", drop_first=True),
+                  pd.get_dummies(df["gen"], prefix="gen", drop_first=True)],
+                 axis=1)
+    X = sm.add_constant(X.astype(float))
+    y = df["log_time"].astype(float)
+    r = sm.OLS(y, X).fit(cov_type="cluster", cov_kwds={"groups": df["org"]})
+
+    speed_mult = {"A100": 1.0}
+    for g in ("H100", "B200", "GB200", "GB300"):
+        speed_mult[g] = float(np.exp(-r.params[f"gen_{g}"]))
+
+    market = pd.read_csv(MARKET_CSV)
+    covered = {"A100", "H100", "B200", "GB200", "GB300"}
+    kept = market[market["gpu_model"].isin(covered)].copy()
+    assert len(kept) == 8  # 5 of 13 excluded: T4 x2, L4 x1, A10/A10G x2
+
+    kept["speed_multiplier"] = kept["gpu_model"].map(speed_mult)
+    kept["price_eff"] = kept["price_per_gpu_hour_usd"] / kept["speed_multiplier"]
+
+    def slope(m, col):
+        m = m.copy()
+        m["log_price"] = np.log(m[col])
+        m["log_domain"] = np.log(m["domain_size"])
+        X = sm.add_constant(m[["log_domain"]].astype(float))
+        y = m["log_price"].astype(float)
+        return sm.OLS(y, X).fit().params["log_domain"]
+
+    raw_slope = slope(kept, "price_per_gpu_hour_usd")
+    adj_slope = slope(kept, "price_eff")
+    raw_mult = float(np.exp(raw_slope * np.log(2)))
+    adj_mult = float(np.exp(adj_slope * np.log(2)))
+
+    assert round(adj_mult, 3) == 1.243
+    assert adj_mult < raw_mult  # gen-adjustment shrinks the raw premium
+    assert adj_mult > 1.0       # but a premium survives -- doesn't flip sign

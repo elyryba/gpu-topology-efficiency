@@ -1,0 +1,46 @@
+GENERATION-ADJUSTED HEDONIC COMPARISON
+
+CAVEAT (carried forward from 13, if anything more important here): gen-adjustment fixes the CONFOUND DIRECTION -- it does not fix the sample size, and it does not manufacture within-generation domain variation that the market snapshot doesn't have. Even among the rows kept below, domain class and generation remain perfectly confounded (domain=1 is only A100, domain=8 is only H100/B200, domain=72 is only GB200/GB300). Treat this as a directionally cleaner, still-descriptive comparison -- not a matched causal estimate.
+
+GENERATION SPEED MULTIPLIERS (relative to A100, from 08's mined-augmented gen fixed effects)
+  A100 (reference): 1.000x (coefficient=0 by construction, no uncertainty)
+  H100: coef=-1.1817  se=0.1646  -> 3.260x A100's speed
+  B200: coef=-1.9294  se=0.1693  -> 6.886x A100's speed
+  GB200: coef=-1.7788  se=0.1859  -> 5.922x A100's speed
+  GB300: coef=-2.1337  se=0.1995  -> 8.446x A100's speed
+
+GENERATION MAPPING (per row, stated explicitly -- no silent guesses)
+  [EXCLUDE] aws/g4dn.xlarge (T4, domain=1): Turing generation, zero representation among this dataset's 14 measured generations -- no defensible nearest match, excluded rather than guessed
+  [EXCLUDE] aws/g5.xlarge (A10G, domain=1): same as A10 -- only 1 raw submission, filtered out, excluded rather than guessed
+  [EXCLUDE] aws/g6.xlarge (L4, domain=1): Ada Lovelace inference/graphics-tier card; architecturally related to L40S (which IS measured) but a materially different power/performance class (72W inference vs. 300W datacenter training) -- mapping to L40S would overstate L4's throughput, excluded rather than guessed
+  [KEEP] aws/p5.48xlarge (H100, domain=8): exact match to the measured H100 generation
+  [KEEP] aws/p6-b200.48xlarge (B200, domain=8): exact match to the measured B200 generation
+  [EXCLUDE] azure/Standard_NC4as_T4_v3 (T4, domain=1): Turing generation, zero representation among this dataset's 14 measured generations -- no defensible nearest match, excluded rather than guessed
+  [KEEP] azure/Standard_NC24ads_A100_v4 (A100, domain=1): exact match; A100 is the omitted/reference category in the gen fixed effects (coefficient=0 by construction)
+  [KEEP] azure/Standard_ND96isr_H100_v5 (H100, domain=8): exact match to the measured H100 generation
+  [KEEP] azure/Standard_ND128isr_NDR_GB200_v6 (GB200, domain=72): exact match to the measured GB200 generation
+  [EXCLUDE] oci/B95909 (A10, domain=1): only 1 raw MLPerf submission ever recorded for the A10G generation across all extracted rounds, filtered out by the MIN_OBS_PER_GROUP=8 threshold used throughout this repo -- not enough signal for a coefficient, excluded rather than guessed
+  [KEEP] oci/B98415 (H100, domain=8): exact match to the measured H100 generation
+  [KEEP] oci/B110979 (GB200, domain=72): exact match to the measured GB200 generation
+  [KEEP] oci/B112140 (GB300, domain=72): exact match to the measured GB300 generation
+
+Kept 8 of 13 snapshot rows (5 excluded). Domain=1 shrinks to n=1.
+
+EFFECTIVE PRICE BY DOMAIN (raw $/GPU-hr vs. $/effective-GPU-hr, A100-equivalent)
+  domain=  1  n=1  raw median=$0.679/GPU-hr  effective median=$0.679/eff-GPU-hr
+  domain=  8  n=4  raw median=$8.440/GPU-hr  effective median=$2.089/eff-GPU-hr
+  domain= 72  n=3  raw median=$18.000/GPU-hr  effective median=$2.702/eff-GPU-hr
+
+THREE NUMBERS SIDE BY SIDE (per domain doubling)
+  1. Raw price premium (13_hedonic_comparison.py, n=13):        x1.764 pooled / x1.771 provider-FE
+     (recomputed here on the n=8-row gen-coverable subset for a like-for-like check: x1.619 pooled / x1.627 provider-FE)
+  2. Gen-ADJUSTED price premium (this script, n=8):    x1.243 pooled [95% sim: 1.180, 1.306] / x1.234 provider-FE [95% sim: 1.172, 1.297]
+  3. Measured throughput premium (09 comm-bound curve):         x0.894 time (-10.6% time-to-train)
+
+COMBINED cost-to-train multiplier (price x time), pooled slope, on the n=8 gen-coverable subset
+  using raw price:          1.619 x 0.894 = 1.448  -> NET COST (price spread exceeds performance spread)
+  using gen-adjusted price: 1.243 x 0.894 = 1.111  -> NET COST (price spread exceeds performance spread)
+
+Simulation: 5000 Monte Carlo draws from the joint asymptotic sampling distribution of the 4 estimated gen coefficients (multivariate normal, mean=point estimates, covariance=org-clustered cov_params() block), each redoing the price deflation and log-log refit. Seed fixed at 42 for reproducibility.
+
+Bottom line: gen-adjustment changes the exact multiplier but not the direction found in 13 -- the market's price spread still exceeds the measured performance spread on this snapshot, now with the generation confound explicitly removed from the price side (at the cost of a smaller, n=8, more lopsided sample -- domain=1 is a single point).

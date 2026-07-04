@@ -22,6 +22,7 @@ compute-pricing discount function.
 - `docs/market_data_recon.md` — reconnaissance (no data collected) of GPU rental pricing sources; flags vast.ai (needs written permission) and GPUPerHour (needs paid license) as off-limits, clears AWS/GCP/Azure/OCI's official pricing APIs
 - `scripts/12_market_price_collection.py` — collects current on-demand pricing from AWS/Azure/OCI (the cleared sources only; never touches vast.ai/GPUPerHour); manually annotates topology per SKU from provider docs, same discipline as 07
 - `scripts/13_hedonic_comparison.py` — market price premium vs. measured throughput premium (09's comm-bound curve), per domain doubling
+- `scripts/14_gen_adjusted_hedonic.py` — same comparison, but deflates each SKU's price by its generation's measured speed (08's gen FE) before recomputing the price slope; fixes the confound direction, not the sample size (n shrinks from 13 to 8)
 - `data/market_prices_snapshot.csv` — point-in-time GPU pricing snapshot (12); has a `collected_at` column since none of the three APIs expose historical pricing
 - `tests/test_reproduction.py` — pins the headline numbers below; run via pytest
 - `.github/workflows/reproduce.yml` — CI: runs 02-06 + pytest on push/PR and monthly (living-validation hook)
@@ -35,7 +36,7 @@ compute-pricing discount function.
 - Refit + discount function (08/09, no MLPerf clone needed, just the committed CSVs): `python3 scripts/08_refit_with_mined_domains.py && python3 scripts/09_discount_function.py`
 - Inference hardening (10, no MLPerf clone needed): `python3 scripts/10_inference_hardening.py`
 - Measured comm-intensity (11, needs $MLPERF_ROOT to re-mine; skip and just use the committed data/comm_intensity_mined.csv otherwise): `MLPERF_ROOT=~/mlperf python3 scripts/11_measured_comm_intensity.py`
-- Market pricing (12/13, 12 hits live AWS/Azure/OCI APIs -- never run in CI, re-run manually for a fresh snapshot; 13 only needs the committed CSV): `python3 scripts/12_market_price_collection.py && python3 scripts/13_hedonic_comparison.py`
+- Market pricing (12/13/14, 12 hits live AWS/Azure/OCI APIs -- never run in CI, re-run manually for a fresh snapshot; 13/14 only need the committed CSV): `python3 scripts/12_market_price_collection.py && python3 scripts/13_hedonic_comparison.py && python3 scripts/14_gen_adjusted_hedonic.py`
 - Tests: `pytest tests/test_reproduction.py`
 - Deps: pandas, numpy, statsmodels, pytest, wildboottest (exact pins in requirements.txt)
 
@@ -120,6 +121,21 @@ compute-pricing discount function.
   unlike 09's model/gen-FE-isolated regression. Treat as a first-order, descriptive
   comparison (direction, not precise multiplier). vast.ai (richest topology schema found)
   and GPUPerHour remain untouched pending permission/license -- see docs/market_data_recon.md.
+- Gen-adjusted hedonic comparison (14, DONE — follow-up to open item 3): deflated each
+  market SKU's price by its generation's measured speed vs. A100 (08's gen FE: H100=3.26x,
+  B200=6.89x, GB200=5.92x, GB300=8.45x A100's speed). T4/L4/A10/A10G excluded (no measured
+  MLPerf generation -- A10G has only 1 raw submission, filtered by MIN_OBS_PER_GROUP=8),
+  shrinking n from 13 to 8 (domain=1 down to a single A100 point). Gen-adjusted price
+  premium: **x1.243** per doubling [95% simulation interval: 1.180, 1.306], down from the
+  raw x1.619 on the same n=8 subset (x1.764 on the full n=13) -- but still exceeds the
+  measured throughput premium (x0.894), so 13's direction survives: combined cost
+  multiplier x1.45 (raw) -> x1.11 (gen-adjusted), still NET COST, just a smaller one.
+  Uncertainty via simulation (5000 MC draws from the gen coefficients' joint asymptotic
+  covariance), not the delta method -- stated explicitly since the price-deflation-then-
+  refit pipeline is discrete and resamples more naturally than it differentiates.
+  Gen-adjustment fixes the confound DIRECTION only: even among the 8 kept rows, domain
+  class and generation remain perfectly confounded (domain=1 is only A100, domain=8 only
+  H100/B200, domain=72 only GB200/GB300) -- still not a matched estimate.
 
 ## Conventions
 - Always use org-clustered standard errors for headline claims; nonrobust only for comparison
@@ -156,15 +172,18 @@ compute-pricing discount function.
    filename fallback (not tied to a specific system_id) are the remaining soft spots.
 2. Source GH200/NVL32 deployment domain sizes; currently on uncorrected proxy
 3. ~~Hedonic pricing regression on GPU rental market data — compare performance premium vs
-   price premium~~ — DONE with AWS/Azure/OCI only (12_market_price_collection.py /
-   13_hedonic_comparison.py); market price spread (~x1.76-1.77/doubling) exceeds the
-   measured throughput spread (x0.894/doubling), combined cost multiplier ~x1.58. Follow-up
-   if revisited: this used only the 3 sources docs/market_data_recon.md cleared with zero
-   ToS friction, at n=13 SKUs with no within-GPU-model domain variation (confounded with
-   GPU generation) -- vast.ai (richest topology schema: bw_nvlink, num_gpus per listing,
-   real transaction-like prices) would let this be redone properly, but needs written
-   permission from vast.ai first per their ToS (see docs/market_data_recon.md). GCP was
-   also skipped (needs an API key not configured here) -- revisit if credentials appear.
+   price premium~~ — DONE with AWS/Azure/OCI only (12/13), then gen-deconfounded (14):
+   raw price spread ~x1.76-1.77/doubling vs. measured throughput x0.894/doubling (combined
+   ~x1.58); gen-adjusted price spread x1.243/doubling (combined ~x1.11) on the n=8 subset
+   whose GPU model has a measured MLPerf generation -- direction holds (market > measured
+   performance) at both stages, magnitude shrinks once the generation confound is removed.
+   Follow-up if revisited: n=8-13 throughout, and even gen-adjustment leaves domain class
+   and generation perfectly confounded within the market data (no same-GPU-different-domain
+   pairs exist) -- vast.ai (richest topology schema: bw_nvlink, num_gpus per listing, real
+   transaction-like prices, likely enough volume for actual within-GPU domain variation)
+   would let this be redone as a real matched estimate, but needs written permission from
+   vast.ai first per their ToS (see docs/market_data_recon.md). GCP was also skipped (needs
+   an API key not configured here) -- revisit if credentials appear.
 4. Check MLCommons results-usage/trademark policy before any commercial use
 5. ~~Continuous monotone discount function, validated on held-out MLPerf rounds~~ — DONE
    (09_discount_function.py). Workload-conditional (comm-bound/comm-light), built on the

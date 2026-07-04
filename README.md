@@ -33,6 +33,7 @@ scripts/
   11_measured_comm_intensity.py    TP/PP degree mined from config files -> continuous comm-intensity proxy
   12_market_price_collection.py    collects current GPU rental pricing (AWS/Azure/OCI, cleared sources only)
   13_hedonic_comparison.py         market price premium vs. measured throughput premium, per domain doubling
+  14_gen_adjusted_hedonic.py       same comparison, deflated by measured GPU-generation speed differences
 ```
 
 Run: `bash setup.sh` (creates a venv, installs the pinned `requirements.txt`,
@@ -298,7 +299,7 @@ negative and significant (p=0.004) -- a coherent mechanistic story
 (communication-heavy parallelism is costly, but larger NVLink domains
 measurably offset that cost) that the binary version couldn't surface.
 
-## Market pricing comparison (12_market_price_collection.py, 13_hedonic_comparison.py)
+## Market pricing comparison (12_market_price_collection.py, 13_hedonic_comparison.py, 14_gen_adjusted_hedonic.py)
 
 CLAUDE.md open-work item 3: does the GPU rental market already price the
 topology premium measured above? `docs/market_data_recon.md` researched
@@ -353,6 +354,53 @@ total GPU-hour spend even after accounting for finishing ~11% faster, at
 least in this small, confounded snapshot. Read the direction, not the
 precise multiplier, given n=13 and the GPU-generation confound above.
 
+### Generation-deconfounded version (14_gen_adjusted_hedonic.py)
+
+The caveat above is real, and this script fixes its *direction* (not its
+sample size): 08's own gen fixed effects are measured log-speed
+differences between hardware generations at identical scale/domain/model
+-- e.g. H100 is 3.26x A100's speed, GB300 is 8.45x, on the same task.
+Deflating each SKU's price by its generation's measured speed (relative
+to A100, the fixed effects' natural reference category) converts
+$/GPU-hour into $/effective-GPU-hour before recomputing the price slope.
+
+Market-snapshot GPU models with no measured MLPerf generation are
+excluded, not guessed: T4 (zero representation), L4 (architecturally
+close to L40S but a materially different power/performance class --
+mapping would overstate it), and A10/A10G (only 1 raw MLPerf submission
+ever recorded, filtered by the same `MIN_OBS_PER_GROUP=8` threshold used
+throughout this repo). That leaves **8 of the 13** snapshot rows --
+gen-adjustment shrinks the usable sample, in exchange for removing the
+generation confound from what's left. Domain=1 drops to a single point
+(the one A100 SKU) -- even more fragile than 13's already-small n=13.
+
+| | per domain doubling |
+|---|---|
+| Raw price premium (13, n=13) | ×1.76 |
+| Raw price premium (same n=8 gen-coverable subset, for a fair comparison) | ×1.62 |
+| **Gen-adjusted price premium (n=8)** | **×1.243** [95% simulation interval: 1.180, 1.306] |
+| Measured throughput premium (09 comm-bound) | ×0.894 time (-10.6%) |
+| Combined cost multiplier, raw price (n=8 subset) | ×1.45 -- NET COST |
+| Combined cost multiplier, gen-adjusted price | ×1.11 -- NET COST |
+
+Uncertainty in the gen-adjusted premium comes from 5000 Monte Carlo draws
+from the joint sampling distribution of the 4 estimated gen coefficients
+(multivariate normal, mean = point estimates, covariance = the relevant
+block of 08's org-clustered `cov_params()`) -- simulation, not the delta
+method, since each draw requires redoing a discrete price-deflation +
+OLS-refit step that's more natural to resample than to differentiate
+through analytically.
+
+**Bottom line: the direction from 13 survives gen-adjustment** -- the
+market's price spread still exceeds the measured performance spread,
+just by less once the generation confound is explicitly removed
+(combined multiplier ×1.45 → ×1.11 on the same 8 rows). But even after
+gen-adjustment, domain class and generation remain perfectly confounded
+within the market data itself (domain=1 is only A100, domain=8 is only
+H100/B200, domain=72 is only GB200/GB300) -- gen-adjustment corrects a
+real, externally-sourced confound, it doesn't manufacture the
+same-GPU-different-domain pairs that would make this a matched estimate.
+
 ## How to reproduce
 
 ```bash
@@ -383,11 +431,12 @@ MLPERF_ROOT=~/mlperf python3 scripts/11_measured_comm_intensity.py
 real ~480MB download for AWS's bulk price list) and is never run in CI --
 a price snapshot is a point-in-time artifact, not something to
 re-collect on every push. Re-run it manually when a fresh snapshot is
-wanted; 13 only needs the committed `data/market_prices_snapshot.csv`:
+wanted; 13 and 14 only need the committed `data/market_prices_snapshot.csv`:
 
 ```bash
 python3 scripts/12_market_price_collection.py   # optional: refreshes the snapshot
 python3 scripts/13_hedonic_comparison.py
+python3 scripts/14_gen_adjusted_hedonic.py
 ```
 
 CI (`.github/workflows/reproduce.yml`, badge above) runs the pinned
