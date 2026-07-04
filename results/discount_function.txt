@@ -27,3 +27,16 @@ DISCOUNT TABLE (time-to-train multiplier relative to domain=4; <1.0 = less time 
       72  0.784 [0.610, 1.009]      interpolation  0.627 [0.508, 0.773]      interpolation
 
 Interpolation = domain size falls within the observed range for that workload class in this dataset. Extrapolation = outside it -- treat those cells as a model-implied projection, not an empirical finding.
+
+ROBUSTNESS: flux1 moved from comm-bound to comm-light (per 11_measured_comm_intensity.py's finding that flux1 has zero measured TP/PP parallelism anywhere in the corpus)
+  comm-light slope  coef=-0.0820  (headline: -0.0841)
+  comm-bound slope  coef=-0.1710  (headline: -0.1618)
+
+  domain   light (headline)   light (no-flux1)     delta   heavy (headline)   heavy (no-flux1)     delta
+       4             1.0000             1.0000   +0.0000             1.0000             1.0000   +0.0000
+       8             0.9434             0.9447   +0.0014             0.8939             0.8882   -0.0057
+      16             0.8900             0.8925   +0.0026             0.7991             0.7889   -0.0102
+      36             0.8313             0.8351   +0.0038             0.7009             0.6867   -0.0142
+      72             0.7842             0.7889   +0.0047             0.6265             0.6099   -0.0166
+
+VERDICT: NOT MATERIAL. Largest cell movement (0.0166) is a small fraction of the largest 95% band width (0.3989) -- the discount table above is insensitive to flux1's COMM_BOUND label and remains the headline. This is a robustness check, not a correction.

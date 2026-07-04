@@ -76,6 +76,13 @@ compute-pricing discount function.
   both workload classes — not a coincidence, they're the canonical tray/rack sizes present
   throughout the dataset. Comm-light's band crosses 1.0 at domain=72 (p=0.058, marginal);
   comm-bound is comfortably significant throughout.
+- Discount function flux1-label robustness (09, DONE — follow-up to referee point 4):
+  11 found flux1 sits in COMM_BOUND but has zero measured TP/PP parallelism anywhere in the
+  corpus. Moving it to comm-light and rebuilding the whole discount table moves every cell
+  by at most 0.017 (comm-bound at domain=72: 0.627 -> 0.610) — a small fraction of the
+  ~0.27-0.40-wide confidence bands. NOT MATERIAL: the COMM_BOUND-based table remains the
+  headline (results/discount_function.txt ROBUSTNESS section has the full comparison and
+  the verdict logic: material iff largest cell delta > 25% of the largest band width).
 - Inference hardening (10, DONE — referee point 3): wild cluster bootstrap-t (Rademacher,
   9999 reps, clustered by org, wildboottest package) on both headline premiums. Categorical
   cap: asymptotic p=0.026 -> bootstrap p=0.028 (holds). Mined-augmented: asymptotic p=0.0001

@@ -221,6 +221,16 @@ not a coincidence of the table choice. Note the comm-light band at
 domain=72 crosses 1.0 (consistent with its p=0.058, only marginally
 significant); the comm-bound curve is comfortably significant throughout.
 
+**Robustness to the flux1 label:** 11_measured_comm_intensity.py found
+flux1 sits in `COMM_BOUND` but shows zero measured TP/PP parallelism
+anywhere in the corpus — a real disagreement between its hand-label and
+the measured evidence. Moving flux1 to comm-light and rebuilding the
+whole table moves every cell by at most 0.017 (comm-bound at domain=72:
+0.627 → 0.610), a small fraction of the ~0.27–0.40-wide confidence bands
+above. **The table is insensitive to flux1's label** — this is a
+robustness check, not a correction; the table above remains the headline
+(full comparison: `results/discount_function.txt`, ROBUSTNESS section).
+
 ## Inference hardening (10_inference_hardening.py)
 
 Referee point: with only 41 org clusters, asymptotic cluster-robust SEs

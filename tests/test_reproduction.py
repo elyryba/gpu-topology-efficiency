@@ -201,3 +201,48 @@ def test_measured_comm_intensity_coverage_and_sharpening():
     assert round(p_bin, 4) == 0.0229
     assert round(p_cont, 4) == 0.0040
     assert p_cont < p_bin  # measured continuous proxy sharpens the interaction
+
+
+def test_discount_function_insensitive_to_flux1_label():
+    """Locks 09_discount_function.py's flux1-label robustness check:
+    flux1 sits in COMM_BOUND but 11_measured_comm_intensity.py found it
+    has zero measured TP/PP parallelism anywhere in the corpus. Moving it
+    to comm-light should move the domain=72 discount cells by only a
+    small fraction of their confidence bands. If this ever fails, the
+    finding has become material and the headline table needs
+    re-evaluating, not a quiet threshold bump."""
+    df = load_clean(DATASET_CSV)
+    mined = pd.read_csv(MINED_CSV)
+    high = mined[mined["confidence"] == "high"][
+        ["repo", "org", "system_id", "inferred_domain"]]
+    df = df.merge(high, on=["repo", "org", "system_id"], how="left")
+    df["true_domain_mined"] = df["inferred_domain"].fillna(df["true_domain"])
+    df["log_domain_mined"] = np.log(df["true_domain_mined"])
+
+    def fit_curve(comm_set):
+        d = df.copy()
+        d["comm"] = d["model"].isin(comm_set).astype(float)
+        d["domain_mined_x_comm"] = d["log_domain_mined"] * d["comm"]
+        X = pd.concat([d[["log_gpus", "log_domain_mined", "domain_mined_x_comm"]],
+                      pd.get_dummies(d["model"], prefix="model", drop_first=True),
+                      pd.get_dummies(d["gen"], prefix="gen", drop_first=True)],
+                     axis=1)
+        X = sm.add_constant(X.astype(float))
+        y = d["log_time"].astype(float)
+        r = sm.OLS(y, X).fit(cov_type="cluster", cov_kwds={"groups": d["org"]})
+        b_light = r.params["log_domain_mined"]
+        b_heavy = b_light + r.params["domain_mined_x_comm"]
+        return b_light, b_heavy
+
+    bl0, bh0 = fit_curve(COMM_BOUND)
+    bl1, bh1 = fit_curve(COMM_BOUND - {"flux1"})
+
+    delta_light_72 = (np.exp(bl1 * np.log(72 / 4))
+                      - np.exp(bl0 * np.log(72 / 4)))
+    delta_heavy_72 = (np.exp(bh1 * np.log(72 / 4))
+                      - np.exp(bh0 * np.log(72 / 4)))
+
+    assert round(delta_light_72, 3) == 0.005
+    assert round(delta_heavy_72, 3) == -0.017
+    assert abs(delta_light_72) < 0.02
+    assert abs(delta_heavy_72) < 0.02

@@ -33,6 +33,16 @@ multipliers (relative to the domain=4 reference point) for domain sizes
 4/8/16/36/72, org-clustered uncertainty bands, and an explicit
 interpolation/extrapolation flag per cell based on the observed domain
 range within each workload class.
+
+Referee follow-up: 11_measured_comm_intensity.py found flux1 is in
+COMM_BOUND but shows zero measured TP/PP parallelism anywhere in the
+corpus -- its hand-label disagrees with the measured evidence. This
+script includes a robustness check: rebuild the whole discount table with
+flux1 moved to comm-light and report how much every cell moves. If that
+move were material, the corrected table would replace this one as the
+headline; empirically it doesn't (see ROBUSTNESS section), so the
+COMM_BOUND-based table above remains authoritative and the check is
+reported as evidence of insensitivity, not a correction.
 """
 import os
 
@@ -124,6 +134,24 @@ def multiplier_band(b_hat, se, domain, ref=DOMAIN_REF, z=1.96):
     lo = float(np.exp((b_hat - z * se) * logratio))
     hi = float(np.exp((b_hat + z * se) * logratio))
     return point, min(lo, hi), max(lo, hi)
+
+
+def fit_curves(df, comm_set):
+    """Fit the two-curve spec for a given comm-bound model set and return
+    the monotonicity-enforced slopes/SEs used to build a discount table
+    (silently swallows monotonicity-clip notes -- the caller decides
+    whether to surface them)."""
+    d = df.copy()
+    d["comm"] = d["model"].isin(comm_set).astype(float)
+    d["domain_mined_x_comm"] = d["log_domain_mined"] * d["comm"]
+    r = fit(d, extra_cols=["domain_mined_x_comm"])
+    b_light = r.params["log_domain_mined"]
+    se_light = r.bse["log_domain_mined"]
+    b_heavy, se_heavy = heavy_slope_and_se(r)
+    notes = []
+    b_light_used = enforce_nonpositive(b_light, "comm-light", notes)
+    b_heavy_used = enforce_nonpositive(b_heavy, "comm-bound", notes)
+    return b_light_used, se_light, b_heavy_used, se_heavy, notes
 
 
 def main():
@@ -244,6 +272,63 @@ def main():
                 "range for that workload class in this dataset. "
                 "Extrapolation = outside it -- treat those cells as a "
                 "model-implied projection, not an empirical finding.")
+    lines.append("")
+
+    # ---------- robustness: flux1 label sensitivity ----------
+    # 11_measured_comm_intensity.py found flux1 (in COMM_BOUND) shows zero
+    # measured TP/PP parallelism anywhere in the corpus -- its hand-label
+    # disagrees with the measured evidence. Check how much the table
+    # actually depends on that one label.
+    comm_bound_noflux = COMM_BOUND - {"flux1"}
+    bl_nf, se_l_nf, bh_nf, se_h_nf, notes_nf = fit_curves(df, comm_bound_noflux)
+
+    lines.append("ROBUSTNESS: flux1 moved from comm-bound to comm-light "
+                "(per 11_measured_comm_intensity.py's finding that flux1 "
+                "has zero measured TP/PP parallelism anywhere in the "
+                "corpus)")
+    lines.append(f"  comm-light slope  coef={bl_nf:+.4f}  "
+                f"(headline: {b_light_used:+.4f})")
+    lines.append(f"  comm-bound slope  coef={bh_nf:+.4f}  "
+                f"(headline: {b_heavy_used:+.4f})")
+    lines.append("")
+    lines.append(f"{'domain':>8s}  {'light (headline)':>17s}  "
+                f"{'light (no-flux1)':>17s}  {'delta':>8s}  "
+                f"{'heavy (headline)':>17s}  {'heavy (no-flux1)':>17s}  "
+                f"{'delta':>8s}")
+    max_abs_delta = 0.0
+    for d in DOMAIN_SIZES:
+        lp0, _, _ = multiplier_band(b_light_used, se_light, d)
+        hp0, _, _ = multiplier_band(b_heavy_used, se_heavy, d)
+        lp1, _, _ = multiplier_band(bl_nf, se_l_nf, d)
+        hp1, _, _ = multiplier_band(bh_nf, se_h_nf, d)
+        dl, dh = lp1 - lp0, hp1 - hp0
+        max_abs_delta = max(max_abs_delta, abs(dl), abs(dh))
+        lines.append(f"{d:8d}  {lp0:17.4f}  {lp1:17.4f}  {dl:+8.4f}  "
+                     f"{hp0:17.4f}  {hp1:17.4f}  {dh:+8.4f}")
+    lines.append("")
+
+    band_widths = []
+    for d in DOMAIN_SIZES:
+        _, llo, lhi = multiplier_band(b_light_used, se_light, d)
+        _, hlo, hhi = multiplier_band(b_heavy_used, se_heavy, d)
+        band_widths += [lhi - llo, hhi - hlo]
+    max_band_width = max(w for w in band_widths if w > 0) if any(
+        w > 0 for w in band_widths) else 1.0
+
+    if max_abs_delta > 0.25 * max_band_width:
+        lines.append(f"VERDICT: MATERIAL. Largest cell movement "
+                     f"({max_abs_delta:.4f}) exceeds 25% of the largest "
+                     f"95% band width ({max_band_width:.4f}) -- the "
+                     f"no-flux1 table should be treated as the headline "
+                     f"and the table above as superseded.")
+    else:
+        lines.append(f"VERDICT: NOT MATERIAL. Largest cell movement "
+                     f"({max_abs_delta:.4f}) is a small fraction of the "
+                     f"largest 95% band width ({max_band_width:.4f}) -- "
+                     f"the discount table above is insensitive to "
+                     f"flux1's COMM_BOUND label and remains the "
+                     f"headline. This is a robustness check, not a "
+                     f"correction.")
 
     out = "\n".join(lines)
     os.makedirs(os.path.dirname(OUT_TXT), exist_ok=True)
