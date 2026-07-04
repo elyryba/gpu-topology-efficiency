@@ -16,6 +16,9 @@ compute-pricing discount function.
 - `scripts/07_mine_nvl_configs.py` — mines system_name/hw_notes/sw_notes/accelerator_interconnect_topology + config filenames for direct domain evidence (needs repos cloned; set $MLPERF_ROOT)
 - `scripts/08_refit_with_mined_domains.py` — refits the topology premium using mined high-confidence domains where available, categorical cap otherwise
 - `scripts/09_discount_function.py` — workload-conditional (comm-bound/comm-light) monotone discount function on the evidence-augmented domain feature, validated on the v5.1-v6.0 temporal holdout
+- `scripts/10_inference_hardening.py` — wild cluster bootstrap-t (wildboottest package, Rademacher, 9999 reps) on both headline premiums, no MLPERF_ROOT needed
+- `scripts/11_measured_comm_intensity.py` — mines TP/PP degree from benchmark config filenames -> continuous comm-intensity proxy; needs $MLPERF_ROOT to re-mine, but its output (`data/comm_intensity_mined.csv`) is committed
+- `data/comm_intensity_mined.csv` — per-row mined TP*PP comm-intensity feature (11); `comm_intensity_reason` column distinguishes measured / assumed_dp_default / unmeasured_no_scale_match / repo_unavailable
 - `tests/test_reproduction.py` — pins the headline numbers below; run via pytest
 - `.github/workflows/reproduce.yml` — CI: runs 02-06 + pytest on push/PR and monthly (living-validation hook)
 - `results/*.txt` — all regression outputs
@@ -26,12 +29,15 @@ compute-pricing discount function.
 - Run everything (02-06 only, no MLPerf clone needed): `cd scripts && for s in 02 03 04 05 06; do python3 ${s}_*.py; done`
 - Mining (07, needs $MLPERF_ROOT with v5.0/v5.1/v6.0 cloned): `MLPERF_ROOT=~/mlperf python3 scripts/07_mine_nvl_configs.py`
 - Refit + discount function (08/09, no MLPerf clone needed, just the committed CSVs): `python3 scripts/08_refit_with_mined_domains.py && python3 scripts/09_discount_function.py`
+- Inference hardening (10, no MLPerf clone needed): `python3 scripts/10_inference_hardening.py`
+- Measured comm-intensity (11, needs $MLPERF_ROOT to re-mine; skip and just use the committed data/comm_intensity_mined.csv otherwise): `MLPERF_ROOT=~/mlperf python3 scripts/11_measured_comm_intensity.py`
 - Tests: `pytest tests/test_reproduction.py`
-- Deps: pandas, numpy, statsmodels, pytest (exact pins in requirements.txt)
+- Deps: pandas, numpy, statsmodels, pytest, wildboottest (exact pins in requirements.txt)
 
 ## Key findings so far (do not regress these)
 - Topology premium (reparametrized: log_time ~ log_total_gpus + log_domain + FEs):
-  v2 corrected = -0.096 (p=0.026 org-clustered); pre-Blackwell clean subsample = -0.30 (p=0.0006)
+  v2 corrected = -0.096 (p=0.026 org-clustered; wild cluster bootstrap p=0.028, holds --
+  see item 10 below); pre-Blackwell clean subsample = -0.30 (p=0.0006)
 - Sign survives 29 leave-one-out refits, temporal holdout (OOS R²=0.886), Huber/quantile estimators
 - Continuous inter-node bandwidth (06): does NOT replace domain size (S1/S2 fail);
   but bandwidth×comm-bound interaction is -0.176 (p=1e-4) — strongest mechanism evidence
@@ -70,6 +76,27 @@ compute-pricing discount function.
   both workload classes — not a coincidence, they're the canonical tray/rack sizes present
   throughout the dataset. Comm-light's band crosses 1.0 at domain=72 (p=0.058, marginal);
   comm-bound is comfortably significant throughout.
+- Inference hardening (10, DONE — referee point 3): wild cluster bootstrap-t (Rademacher,
+  9999 reps, clustered by org, wildboottest package) on both headline premiums. Categorical
+  cap: asymptotic p=0.026 -> bootstrap p=0.028 (holds). Mined-augmented: asymptotic p=0.0001
+  -> bootstrap p=0.0067 (holds, but the asymptotic p understated uncertainty by ~67x).
+  Neither headline flips, but treat every asymptotic p in this repo as a lower bound on
+  the true p, not the true p, given only 41 clusters. wildboottest gotcha: pass cluster as
+  integer-coded IDs (pd.factorize), not raw org-name strings -- strings crash its numba JIT
+  with a typing error.
+- Measured comm-intensity (11, DONE — referee point 4): mined TP*PP degree from benchmark
+  config filenames as a continuous comm-intensity proxy (log(TP*PP)), replacing the
+  hand-labeled COMM_BOUND binary in 09's interaction. Coverage: of 969 rows, 361 (37%) have
+  no available raw repo to check (v3.1/v4.0/v4.1 not cloned) and are excluded; of the rest,
+  303 (31% of 969) measured directly, 240 (25%) assumed pure-data-parallel (model never
+  shows tp/pp naming anywhere in the corpus -- explicit assumption, not measurement), 65 (7%)
+  unmeasured (tp/pp-style model but no scale-matching config found). Restricted sample
+  (measured+assumed-DP) n=543. On that identical subsample: hand-labeled binary interaction
+  p=0.0229 vs. measured continuous interaction p=0.0040 -- SHARPENS, ~5.7x more significant.
+  comm_intensity's own main effect is positive (p=0.13, not significant) while its
+  interaction with domain is negative and significant -- a coherent mechanism story the
+  binary couldn't separate out. Also surfaced: flux1 is in COMM_BOUND but has ZERO tp/pp
+  configs anywhere in the corpus -- the measured proxy disagrees with its hand-label.
 
 ## Conventions
 - Always use org-clustered standard errors for headline claims; nonrobust only for comparison
@@ -90,6 +117,13 @@ compute-pricing discount function.
   distance on that specific fit — a sensitivity result can look like it's driven by the
   rows you cared about when it's actually a handful of unrelated thin-generation leverage
   points (see the -0.338 caveat above; 07/08's leverage audit is the template)
+- Report asymptotic clustered p-values as a lower bound, not the final word, given only 41
+  org clusters — wild cluster bootstrap them (10_inference_hardening.py is the template)
+  before treating a "marginal" result as settled either way
+- Never conflate `comm_intensity_reason == "assumed_dp_default"` with an actual measurement
+  (data/comm_intensity_mined.csv, 11) — only "measured" rows come from a parsed config file;
+  the assumed-DP default is a documented modeling choice for models that never show tp/pp
+  naming anywhere in the corpus, not evidence
 
 ## Open work (priority order)
 1. ~~Mine per-submission NVL config from system-description free text for GB200/GB300~~ —

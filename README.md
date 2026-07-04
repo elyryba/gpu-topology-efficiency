@@ -29,6 +29,8 @@ scripts/
   07_mine_nvl_configs.py           mines per-submission NVLink domain evidence from raw MLPerf repos
   08_refit_with_mined_domains.py   refits the topology premium using mined evidence where available
   09_discount_function.py          workload-conditional discount function, validated on a temporal holdout
+  10_inference_hardening.py        wild cluster bootstrap-t on both headline premiums (few-cluster robustness)
+  11_measured_comm_intensity.py    TP/PP degree mined from config files -> continuous comm-intensity proxy
 ```
 
 Run: `bash setup.sh` (creates a venv, installs the pinned `requirements.txt`,
@@ -83,6 +85,11 @@ independent. The original's "-0.78 vs -0.68, both p<0.0001" framing is
 technically true and materially misleading about effect size: the correction
 shrank the topology premium by ~70% (from 0.33 to 0.10), not the ~24%
 implied by "-1.02 → -0.78."
+
+*(41 org clusters is right at the edge where asymptotic cluster-robust
+inference is known to get optimistic. `10_inference_hardening.py` checked
+this p=0.026 with a 9999-rep wild cluster bootstrap: it holds, at
+p=0.028 — see that section below before treating "marginal" as settled.)*
 
 ## Standing limitations (inherited + new)
 
@@ -214,6 +221,71 @@ not a coincidence of the table choice. Note the comm-light band at
 domain=72 crosses 1.0 (consistent with its p=0.058, only marginally
 significant); the comm-bound curve is comfortably significant throughout.
 
+## Inference hardening (10_inference_hardening.py)
+
+Referee point: with only 41 org clusters, asymptotic cluster-robust SEs
+(used for every headline number above) are at the edge of where they're
+known to become anti-conservative in finite samples. This script re-tests
+both headline topology-premium estimates with a wild cluster bootstrap-t
+(Rademacher weights, null imposed, 9999 replications, clustered by org --
+`results/inference_hardening.txt`):
+
+| | asymptotic p | bootstrap p |
+|---|---|---|
+| Categorical cap (04) | 0.026 | **0.028** |
+| Mined-augmented (08) | 0.0001 | **0.0067** |
+
+Neither headline loses significance. But the gap is worth sitting with:
+the mined-augmented estimate's asymptotic p-value understated the true
+uncertainty by roughly 67x (0.0001 → 0.0067). The bootstrap doesn't flip
+any conclusion in this repo, but it does mean the asymptotic SEs
+everywhere else were optimistic, not just for the one headline this
+happened to be checked on.
+
+## Measured comm-intensity (11_measured_comm_intensity.py)
+
+Referee point: 09's comm-bound/comm-light split is a hand-labeled binary
+(`COMM_BOUND`, 7 fixed model names) standing in for a continuous physical
+quantity. This script mines actual tensor-parallel x pipeline-parallel
+(TP×PP) degree from MLPerf benchmark config filenames (e.g.
+`config_GB300_128x4x56xtp2pp8cp2_cg_fp4.sh` → TP=2, PP=8) as a measured
+comm-intensity proxy (`comm_intensity = log(TP×PP)`), and refits 09's
+interaction using it instead of the binary, on an identical subsample so
+the comparison is apples-to-apples (`results/measured_comm_intensity.txt`,
+mined feature: `data/comm_intensity_mined.csv`).
+
+Coverage is partial and unevenly distributed -- reported honestly, not
+smoothed over. Of 969 analysis rows: 361 (37%) are from MLPerf rounds we
+don't have cloned (v3.1/v4.0/v4.1) and can't be checked at all; of the
+rest, 303 (31%) have a directly measured TP/PP value, 240 (25%) are
+models that never use TP/PP naming anywhere in the corpus and are
+assumed pure data-parallel (TP=PP=1, flagged explicitly, not asserted as
+measured), and 65 (7%) use TP/PP-style models but had no scale-matching
+config found for that specific row. The restricted analysis sample
+(measured + assumed-DP) is 543 rows (56% of 969).
+
+One direct discrepancy surfaced: **flux1 is in the hand-labeled
+COMM_BOUND set, but shows zero TP/PP configuration anywhere in the three
+repos scanned** -- the measured proxy would call it pure data-parallel,
+contradicting its hand-label.
+
+On the 543-row restricted sample, refitting the same interaction spec
+with the measured continuous proxy instead of the binary:
+
+| | interaction p-value |
+|---|---|
+| Original hand-labeled binary (09), same subsample | 0.0229 |
+| Measured continuous proxy | **0.0040** |
+
+**The split sharpens** — about 5.7x more significant with the measured
+proxy, on the identical rows. The continuous spec also separates two
+effects the binary couldn't: `comm_intensity`'s own main effect is
+*positive* (higher TP×PP alone tends to be slower, p=0.13, not
+significant on its own) while its interaction with domain size is
+negative and significant (p=0.004) -- a coherent mechanistic story
+(communication-heavy parallelism is costly, but larger NVLink domains
+measurably offset that cost) that the binary version couldn't surface.
+
 ## How to reproduce
 
 ```bash
@@ -222,8 +294,10 @@ source .venv/bin/activate
 pytest tests/test_reproduction.py   # pins the headline numbers above
 ```
 
-07 additionally requires the raw MLPerf repos cloned locally (08/09 only
-need the committed CSVs, same as 02-06):
+07 and 11 additionally require the raw MLPerf repos cloned locally (08/09/10
+only need the committed CSVs, same as 02-06 -- 11's mined feature is also
+committed as `data/comm_intensity_mined.csv`, so only re-mining it from
+scratch needs the clones):
 
 ```bash
 mkdir -p ~/mlperf && cd ~/mlperf
@@ -234,6 +308,8 @@ cd -
 MLPERF_ROOT=~/mlperf python3 scripts/07_mine_nvl_configs.py
 python3 scripts/08_refit_with_mined_domains.py
 python3 scripts/09_discount_function.py
+python3 scripts/10_inference_hardening.py
+MLPERF_ROOT=~/mlperf python3 scripts/11_measured_comm_intensity.py
 ```
 
 CI (`.github/workflows/reproduce.yml`, badge above) runs the pinned
