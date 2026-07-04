@@ -29,6 +29,12 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run analysis pipeline (02-06)
+        # Deliberately excludes 07/11 (need $MLPERF_ROOT, raw repos not
+        # cloned here) and 12 (hits live AWS/Azure/OCI pricing APIs --
+        # a price snapshot shouldn't re-collect on every push; it's a
+        # point-in-time artifact, re-run manually when a fresh snapshot
+        # is wanted). 08/09/10/13 aren't run here either, but their
+        # substance is re-verified by the pytest step below instead.
         run: |
           cd scripts
           for s in 02_topology_efficiency_model 03_corrected_topology_model \
