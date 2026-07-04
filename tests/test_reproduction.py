@@ -8,6 +8,7 @@ when someone eyeballs results/*.txt.
 
 Run: pytest tests/test_reproduction.py
 """
+import json
 import os
 import sys
 
@@ -302,3 +303,39 @@ def test_gen_adjusted_hedonic_premium():
     assert round(adj_mult, 3) == 1.243
     assert adj_mult < raw_mult  # gen-adjustment shrinks the raw premium
     assert adj_mult > 1.0       # but a premium survives -- doesn't flip sign
+
+
+def test_model_params_json_matches_committed_copy():
+    """Regenerates site/model_params.json in-memory (no write to disk) and
+    asserts it matches the committed copy exactly, except `generated_at`
+    (a live timestamp that necessarily differs on every run -- excluded
+    from the comparison, everything else is compared byte-for-byte). If
+    this ever fails, the public calculator has drifted from the actual
+    fitted models and 15_export_model_params.py needs re-running, not a
+    quiet copy of new numbers into the committed file."""
+    import importlib.util
+
+    script_path = os.path.join(os.path.dirname(__file__), "..", "scripts",
+                              "15_export_model_params.py")
+    spec = importlib.util.spec_from_file_location(
+        "export_model_params", script_path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    fresh = module.build_params()
+
+    committed_path = os.path.join(os.path.dirname(__file__), "..", "site",
+                                 "model_params.json")
+    with open(committed_path) as f:
+        committed = json.load(f)
+
+    # generated_at is a live timestamp -- excluded from comparison, not
+    # from existence: both must have it, they just won't match.
+    assert "generated_at" in fresh["metadata"]
+    assert "generated_at" in committed["metadata"]
+    fresh["metadata"] = {k: v for k, v in fresh["metadata"].items()
+                        if k != "generated_at"}
+    committed["metadata"] = {k: v for k, v in committed["metadata"].items()
+                            if k != "generated_at"}
+
+    assert fresh == committed

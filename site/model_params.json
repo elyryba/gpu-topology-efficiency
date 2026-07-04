@@ -1,0 +1,61 @@
+{
+  "discount_curves": {
+    "comm_bound": {
+      "observed_domain_range": [
+        4.0,
+        72.0
+      ],
+      "se": 0.036993,
+      "slope": -0.161766
+    },
+    "comm_light": {
+      "observed_domain_range": [
+        2.0,
+        72.0
+      ],
+      "se": 0.044421,
+      "slope": -0.084095
+    },
+    "domain_ref": 4,
+    "spec": "log_time ~ log_gpus + log_domain_mined + domain_mined_x_comm + model FE + gen FE, org-clustered SEs (09_discount_function.py)",
+    "z": 1.96
+  },
+  "gen_speed_multipliers": {
+    "multipliers": {
+      "A100": 1.0,
+      "B200": 6.8855,
+      "GB200": 5.9225,
+      "GB300": 8.4458,
+      "H100": 3.2601
+    },
+    "reference": "A100",
+    "source": "08_refit_with_mined_domains.py gen fixed effects"
+  },
+  "market_premium": {
+    "gen_adjusted": {
+      "n": 8,
+      "pooled": 1.243,
+      "pooled_ci95": [
+        1.1802,
+        1.3064
+      ],
+      "provider_fe": 1.2341,
+      "provider_fe_ci95": [
+        1.1717,
+        1.2974
+      ]
+    },
+    "note": "Descriptive, confounded with GPU generation (13); gen-adjusted removes that confound but shrinks the sample to n=8 (14). See README Market pricing comparison section.",
+    "raw": {
+      "n": 13,
+      "pooled": 1.7638,
+      "provider_fe": 1.7713
+    }
+  },
+  "metadata": {
+    "dataset_n": 969,
+    "generated_at": "2026-07-04T07:06:20Z",
+    "repo_url": "https://github.com/elyryba/gpu-topology-efficiency",
+    "repo_version": "v0.4.0"
+  }
+}
