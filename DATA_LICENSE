@@ -32,19 +32,49 @@ files).
 
 Attribution
 -----------
-MLPerf(TM) and MLCommons(TM) are trademarks of the MLCommons Association.
-This project is an independent, third-party analysis of publicly
-published MLPerf Training results. It is not endorsed by, sponsored by,
-or affiliated with MLCommons, and its findings have not been verified by
-the MLCommons Association.
+MLPerf® is a registered trademark of the MLCommons® Association in
+the United States and other countries. All references to "MLPerf" in
+this repository refer to MLPerf® Training benchmark results published
+by MLCommons.
 
-Open caveat -- not yet resolved
---------------------------------
-This repo's CLAUDE.md (open-work item) already flags: before any
+Citation for the underlying results data:
+
+    MLPerf® Training results, rounds v3.1 through v6.0. Includes both
+    Closed and Open division submissions -- directly verified by
+    inspecting the "division" field of the source JSON for v5.0/v5.1/v6.0
+    (e.g. v6.0 alone contains 2 Open-division system entries alongside
+    119 Closed-division ones); v3.1/v4.0/v4.1 were not independently
+    re-verified here, but at least one v3.1 system_id ("8xA100_40GB_open")
+    strongly suggests Open-division submissions appear there too. Either
+    way, "Closed division" alone would misdescribe the source -- don't
+    cite this dataset as Closed-only. Retrieved from the official
+    MLCommons GitHub repositories (github.com/mlcommons/training_results_
+    v3.1 through .../training_results_v6.0) and
+    mlcommons.org/benchmarks/training/.
+
+The individual MLPerf® results this project draws on are official,
+MLCommons-verified benchmark submissions. The aggregate regression
+analysis, mined NVLink-domain evidence, and discount function in THIS
+repository are NOT themselves MLCommons-verified results -- they are
+independent, third-party derived work, produced by re-processing publicly
+published data, not benchmark submissions in their own right.
+
+This project is an independent, third-party analysis. It is not endorsed
+by, sponsored by, certified by, or affiliated with MLCommons or the
+MLCommons Association, and none of its findings (the topology premium,
+the mined domain evidence, or the discount function) have been reviewed
+or verified by MLCommons.
+
+Open caveat -- not yet resolved (do not treat this as resolved)
+------------------------------------------------------------------
+This repo's CLAUDE.md (open-work item 4) already flags: before any
 commercial use of this analysis (e.g. as a compute-pricing input), check
 MLCommons' results-usage and trademark policies directly at
 mlcommons.org, separately from the Apache 2.0 license covering the
-repositories themselves. That check has not been performed as part of
-this work -- nothing found in the cloned repos restricts the current
-non-commercial, attributed, open-source use of the data, but the
-commercial-use question remains open.
+repositories themselves. That check has NOT been performed as part of
+this work, and this document makes NO claim of compliance with MLCommons'
+results-usage or commercial-use policies -- nothing found in the cloned
+repos restricts the current non-commercial, attributed, open-source use
+of the data, but the commercial-use question is explicitly left open for
+the repo owner to resolve before any such use, not asserted as settled
+here.

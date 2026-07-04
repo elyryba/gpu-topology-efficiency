@@ -2,14 +2,18 @@
 
 [![Reproduce](https://github.com/elyryba/gpu-topology-efficiency/actions/workflows/reproduce.yml/badge.svg)](https://github.com/elyryba/gpu-topology-efficiency/actions/workflows/reproduce.yml)
 
-Independent, from-scratch rebuild and extension of the MLPerf topology-efficiency
+Independent, from-scratch rebuild and extension of the MLPerf® topology-efficiency
 analysis. Everything below was re-derived by running the code in this repo
-against `data/mlperf_topology_dataset.csv` (1,041 extracted MLPerf Training
-submissions, v3.1–v6.0; 969 after quality filtering).
+against `data/mlperf_topology_dataset.csv` (1,041 extracted MLPerf® Training
+submissions, v3.1–v6.0, Closed and Open divisions; 969 after quality filtering).
 
-Source data is MLCommons MLPerf Training results (Apache License 2.0); see
-[DATA_LICENSE](DATA_LICENSE) for attribution terms. This repo's own code is
-[MIT-licensed](LICENSE).
+MLPerf® is a registered trademark of the MLCommons® Association. Source data
+is MLCommons MLPerf® Training results (Apache License 2.0) -- see
+[DATA_LICENSE](DATA_LICENSE) for the full citation and attribution terms.
+This repo's own code is [MIT-licensed](LICENSE). **This project is an
+independent, third-party analysis: it is not endorsed by, sponsored by, or
+affiliated with MLCommons, and none of its findings have been verified by
+the MLCommons Association.**
 
 ## Pipeline
 
