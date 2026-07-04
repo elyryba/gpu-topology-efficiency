@@ -31,6 +31,8 @@ scripts/
   09_discount_function.py          workload-conditional discount function, validated on a temporal holdout
   10_inference_hardening.py        wild cluster bootstrap-t on both headline premiums (few-cluster robustness)
   11_measured_comm_intensity.py    TP/PP degree mined from config files -> continuous comm-intensity proxy
+  12_market_price_collection.py    collects current GPU rental pricing (AWS/Azure/OCI, cleared sources only)
+  13_hedonic_comparison.py         market price premium vs. measured throughput premium, per domain doubling
 ```
 
 Run: `bash setup.sh` (creates a venv, installs the pinned `requirements.txt`,
@@ -296,6 +298,61 @@ negative and significant (p=0.004) -- a coherent mechanistic story
 (communication-heavy parallelism is costly, but larger NVLink domains
 measurably offset that cost) that the binary version couldn't surface.
 
+## Market pricing comparison (12_market_price_collection.py, 13_hedonic_comparison.py)
+
+CLAUDE.md open-work item 3: does the GPU rental market already price the
+topology premium measured above? `docs/market_data_recon.md` researched
+candidate data sources first (no data collected, no scraping) and flagged
+two as off-limits: **vast.ai** (richest topology schema of anything
+surveyed, but its ToS prohibits compiling a dataset via the API without
+written permission -- not touched, pending that permission) and
+**GPUPerHour** (requires a paid commercial license for programmatic
+access -- not touched). `12_market_price_collection.py` collects current
+on-demand pricing only from the sources the recon cleared as unrestricted:
+AWS's Price List Bulk API, Azure's Retail Prices API, and OCI's public
+pricing endpoint (all unauthenticated, official, documented for exactly
+this kind of use). GCP is skipped -- its Billing API needs an API key not
+configured in this environment, a documented gap, not a workaround.
+
+None of these three APIs expose NVLink/interconnect topology as a
+structured field, so `domain_size`/`interconnect_type`/`multi_node` come
+from a manually curated lookup table citing each provider's own
+instance-family docs (`data/market_prices_snapshot.csv`) -- the same
+annotation discipline `07_mine_nvl_configs.py` uses for MLPerf metadata,
+applied to price sheets instead of benchmark submissions.
+
+| domain | n | median $/GPU-hr |
+|---|---|---|
+| 1 (low-interconnect) | 6 | $0.74 |
+| 8 (single-node NVLink) | 4 | $8.44 |
+| 72 (GB200/GB300 NVL72 rack-scale) | 3 | $18.00 |
+
+**The critical caveat, worth repeating because it changes how to read
+every number here:** unlike 09's throughput regression, which isolates
+domain size while holding GPU model/generation fixed via fixed effects,
+this market snapshot has **zero within-GPU-model domain-size variation**
+-- no provider in the collected data sells the same GPU model at more
+than one topology class (nobody sells a single-GPU H100 next to an
+8-GPU-NVLink H100). Every price comparison here is confounded with GPU
+generation. `13_hedonic_comparison.py`'s numbers describe how list price
+scales with deployment class, not a topology-isolated hedonic estimate --
+a descriptive first-order comparison, not a matched causal one.
+
+With that caveat firmly in mind (`results/hedonic_comparison.txt`):
+
+| | per domain doubling |
+|---|---|
+| Market price (pooled OLS, n=13) | **×1.76** more expensive per GPU-hour |
+| Market price (with provider FE) | ×1.77 more expensive per GPU-hour |
+| Measured throughput (09 comm-bound) | ×0.894 time (-10.6% time-to-train) |
+| **Combined cost-to-train multiplier** | **×1.58** (price effect × time effect) |
+
+The market's price spread is larger than the measured performance
+spread: paying for a bigger NVLink domain costs roughly 58% more in
+total GPU-hour spend even after accounting for finishing ~11% faster, at
+least in this small, confounded snapshot. Read the direction, not the
+precise multiplier, given n=13 and the GPU-generation confound above.
+
 ## How to reproduce
 
 ```bash
@@ -320,6 +377,17 @@ python3 scripts/08_refit_with_mined_domains.py
 python3 scripts/09_discount_function.py
 python3 scripts/10_inference_hardening.py
 MLPERF_ROOT=~/mlperf python3 scripts/11_measured_comm_intensity.py
+```
+
+12 hits live AWS/Azure/OCI pricing APIs (no MLPerf clone needed, but a
+real ~480MB download for AWS's bulk price list) and is never run in CI --
+a price snapshot is a point-in-time artifact, not something to
+re-collect on every push. Re-run it manually when a fresh snapshot is
+wanted; 13 only needs the committed `data/market_prices_snapshot.csv`:
+
+```bash
+python3 scripts/12_market_price_collection.py   # optional: refreshes the snapshot
+python3 scripts/13_hedonic_comparison.py
 ```
 
 CI (`.github/workflows/reproduce.yml`, badge above) runs the pinned
