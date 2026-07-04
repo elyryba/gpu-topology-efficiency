@@ -1,6 +1,20 @@
 REFIT WITH MINED NVLINK DOMAINS
 n=969 | rows with high-confidence mined domain override: 137
 
+ACCOUNTING: all 92 GB200/GB300 sub-rack rows (total_gpus < 72), traced end to end
+  sub-rack rows in this analysis sample: 92
+  matched to a mining entry: 92  (unmatched -- no mining entry at all: 0)
+  high confidence:   54
+  medium confidence: 3
+  low confidence:    35
+  cap-only (medium + low + unmatched, i.e. everything non-high): 38
+  check: high + cap-only = 54 + 38 = 92 (must equal 92: OK)
+
+Note: an earlier mining pass (commit cbccc13, before the field-coverage and
+gen-consistency fixes in commit 4681925) reported 41 high / 51 cap-only for
+this same 92-row set. That number is superseded by the fix -- do not cite it;
+the counts above are the current, reviewed state.
+
 TOPOLOGY PREMIUM: categorical cap vs. mined-augmented (org-clustered SEs)
   categorical cap (baseline)  coef=-0.0961  se=0.0432  p=0.02591  (reference: -0.0961, p=0.0259 per CLAUDE.md / 04_rigor_checks.py)
   mined-augmented             coef=-0.1309  se=0.0339  p=0.0001131
@@ -25,3 +39,29 @@ LEAVE-ONE-GENERATION-OUT (mined-augmented feature)
 SENSITIVITY: drop the 38 cap-only sub-rack rows entirely (no high-confidence evidence -- pure categorical assumption)
   n=931  premium=-0.3376  se=0.0910  p=0.0002074
   (shows how much the headline premium depends on rows where we still have to trust min(total_gpus,72) rather than direct submission evidence)
+
+LEVERAGE AUDIT: top 10 Cook's-distance rows in the cap-only-dropped fit (n=931)
+(checks whether the -0.338 sensitivity number is actually driven by mined evidence, or by unrelated outliers)
+  cooks_d=0.2167  tinycorp/tinybox_8xMI300X (MI300X, total_gpus=8, model=bert)
+    evidence: (not a mined GB200/GB300 evidence row -- generic FE/scale leverage point, unrelated to domain mining)
+  cooks_d=0.1976  Dell/1xXE7745x8RTXPro6000-PCIe-96GB (RTX, total_gpus=8, model=retinanet)
+    evidence: (not a mined GB200/GB300 evidence row -- generic FE/scale leverage point, unrelated to domain mining)
+  cooks_d=0.1828  TTA/RTX6000Pro_8x96GB (RTX, total_gpus=8, model=llama31_8b)
+    evidence: (not a mined GB200/GB300 evidence row -- generic FE/scale leverage point, unrelated to domain mining)
+  cooks_d=0.0945  JuniperNetworks/a100_n8_ngc24.1_pytorch_deepspeed (A100, total_gpus=64, model=llama2_70b_lora)
+    evidence: (not a mined GB200/GB300 evidence row -- generic FE/scale leverage point, unrelated to domain mining)
+  cooks_d=0.0940  tinycorp/tinybox_green (RTX, total_gpus=6, model=bert)
+    evidence: (not a mined GB200/GB300 evidence row -- generic FE/scale leverage point, unrelated to domain mining)
+  cooks_d=0.0682  Ailiverse/8xA100_40GB_open (A100, total_gpus=80, model=resnet)
+    evidence: (not a mined GB200/GB300 evidence row -- generic FE/scale leverage point, unrelated to domain mining)
+  cooks_d=0.0441  tinycorp/tinybox_green (RTX, total_gpus=6, model=bert)
+    evidence: (not a mined GB200/GB300 evidence row -- generic FE/scale leverage point, unrelated to domain mining)
+  cooks_d=0.0428  HPE/HPE-GB300-ngpu72_ngc26.04_reduced_gbs (GB300, total_gpus=72, model=llama31_405b)
+    evidence: [mined, confidence=high, inferred_domain=72.0] [system_name] NVIDIA GB300 NVL72 by HPE
+  cooks_d=0.0428  Fujitsu/PRIMERGY-CDI-L40Sx16 (L40S, total_gpus=16, model=bert)
+    evidence: (not a mined GB200/GB300 evidence row -- generic FE/scale leverage point, unrelated to domain mining)
+  cooks_d=0.0236  NVIDIA/l40s_n16_ngc24.04_pytorch (L40S, total_gpus=64, model=ssd)
+    evidence: (not a mined GB200/GB300 evidence row -- generic FE/scale leverage point, unrelated to domain mining)
+
+CAVEAT: only 1 of the top 10 highest-leverage rows is even a mined GB200/GB300 evidence row (HPE GB300 ngpu72, and its mined domain [72] matches what the categorical cap already assumed at total_gpus=72 -- not new information). The other 9 are generic thin-generation leverage points (single-system tinycorp/Dell/TTA/JuniperNetworks/Ailiverse/Fujitsu/NVIDIA submissions in MI300X, RTX, A100, L40S) with no connection to NVLink domain mining at all.
+The -0.338 sensitivity figure should NOT be read as 'strengthened because we now trust the evidence more' -- dropping the 38 cap-only rows changes which thin generations dominate the fixed effects, and that recomposition, not the mined domain values, is what is mostly moving this number. Treat -0.338 as a sensitivity bound, not a second confirmation of the mined-augmented headline (-0.131).

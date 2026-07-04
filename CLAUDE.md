@@ -36,11 +36,22 @@ compute-pricing discount function.
 - Identification caveat: B200/B300 and AMD gens have ZERO within-gen domain variation;
   premium identified from GB200/GB300 sub-rack rows, H100 variants, thin older gens
 - Mined-domain evidence (07/08, DONE — see open item 1): of the 92 GB200/GB300 sub-rack
-  rows, 54 now have direct high-confidence evidence confirming the categorical NVL72 cap,
-  0 conflict with it, 38 remain cap-only (no resolving evidence). Refitting with mined
-  domains where available: premium strengthens to **-0.131 (p=0.0001)**, and further to
-  -0.338 (p=0.0002, n=931) if the 38 cap-only rows are dropped entirely — direct evidence
-  points the same direction as the categorical assumption, more strongly, not against it.
+  rows, all 92 match a mining entry (0 unmatched); 54 are high confidence (confirms the
+  categorical NVL72 cap), 3 medium + 35 low = 38 cap-only. 54 + 38 = 92, verified exactly
+  (results/refit_mined_domains.txt ACCOUNTING section). An earlier mining pass (commit
+  cbccc13, before two classifier fixes in 4681925) reported 41/51 for this same 92-row
+  set — superseded, do not cite it. Refitting with mined domains where available: premium
+  strengthens to **-0.131 (p=0.0001)**.
+- Sensitivity check (drop the 38 cap-only rows entirely) gives -0.338 (p=0.0002, n=931),
+  but a Cook's-distance leverage audit (results/refit_mined_domains.txt LEVERAGE AUDIT)
+  shows only 1 of the top 10 highest-leverage rows in that fit is even a mined GB200/GB300
+  row (HPE GB300 ngpu72, and its mined domain [72] matches what the cap already assumed —
+  not new information); the other 9 are unrelated thin-generation single-system leverage
+  points (tinycorp, Dell, TTA, JuniperNetworks, Ailiverse, Fujitsu, NVIDIA — MI300X/RTX/
+  A100/L40S). **Do not cite -0.338 as confirmation that mined evidence strengthens the
+  premium** — it's mostly an artifact of which thin-generation rows dominate the fixed
+  effects once the cap-only rows are dropped, not the mined domain values themselves.
+  Treat it as a sensitivity bound, not a second estimate of the effect.
 - Real tray-vs-fabric trap caught during mining: Nebius's GB300 `system_name` literally
   says "NVL4", but that number equals the submission's own accelerators_per_node in all 3
   occurrences — a compute-tray label, not the rack fabric. Classify by cross-checking the
@@ -62,6 +73,10 @@ compute-pricing discount function.
   exist for transparency/audit, not as model inputs (see 07/08 docstrings)
 - Before any commercial use, MLCommons' results-usage/trademark policy (separate from the
   Apache 2.0 license on the source repos) still needs checking — see DATA_LICENSE
+- Before citing any "drop rows and refit" sensitivity number as confirmation, check Cook's
+  distance on that specific fit — a sensitivity result can look like it's driven by the
+  rows you cared about when it's actually a handful of unrelated thin-generation leverage
+  points (see the -0.338 caveat above; 07/08's leverage audit is the template)
 
 ## Open work (priority order)
 1. ~~Mine per-submission NVL config from system-description free text for GB200/GB300~~ —
