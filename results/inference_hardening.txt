@@ -1,0 +1,18 @@
+INFERENCE HARDENING: wild cluster bootstrap-t vs. asymptotic cluster-robust p-values
+
+1. CATEGORICAL-CAP BASELINE (04_rigor_checks.py)
+  n=969, clusters=41, feature=log_domain
+  asymptotic:  coef=-0.0961  se=0.0432  t=-2.227  p=0.02591
+  wild cluster bootstrap-t (Rademacher, 9999 reps, wildboottest package): t=-2.227  p=0.0284
+  significance at alpha=0.05: HOLDS under both
+
+2. MINED-AUGMENTED (08_refit_with_mined_domains.py)
+  n=969, clusters=41, feature=log_domain_mined
+  asymptotic:  coef=-0.1309  se=0.0339  t=-3.861  p=0.0001131
+  wild cluster bootstrap-t (Rademacher, 9999 reps, wildboottest package): t=-3.861  p=0.006701
+  significance at alpha=0.05: HOLDS under both
+
+SUMMARY
+  categorical-cap:  asymptotic p=0.02591 -> bootstrap p=0.0284
+  mined-augmented:  asymptotic p=0.0001131 -> bootstrap p=0.006701
+  Both estimates remain significant at alpha=0.05 under the bootstrap. Note the asymptotic p-values still understate uncertainty relative to the bootstrap (most visibly for the mined-augmented estimate) -- the conclusion doesn't flip, but the 41-cluster asymptotic SEs were optimistic.
