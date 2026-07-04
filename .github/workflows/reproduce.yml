@@ -1,0 +1,34 @@
+name: Reproduce
+
+on:
+  push:
+  pull_request:
+  schedule:
+    # Living-validation hook: re-run monthly so a new MLPerf round dropped
+    # into data/ later (or a pinned-dependency drift) gets caught even
+    # without a code change triggering the workflow.
+    - cron: "17 6 1 * *"
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9.6"
+
+      - name: Install pinned dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run analysis pipeline (02-06)
+        run: |
+          cd scripts
+          for s in 02_topology_efficiency_model 03_corrected_topology_model \
+                   04_rigor_checks 05_deep_checks 06_continuous_bandwidth_model; do
+            python3 "${s}.py"
+          done
+
+      - name: Run tests
+        run: pytest tests/test_reproduction.py -v
