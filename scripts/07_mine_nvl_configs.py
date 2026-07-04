@@ -10,26 +10,47 @@ inconsistent — a GB300 compute tray labeled "NVL4" describes the tray
 module, not the rack fabric).
 
 Evidence sources, in preference order:
-1. `system_name` field in <org>/systems/<id>.json. This is the only place
-   a literal NVL72/36/16/8/4 token was found in practice, usually inside
-   an unambiguous rack product name (e.g. "8x NVIDIA GB200 NVL72"). BUT:
-   Nebius's GB300 submissions say e.g. "8x NVIDIA GB300 NVL4" — no
-   "tray"/"module" qualifier word appears anywhere in the string, yet
-   "NVL4" here names the compute tray, not the rack fabric (confirmed:
-   the matched number equals that submission's own accelerators_per_node
-   in all 3 occurrences found in v6.0). A word-list check for qualifier
-   language does NOT catch this — the real tell is that the mention
-   collapses to the tray-level GPU count. So: any NVL match whose number
-   equals accelerators_per_node is downgraded to `low` confidence
-   (tray/module label) regardless of org or wording; only a match that
-   does NOT coincide with accelerators_per_node is trusted as `high`
-   (genuine rack-fabric-scale evidence, e.g. NVL72 on an 8-GPU-per-node
-   system).
+1. Free-text fields in <org>/systems/<id>.json: `system_name`, `hw_notes`,
+   `sw_notes`, `accelerator_interconnect_topology` (checked in that order;
+   first match wins). All four are scanned because the literal NVL token
+   doesn't live in one canonical field across submitters — e.g. Oracle's
+   `system_name` is just "BM.GPU.GB300.4" with no NVL mention at all, but
+   its `hw_notes` says "OCI GB300 NVL72 Supercluster configuration" and
+   `accelerator_interconnect_topology` is literally "NVL72"; Quanta_Cloud_
+   Technology puts it in `hw_notes` ("QuantaGrid D75U-1U (NVIDIA GB300
+   NVL72)") with an empty system_name-adjacent signal. An earlier version
+   of this script only checked `system_name` and silently mis-classified
+   10 real submissions (Oracle x4, CoreWeave x4, Quanta x2) as `low`
+   confidence when direct high-confidence rack-fabric evidence existed one
+   field over — verified none of these fields ever contain a numeric NVL
+   token for non-rack-fabric reasons (the only other `NVL`-containing
+   fields across the whole corpus are generic strings like "NVLINK Gen5",
+   which don't match the NVL72/36/16/8/4 regex at all).
+
+   Nebius's GB300 submissions say e.g. "8x NVIDIA GB300 NVL4" in
+   `system_name` — no "tray"/"module" qualifier word appears anywhere in
+   the string, yet "NVL4" here names the compute tray, not the rack fabric
+   (confirmed: the matched number equals that submission's own
+   accelerators_per_node in all 3 occurrences found in v6.0). A word-list
+   check for qualifier language does NOT catch this — the real tell is
+   that the mention collapses to the tray-level GPU count. So: any NVL
+   match whose number equals accelerators_per_node is downgraded to
+   `medium` confidence (tray/module label) regardless of org, field, or
+   wording; only a match that does NOT coincide with accelerators_per_node
+   is trusted as `high` (genuine rack-fabric-scale evidence, e.g. NVL72 on
+   an 8-GPU-per-node system).
 2. Benchmark config filenames under <org>/benchmarks/*/implementations/*/.
    Node-shape tokens like "config_GB300_2x4x1xtp1pp1cp1_fp4.sh" encode
    accelerators-per-node (a tray-level count), not domain size. Recorded
    at `low` confidence with `inferred_domain` left blank so this signal
-   can never silently masquerade as fabric evidence.
+   can never silently masquerade as fabric evidence. Only accepted if the
+   filename's own GB200/GB300 token matches this row's `gen` (an earlier
+   version let a GB200-branded filename get attributed to a GB300 Lambda/
+   Oracle row via an org-wide fallback when no filename matched the
+   system_id — gen-matching closes that hole). The evidence_string notes
+   whether the match is tied to this exact system_id or is an org-level
+   fallback (same file attributed to every system in that org lacking its
+   own match), since the latter is materially weaker.
 No match from either source -> `none` (cap remains the only assumption).
 
 This script does not modify topology_common.py or any model script — it
@@ -60,6 +81,8 @@ DATASET_CSV = os.path.join(os.path.dirname(__file__), "..", "data",
 
 NVL_RE = re.compile(r"NVL[\s\-]?(72|36|16|8|4)\b", re.IGNORECASE)
 NODE_SHAPE_RE = re.compile(r"(GB200|GB300).{0,40}?x(\d+)x", re.IGNORECASE)
+TEXT_FIELDS = ("system_name", "hw_notes", "sw_notes",
+              "accelerator_interconnect_topology")
 
 
 def int_field(v):
@@ -70,39 +93,51 @@ def int_field(v):
         return None
 
 
-def mine_system_name(system_name, accel_pn):
+def mine_text_fields(sysinfo, accel_pn):
     """Return (confidence, evidence_string, inferred_domain) or None.
 
-    An NVL token whose number equals accelerators_per_node is a tray/module
-    label, not rack-fabric evidence (the Nebius GB300 "NVL4" trap) — it
-    gets `medium` confidence with no inferred_domain. A token that doesn't
-    coincide with the per-node count is trusted as `high`.
+    Checks system_name, hw_notes, sw_notes, accelerator_interconnect_topology
+    in that order (first match wins). An NVL token whose number equals
+    accelerators_per_node is a tray/module label, not rack-fabric evidence
+    (the Nebius GB300 "NVL4" trap) — it gets `medium` confidence with no
+    inferred_domain. A token that doesn't coincide with the per-node count
+    is trusted as `high`.
     """
-    m = NVL_RE.search(system_name or "")
-    if not m:
-        return None
-    domain = int(m.group(1))
-    if accel_pn is not None and domain == accel_pn:
-        note = (f"{system_name} (NVL{domain} == accelerators_per_node "
-                f"{accel_pn} -> tray/module label, not rack fabric)")
-        return ("medium", note, None)
-    return ("high", system_name, domain)
+    for field in TEXT_FIELDS:
+        text = sysinfo.get(field, "") or ""
+        m = NVL_RE.search(text)
+        if not m:
+            continue
+        domain = int(m.group(1))
+        tagged = f"[{field}] {text}"
+        if accel_pn is not None and domain == accel_pn:
+            note = (f"{tagged} (NVL{domain} == accelerators_per_node "
+                    f"{accel_pn} -> tray/module label, not rack fabric)")
+            return ("medium", note, None)
+        return ("high", tagged, domain)
+    return None
 
 
-def mine_config_filenames(base, org, system_id):
+def mine_config_filenames(base, org, system_id, gen):
     """Fallback low-confidence signal: node-shape tokens in benchmark config
-    filenames. Prefers files whose name contains system_id; else any
-    GB200/GB300 node-shape match under the org's benchmarks tree."""
+    filenames, restricted to filenames whose own GB200/GB300 token matches
+    this row's gen (prevents attributing a GB200-branded config to a GB300
+    submission or vice versa). Prefers files whose name contains system_id
+    (system-specific); else any gen-matching file under the org's
+    benchmarks tree (org-level fallback, explicitly labeled as such since
+    it isn't tied to this particular system_id)."""
     pattern = os.path.join(base, org, "benchmarks", "*", "implementations", "*", "*")
     candidates = glob.glob(pattern)
     scoped = [c for c in candidates if system_id.lower() in os.path.basename(c).lower()]
-    pool = scoped or candidates
-    for path in pool:
+    pool = [(p, True) for p in scoped] if scoped else [(p, False) for p in candidates]
+    for path, specific in pool:
         name = os.path.basename(path)
         m = NODE_SHAPE_RE.search(name)
-        if m:
+        if m and m.group(1).upper() == gen.upper():
             tray_n = m.group(2)
-            note = (f"{name} (node-shape token 'x{tray_n}x' = "
+            scope_note = ("system-specific" if specific else
+                         "org-level fallback, NOT tied to this system_id")
+            note = (f"{name} ({scope_note}; node-shape token 'x{tray_n}x' = "
                     f"accelerators-per-node, NOT rack-fabric domain size)")
             return ("low", note, None)
     return None
@@ -133,9 +168,9 @@ def mine_all():
             accel_pn = int_field(sysinfo.get("accelerators_per_node", ""))
             total_gpus = nodes_n * accel_pn if (nodes_n and accel_pn) else None
 
-            evidence = mine_system_name(sysinfo.get("system_name", ""), accel_pn)
+            evidence = mine_text_fields(sysinfo, accel_pn)
             if evidence is None:
-                evidence = mine_config_filenames(base, org, system_id)
+                evidence = mine_config_filenames(base, org, system_id, gen)
             if evidence is None:
                 confidence, evidence_string, inferred_domain = "none", "", None
             else:

@@ -2,33 +2,33 @@ NVL CONFIG MINING — RECONCILIATION vs. GB200/GB300 sub-rack rows
 (total_gpus < 72, from the load_clean() analysis sample)
 
 Dataset rows (system x model benchmark, matches CLAUDE.md's '92' figure): 92
-  direct high-confidence evidence (confirms cap):   41
+  direct high-confidence evidence (confirms cap):   54
   conflicting evidence (mined domain != 72):        0
-  cap-only (no resolving high-confidence evidence): 51
+  cap-only (no resolving high-confidence evidence): 38
 
 Unique sub-rack submissions (system-level, evidence's real grain): 47
-  direct high-confidence evidence (confirms cap):   27
+  direct high-confidence evidence (confirms cap):   31
   conflicting evidence (mined domain != 72):        0
-  cap-only (no resolving high-confidence evidence): 20
+  cap-only (no resolving high-confidence evidence): 16
 
-Examples (high, n=76):
-  - 'SRS-GB200-NVL72-M1 (16x ARS-121GL-NBO)'
-  - 'SRS-GB200-NVL72-M1 (18x ARS-121GL-NBO)'
-  - 'Carina (8x NVIDIA GB200 NVL72)'
-  - 'Carina (24x NVIDIA GB200 NVL72)'
-  - 'Carina (16x NVIDIA GB200 NVL72)'
+Examples (high, n=86):
+  - '[system_name] SRS-GB200-NVL72-M1 (16x ARS-121GL-NBO)'
+  - '[system_name] SRS-GB200-NVL72-M1 (18x ARS-121GL-NBO)'
+  - '[system_name] Carina (8x NVIDIA GB200 NVL72)'
+  - '[system_name] Carina (24x NVIDIA GB200 NVL72)'
+  - '[system_name] Carina (16x NVIDIA GB200 NVL72)'
 
 Examples (medium, n=3):
-  - 'Nebius GB300 n18 (18x NVIDIA GB300 NVL4) (NVL4 == accelerators_per_node 4 -> tray/module label, not rack fabric)'
-  - 'Nebius GB300 n8 (8x NVIDIA GB300 NVL4) (NVL4 == accelerators_per_node 4 -> tray/module label, not rack fabric)'
-  - 'Nebius GB300 n2 (2x NVIDIA GB300 NVL4) (NVL4 == accelerators_per_node 4 -> tray/module label, not rack fabric)'
+  - '[system_name] Nebius GB300 n18 (18x NVIDIA GB300 NVL4) (NVL4 == accelerators_per_node 4 -> tray/module label, not rack fabric)'
+  - '[system_name] Nebius GB300 n8 (8x NVIDIA GB300 NVL4) (NVL4 == accelerators_per_node 4 -> tray/module label, not rack fabric)'
+  - '[system_name] Nebius GB300 n2 (2x NVIDIA GB300 NVL4) (NVL4 == accelerators_per_node 4 -> tray/module label, not rack fabric)'
 
-Examples (low, n=28):
-  - "config_GB200_18x4x1xtp1pp1cp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)"
-  - "config_GB200_18x4x1xtp1pp1cp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)"
-  - "config_GB200_18x4x1xtp1pp1cp8.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)"
-  - "config_GB200_18x4x1024.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)"
-  - "config_GB200_18x4x1024.sh (node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)"
+Examples (low, n=18):
+  - "config_GB200_18x4x1xtp1pp1cp8.sh (org-level fallback, NOT tied to this system_id; node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)"
+  - "config_GB200_18x4x1xtp1pp1cp8.sh (org-level fallback, NOT tied to this system_id; node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)"
+  - "config_GB200_18x4x1xtp1pp1cp8.sh (org-level fallback, NOT tied to this system_id; node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)"
+  - "config_GB200_18x4x1024.sh (org-level fallback, NOT tied to this system_id; node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)"
+  - "config_GB200_18x4x1024.sh (org-level fallback, NOT tied to this system_id; node-shape token 'x4x' = accelerators-per-node, NOT rack-fabric domain size)"
 
 Examples (none, n=0):
   (none found)
