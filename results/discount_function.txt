@@ -1,0 +1,29 @@
+TOPOLOGY DISCOUNT FUNCTION (workload-conditional, evidence-augmented domain feature)
+n=969 | comm-bound rows: 481 | comm-light rows: 488
+
+FITTED CURVES (log_time ~ log_gpus + log_domain_mined + domain_mined_x_comm + model FE + gen FE, org-clustered SEs)
+  comm-light slope  coef=-0.0841  se=0.0444  p=0.0583
+  comm-bound slope  coef=-0.1618  se=0.0370  (= log_domain_mined + domain_mined_x_comm, covariance-propagated SE)
+  interaction term  coef=-0.0777  se=0.0402  p=0.0532
+  R^2: 0.9568
+
+MONOTONICITY ENFORCEMENT
+  Both fitted slopes are already <= 0 (larger domain predicts less or equal time-to-train) -- no clipping needed. Enforcement is active but did not trigger.
+
+TEMPORAL HOLDOUT — fit v3.1-v5.0, predict v5.1-v6.0 (shared models/gens only, so FEs transfer)
+  early n=231: comm-light=-0.0558  comm-bound=-0.2151
+  late  n=143: comm-light=-0.4914  comm-bound=-0.6229
+  out-of-sample R^2 on late rounds (early-fit coefficients): 0.892   median |error| = 17.4% of time-to-train
+
+DISCOUNT TABLE (time-to-train multiplier relative to domain=4; <1.0 = less time = a discount; org-clustered 95% band)
+  observed comm-light domain range: [2, 72]
+  observed comm-bound domain range: [4, 72]
+
+  domain  comm-light mult [95% band]  status         comm-bound mult [95% band]  status       
+       4  1.000 [1.000, 1.000]      interpolation  1.000 [1.000, 1.000]      interpolation
+       8  0.943 [0.888, 1.002]      interpolation  0.894 [0.850, 0.940]      interpolation
+      16  0.890 [0.789, 1.004]      interpolation  0.799 [0.723, 0.884]      interpolation
+      36  0.831 [0.687, 1.007]      interpolation  0.701 [0.598, 0.822]      interpolation
+      72  0.784 [0.610, 1.009]      interpolation  0.627 [0.508, 0.773]      interpolation
+
+Interpolation = domain size falls within the observed range for that workload class in this dataset. Extrapolation = outside it -- treat those cells as a model-implied projection, not an empirical finding.

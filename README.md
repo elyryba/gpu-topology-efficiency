@@ -24,6 +24,7 @@ scripts/
   06_continuous_bandwidth_model.py continuous inter-node bandwidth vs. categorical domain size
   07_mine_nvl_configs.py           mines per-submission NVLink domain evidence from raw MLPerf repos
   08_refit_with_mined_domains.py   refits the topology premium using mined evidence where available
+  09_discount_function.py          workload-conditional discount function, validated on a temporal holdout
 ```
 
 Run: `bash setup.sh` (creates a venv, installs the pinned `requirements.txt`,
@@ -158,14 +159,56 @@ same topology-premium spec as 04 (`results/refit_mined_domains.txt`):
 |---|---|
 | Categorical cap (04, baseline) | -0.096 (p=0.026) |
 | Mined-augmented | **-0.131 (p=0.0001)** |
-| Sensitivity: drop the 38 cap-only rows entirely | -0.338 (p=0.0002, n=931) |
+| Sensitivity: drop the 38 cap-only rows entirely | -0.338 (p=0.0002, n=931) — see caveat below |
 
 Direct evidence points the same direction as the categorical assumption,
 and more strongly: the premium gets *larger* in magnitude and *more*
-significant once mined evidence replaces the flat cap, and stronger still
-once the rows we still have to take on faith are dropped. Leave-one-
+significant once mined evidence replaces the flat cap. Leave-one-
 generation-out on the mined-augmented feature holds sign and significance
 across all 14 generations (range: -0.10 to -0.19).
+
+**Audited caveat on the -0.338 figure:** a Cook's-distance leverage check
+on that sensitivity fit (`results/refit_mined_domains.txt`, LEVERAGE AUDIT
+section) found only 1 of its top 10 highest-leverage rows is even a mined
+GB200/GB300 evidence row — and its mined domain (72) matches what the
+categorical cap already assumed, so it isn't new information. The other 9
+are unrelated thin-generation single-system leverage points (tinycorp,
+Dell, TTA, JuniperNetworks, Ailiverse, Fujitsu, NVIDIA). **-0.338 is a
+sensitivity bound, not a second confirmation of -0.131** — it's mostly an
+artifact of which thin generations dominate the fixed effects once the
+38 cap-only rows are dropped, not a mined-evidence effect. Also note: the
+92/47-row mining reconciliation numbers above (54 high / 38 cap-only)
+supersede an earlier pre-classifier-fix pass that reported 41/51 for the
+same rows — that number is retired, don't cite it.
+
+## Discount function (09_discount_function.py)
+
+CLAUDE.md open-work item 5: a continuous, monotone, workload-conditional
+discount function, built on the evidence-augmented domain feature from 08
+(mined high-confidence domain, categorical cap otherwise), with separate
+curves for comm-bound and comm-light workloads (`COMM_BOUND`, same set as
+05/06) and validated on the same v3.1–v5.0 → v5.1–v6.0 temporal holdout as
+05 (out-of-sample R²=0.892, comparable to 05's 0.886). Monotonicity is
+explicitly enforced (either slope would be clipped to 0 if it ever came
+out positive — it didn't; see `results/discount_function.txt`).
+
+Discount multiplier (time-to-train relative to domain=4, org-clustered 95%
+band), for the domain sizes actually observed in this dataset:
+
+| domain | comm-light | comm-bound |
+|---|---|---|
+| 4 | 1.000 (ref) | 1.000 (ref) |
+| 8 | 0.943 [0.888, 1.002] | 0.894 [0.850, 0.940] |
+| 16 | 0.890 [0.789, 1.004] | 0.799 [0.723, 0.884] |
+| 36 | 0.831 [0.687, 1.007] | 0.701 [0.598, 0.822] |
+| 72 | 0.784 [0.610, 1.009] | 0.627 [0.508, 0.773] |
+
+All five points are **interpolation** within the observed domain range for
+both workload classes (comm-light: [2, 72], comm-bound: [4, 72]) — these
+happen to be the canonical tray/rack sizes present throughout the dataset,
+not a coincidence of the table choice. Note the comm-light band at
+domain=72 crosses 1.0 (consistent with its p=0.058, only marginally
+significant); the comm-bound curve is comfortably significant throughout.
 
 ## How to reproduce
 
@@ -175,8 +218,8 @@ source .venv/bin/activate
 pytest tests/test_reproduction.py   # pins the headline numbers above
 ```
 
-07 and 08 additionally require the raw MLPerf repos cloned locally (they
-are NOT required for 02-06, which run entirely off the included CSVs):
+07 additionally requires the raw MLPerf repos cloned locally (08/09 only
+need the committed CSVs, same as 02-06):
 
 ```bash
 mkdir -p ~/mlperf && cd ~/mlperf
@@ -186,6 +229,7 @@ git clone --depth 1 https://github.com/mlcommons/training_results_v6.0
 cd -
 MLPERF_ROOT=~/mlperf python3 scripts/07_mine_nvl_configs.py
 python3 scripts/08_refit_with_mined_domains.py
+python3 scripts/09_discount_function.py
 ```
 
 CI (`.github/workflows/reproduce.yml`, badge above) runs the pinned

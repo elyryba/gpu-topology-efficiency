@@ -15,6 +15,7 @@ compute-pricing discount function.
 - `scripts/02..06_*.py` — models, in order: baseline, corrected NVL72 domain, rigor checks, deep checks, continuous bandwidth
 - `scripts/07_mine_nvl_configs.py` — mines system_name/hw_notes/sw_notes/accelerator_interconnect_topology + config filenames for direct domain evidence (needs repos cloned; set $MLPERF_ROOT)
 - `scripts/08_refit_with_mined_domains.py` — refits the topology premium using mined high-confidence domains where available, categorical cap otherwise
+- `scripts/09_discount_function.py` — workload-conditional (comm-bound/comm-light) monotone discount function on the evidence-augmented domain feature, validated on the v5.1-v6.0 temporal holdout
 - `tests/test_reproduction.py` — pins the headline numbers below; run via pytest
 - `.github/workflows/reproduce.yml` — CI: runs 02-06 + pytest on push/PR and monthly (living-validation hook)
 - `results/*.txt` — all regression outputs
@@ -23,7 +24,8 @@ compute-pricing discount function.
 ## Commands
 - Setup: `bash setup.sh` (creates venv, installs deps, runs 02-06)
 - Run everything (02-06 only, no MLPerf clone needed): `cd scripts && for s in 02 03 04 05 06; do python3 ${s}_*.py; done`
-- Mining + refit (07/08, needs $MLPERF_ROOT with v5.0/v5.1/v6.0 cloned): `MLPERF_ROOT=~/mlperf python3 scripts/07_mine_nvl_configs.py && python3 scripts/08_refit_with_mined_domains.py`
+- Mining (07, needs $MLPERF_ROOT with v5.0/v5.1/v6.0 cloned): `MLPERF_ROOT=~/mlperf python3 scripts/07_mine_nvl_configs.py`
+- Refit + discount function (08/09, no MLPerf clone needed, just the committed CSVs): `python3 scripts/08_refit_with_mined_domains.py && python3 scripts/09_discount_function.py`
 - Tests: `pytest tests/test_reproduction.py`
 - Deps: pandas, numpy, statsmodels, pytest (exact pins in requirements.txt)
 
@@ -57,6 +59,17 @@ compute-pricing discount function.
   occurrences — a compute-tray label, not the rack fabric. Classify by cross-checking the
   matched NVL number against accelerators_per_node, not by a qualifier-word list (Nebius
   never writes "tray"/"module" — a word-list check misses this).
+- Discount function (09, DONE — see open item 5): workload-conditional, evidence-augmented
+  domain feature (from 08), two log-linear curves (comm-light slope=-0.084 p=0.058;
+  comm-bound slope=-0.162, i.e. base + a -0.078 interaction). Monotonicity enforcement is
+  active (clips either slope to 0 if it ever comes out positive) but did not trigger — both
+  slopes were already <=0. Temporal holdout (v3.1-v5.0 -> v5.1-v6.0): OOS R²=0.892,
+  comparable to 05's 0.886. Discount table at domain={4,8,16,36,72} (relative to domain=4):
+  comm-light down to 0.784 [0.610,1.009] at domain=72; comm-bound down to 0.627
+  [0.508,0.773]. All 5 requested domain sizes are interpolation (within observed range) for
+  both workload classes — not a coincidence, they're the canonical tray/rack sizes present
+  throughout the dataset. Comm-light's band crosses 1.0 at domain=72 (p=0.058, marginal);
+  comm-bound is comfortably significant throughout.
 
 ## Conventions
 - Always use org-clustered standard errors for headline claims; nonrobust only for comparison
@@ -87,4 +100,10 @@ compute-pricing discount function.
 2. Source GH200/NVL32 deployment domain sizes; currently on uncorrected proxy
 3. Hedonic pricing regression on GPU rental market data (e.g. vast.ai price distributions) — compare performance premium vs price premium
 4. Check MLCommons results-usage/trademark policy before any commercial use
-5. Continuous monotone discount function, validated on held-out MLPerf rounds
+5. ~~Continuous monotone discount function, validated on held-out MLPerf rounds~~ — DONE
+   (09_discount_function.py). Workload-conditional (comm-bound/comm-light), built on the
+   evidence-augmented domain feature, monotonicity explicitly enforced (didn't need to
+   trigger), OOS R²=0.892 on the v5.1-v6.0 holdout. Follow-up if revisited: the comm-light
+   curve is only marginally significant (p=0.058) and its band crosses 1.0 at domain=72 —
+   don't present that curve's discount as precisely sized, same caveat as the pooled
+   premium's marginal significance (item 1 above).
