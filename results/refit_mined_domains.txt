@@ -1,0 +1,27 @@
+REFIT WITH MINED NVLINK DOMAINS
+n=969 | rows with high-confidence mined domain override: 137
+
+TOPOLOGY PREMIUM: categorical cap vs. mined-augmented (org-clustered SEs)
+  categorical cap (baseline)  coef=-0.0961  se=0.0432  p=0.02591  (reference: -0.0961, p=0.0259 per CLAUDE.md / 04_rigor_checks.py)
+  mined-augmented             coef=-0.1309  se=0.0339  p=0.0001131
+  R^2 (mined-augmented): 0.9565
+
+LEAVE-ONE-GENERATION-OUT (mined-augmented feature)
+  drop A100       n= 955  premium=-0.1276 (p=0.0002702)
+  drop B200       n= 799  premium=-0.1272 (p=2.776e-05)
+  drop B300       n= 904  premium=-0.1292 (p=0.0001226)
+  drop GB200      n= 879  premium=-0.1593 (p=0.001469)
+  drop GB300      n= 872  premium=-0.1861 (p=3.825e-05)
+  drop H100       n= 687  premium=-0.1028 (p=0.003056)
+  drop H200       n= 817  premium=-0.1194 (p=8.732e-05)
+  drop L40S       n= 955  premium=-0.1415 (p=0.0001662)
+  drop MI300X     n= 954  premium=-0.1313 (p=7.992e-05)
+  drop MI325X     n= 955  premium=-0.1316 (p=0.0001019)
+  drop MI350X     n= 956  premium=-0.1311 (p=0.0001068)
+  drop MI355X     n= 945  premium=-0.1309 (p=0.0001053)
+  drop RTX        n= 959  premium=-0.1081 (p=9.372e-05)
+  drop TPU-v5p    n= 960  premium=-0.1318 (p=0.0001074)
+
+SENSITIVITY: drop the 38 cap-only sub-rack rows entirely (no high-confidence evidence -- pure categorical assumption)
+  n=931  premium=-0.3376  se=0.0910  p=0.0002074
+  (shows how much the headline premium depends on rows where we still have to trust min(total_gpus,72) rather than direct submission evidence)
